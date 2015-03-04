@@ -17,19 +17,22 @@ module.exports = function (grunt, options) {
     var targets = {};
 
     // Create the targets for the base plugin and all add-ons
-    //targets["customer-area"] = extend(true, {}, baseOptions, {
-    //    options: {
-    //        text_domain: "cuar"
-    //    },
-    //    files: [{
-    //        src: [
-    //            options.paths.base_plugin + '/customer-area.php',
-    //            options.paths.base_plugin + "/src/php/**/*.php",
-    //            options.paths.base_plugin + "/includes/**/*.php"
-    //        ],
-    //        expand: true
-    //    }]
-    //});
+    var adminAsset = options.paths.base_plugin + "/assets/admin/js/customer-area.min.js";
+    var frontendAsset = options.paths.base_plugin + "/assets/frontend/js/customer-area.min.js";
+
+    var files = {};
+    files[adminAsset] = [
+        options.paths.base_plugin + '/src/js/common/**/*.js',
+        options.paths.base_plugin + '/src/js/admin/**/*.js'
+    ];
+    files[frontendAsset] = [
+        options.paths.base_plugin + '/src/js/common/**/*.js',
+        options.paths.base_plugin + '/src/js/frontend/**/*.js'
+    ];
+
+    targets["customer-area"] = extend(true, {}, baseOptions, {
+        files: files
+    });
 
     var addons = options.addons;
     addons.forEach(function (addon) {
