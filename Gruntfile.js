@@ -37,9 +37,9 @@ module.exports = function (grunt) {
     grunt.registerTask("dist", ["less:dist", "uglify:dist", "autoprefixer:dist", "tx-pull", "wp_readme_to_markdown"]);
     grunt.registerTask("dev", ["less:dev", "uglify:dev", "autoprefixer:dev"]);
 
-    grunt.registerTask("prepare-languages", ["checktextdomain", "makepot"]);
+    grunt.registerTask("prepare-languages", ["checktextdomain", "makepot", "potomo"]);
     grunt.registerTask("tx-push", ["checktextdomain:customer-area", "makepot:customer-area", "exec:txpush_s"]);
-    grunt.registerTask("tx-pull", ["exec:txpull", "potomo"]);
+    grunt.registerTask("tx-pull", ["exec:txpull", "potomo:customer-area"]);
 
     // The task to prepare a new release
     // TODO make a new branch for the release

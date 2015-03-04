@@ -24,9 +24,13 @@ Checks that all the source code uses the proper text domain in internationalizat
 
 Create the POT files from the source code
 
+#### `grunt potomo`
+
+Compile all `.po` files to `.mo` files 
+
 #### `grunt prepare-languages`
 
-Runs sequentially: `checktextdomain` and then `makepot`
+Runs sequentially: `checktextdomain`, then `makepot`, then `potomo`
 
 #### `grunt sync-cuar-commons`
 
