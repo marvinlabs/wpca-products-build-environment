@@ -24,6 +24,10 @@ Runs sequentially: `checktextdomain`, then `makepot`, then `potomo`
 
 Runs sequentially: `less`, then `autoprefixer`, then `uglify`
 
+#### `grunt prepare-archives`
+
+Runs sequentially: `prepare-languages`, then `prepare-assets`, then `compress`
+
 ### Tasks available for all plugins
 
 #### `grunt checktextdomain`

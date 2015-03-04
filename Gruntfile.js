@@ -36,6 +36,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask("prepare-languages", ["checktextdomain", "makepot", "potomo"]);
     grunt.registerTask("prepare-assets", ["less", "autoprefixer", "uglify"]);
+    grunt.registerTask("prepare-archives", ["prepare-languages", "prepare-assets", "compress"]);
 
     grunt.registerTask("tx-push", ["checktextdomain:customer-area", "makepot:customer-area", "exec:txpush_s"]);
     grunt.registerTask("tx-pull", ["exec:txpull", "potomo:customer-area"]);

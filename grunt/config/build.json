@@ -1,16 +1,12 @@
 {
     "includeFiles": [
         "**/**",
-        "!themes/**/assets/**/*.map",
+        "!**/assets/**/*.map",
         "!node_modules/**",
-        "!build/**",
-        "!releases/**",
-        "!grunt/**",
-        "!Gruntfile.js",
         "!package.json",
         "!README.md",
-        "!wp-assets/**",
         "!.git/**",
+        "!.gitignore",
         "!.idea/**"
     ]
 }
