@@ -65,6 +65,10 @@ Combines and compresses Javascript files into a unique file.
 JS files are taken from each plugin's `src/js` folder and compiled to the plugin's `assets/admin/js` and/or 
 `assets/frontend/js` folder
 
+#### `grunt wp_readme_to_markdown`
+
+Convert each `readme.txt` file to a `README.md` file more appropriate for git repositories 
+
 ### Tasks specific to the main WP Customer Area plugin
 
 #### `grunt tx-push`
