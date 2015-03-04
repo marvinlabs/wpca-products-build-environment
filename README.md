@@ -28,7 +28,7 @@ Create the POT files from the source code
 
 Runs sequentially: `checktextdomain` and then `makepot`
 
-#### `grunt sync_addon_libs`
+#### `grunt sync-cuar-commons`
 
 Use this when you want to copy all files required by an add-on from the main plugin.
 
