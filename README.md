@@ -14,6 +14,16 @@
 
 All grunt tasks shall be run in the build environment directory directly
 
+### Combined (aka. most useful) tasks available for all plugins
+
+#### `grunt prepare-languages`
+
+Runs sequentially: `checktextdomain`, then `makepot`, then `potomo`
+
+#### `grunt prepare-assets`
+
+Runs sequentially: `less`, then `autoprefixer`, then `uglify`
+
 ### Tasks available for all plugins
 
 #### `grunt checktextdomain`
@@ -28,15 +38,32 @@ Create the POT files from the source code
 
 Compile all `.po` files to `.mo` files 
 
-#### `grunt prepare-languages`
-
-Runs sequentially: `checktextdomain`, then `makepot`, then `potomo`
-
 #### `grunt sync-cuar-commons`
 
 Use this when you want to copy all files required by an add-on from the main plugin.
 
 - Copies customer-area/libs/cuar/** to each addon's folder
+
+#### `grunt less`
+
+Compile the LESS source code into CSS stylesheets. 
+
+LESS files are taken from:
+
+- Base plugin skins' `src/less` folder and compiled to the skin's `assets/css` folder
+- 3rd party add-ons' `src/less` and compiled to the add-on's `assets/css` folder
+
+#### `grunt autoprefixer`
+
+Remove/add prefixes for CSS properties. This is usually run as post-processing of the `less` task. This task is run on
+the CSS assets of the base plugin skins as well as 3rd party add-ons' CSS assets.
+
+#### `grunt uglify`
+
+Combines and compresses Javascript files into a unique file. 
+
+JS files are taken from each plugin's `src/js` folder and compiled to the plugin's `assets/admin/js` and/or 
+`assets/frontend/js` folder
 
 ### Tasks specific to the main WP Customer Area plugin
 

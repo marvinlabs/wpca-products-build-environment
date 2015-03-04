@@ -34,10 +34,9 @@ module.exports = function (grunt) {
     // Register some default grunt tasks
     grunt.registerTask("default", ["watch"]);
 
-    grunt.registerTask("dist", ["less:dist", "uglify:dist", "autoprefixer:dist", "tx-pull", "wp_readme_to_markdown"]);
-    grunt.registerTask("dev", ["less:dev", "uglify:dev", "autoprefixer:dev"]);
-
     grunt.registerTask("prepare-languages", ["checktextdomain", "makepot", "potomo"]);
+    grunt.registerTask("prepare-assets", ["less", "autoprefixer", "uglify"]);
+
     grunt.registerTask("tx-push", ["checktextdomain:customer-area", "makepot:customer-area", "exec:txpush_s"]);
     grunt.registerTask("tx-pull", ["exec:txpull", "potomo:customer-area"]);
 

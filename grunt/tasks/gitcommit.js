@@ -1,5 +1,5 @@
 module.exports = function (grunt, options) {
-    var assetFiles = [];
+/*    var assetFiles = [];
 
     var configs = [options.assets.styles, options.assets.scripts];
     for (var j = 0; j < configs.count; ++j) {
@@ -23,5 +23,6 @@ module.exports = function (grunt, options) {
                 lang: [options.i18n.poPath + "/**"]
             }
         }
-    };
+    };*/
+    return {};
 };
