@@ -21,7 +21,7 @@ module.exports = function (grunt) {
                 "bump-commit": "grunt-bump",
                 "replace": "grunt-text-replace",
                 "gitcommit": "grunt-git",
-                "sync_addon_libs": "grunt-wpca"
+                "sync-cuar-commons": "grunt-wpca"
             }
         }
     });
