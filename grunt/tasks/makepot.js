@@ -1,6 +1,5 @@
 module.exports = function (grunt, options) {
     var extend = require('extend');
-    var wpca = require('grunt-wpca/lib/wpca');
 
     var processPot = function (pot) {
         pot.headers["report-msgid-bugs-to"] = options.pkg.bugs.url + "\n";
@@ -63,7 +62,7 @@ module.exports = function (grunt, options) {
         }
     });
 
-    var addons = wpca.listAddons(options.paths.plugins, options.paths.addons_patterns);
+    var addons = options.addons;
     addons.forEach(function (addon) {
         targets[addon.slug] = extend(true, {}, baseOptions, {
             options: {

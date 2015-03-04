@@ -1,6 +1,5 @@
 module.exports = function (grunt, options) {
     var extend = require('extend');
-    var wpca = require('grunt-wpca/lib/wpca');
 
     // The options that are common to all plugins
     var baseOptions = {
@@ -27,7 +26,7 @@ module.exports = function (grunt, options) {
         }]
     });
 
-    var addons = wpca.listAddons(options.paths.plugins, options.paths.addons_patterns);
+    var addons = options.addons;
     addons.forEach(function (addon) {
         targets[addon.slug] = extend(true, {}, baseOptions, {
             options: {

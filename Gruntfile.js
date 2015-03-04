@@ -1,4 +1,7 @@
 module.exports = function (grunt) {
+    var path = require("path");
+    var wpca = require('grunt-wpca/lib/wpca');
+
     // Load configuration
     var configOptions = loadConfigurationFiles(grunt, {
         config: {
@@ -7,8 +10,10 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON("package.json")
     }, "grunt/config");
 
+    // Some additional handy configuration info
+    configOptions['addons'] = wpca.listAddons(configOptions.paths.plugins, configOptions.paths.addons_patterns);
+
     // Configure tasks
-    var path = require("path");
     require("load-grunt-config")(grunt, {
         configPath: path.join(process.cwd(), "grunt/tasks"),
         init: true,
