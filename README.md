@@ -73,6 +73,11 @@ JS files are taken from each plugin's `src/js` folder and compiled to the plugin
 
 Convert each `readme.txt` file to a `README.md` file more appropriate for git repositories 
 
+#### `grunt compress`
+
+Make a zip file of each plugin and place it in the releases folder. File inclusion/exclusion can be adjusted in the file
+named `grunt/config/build.json`.
+
 ### Tasks specific to the main WP Customer Area plugin
 
 #### `grunt tx-push`
