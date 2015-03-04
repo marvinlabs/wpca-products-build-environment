@@ -33,7 +33,7 @@ module.exports = function (grunt, options) {
         if (grunt.file.exists(frontendAsset)) assets.push(frontendAsset);
 
         if (assets.length<=0) return;
-        
+
         targets[addon.slug] = {
             src: assets
         };
