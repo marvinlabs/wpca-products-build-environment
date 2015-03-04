@@ -1,0 +1,24 @@
+{
+    "scripts" : [
+        {
+            "input" : [
+                "src/js/admin/**/*.js"
+            ],
+            "output" : {
+                "path" : "assets/js",
+                "file" : "cuar-admin.min.js"
+            }
+        }
+    ],
+    "skins" : [
+        {
+            "input" : [
+                "src/less/main.less"
+            ],
+            "output" : {
+                "path" : "assets/css",
+                "file" : "bxslider-integration.min.css"
+            }
+        }
+    ]
+}

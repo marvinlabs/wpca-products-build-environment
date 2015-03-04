@@ -1,0 +1,8 @@
+{
+    "versionFiles" : [
+        "package.json",
+        "readme.txt",
+        "README.md",
+        "customer-area.php"
+    ]
+}
