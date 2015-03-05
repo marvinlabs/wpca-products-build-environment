@@ -1,3 +1,37 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Table of Contents
+
+- [Required software](#required-software)
+- [First time setup](#first-time-setup)
+- [Vagrant as local MAMP/WAMP/XAMP/EasyPHP/... replacement](#vagrant-as-local-mampwampxampeasyphp-replacement)
+  - [Let's develop something](#lets-develop-something)
+  - [Let's call it a day](#lets-call-it-a-day)
+- [Grunt tasks](#grunt-tasks)
+  - [Combined (aka. most useful) tasks available for all plugins](#combined-aka-most-useful-tasks-available-for-all-plugins)
+    - [`grunt prepare-languages`](#grunt-prepare-languages)
+    - [`grunt prepare-assets`](#grunt-prepare-assets)
+    - [`grunt prepare-archives`](#grunt-prepare-archives)
+    - [`grunt start-dev`](#grunt-start-dev)
+  - [Tasks available for all plugins](#tasks-available-for-all-plugins)
+    - [`grunt checktextdomain`](#grunt-checktextdomain)
+    - [`grunt makepot`](#grunt-makepot)
+    - [`grunt potomo`](#grunt-potomo)
+    - [`grunt sync-cuar-commons`](#grunt-sync-cuar-commons)
+    - [`grunt less`](#grunt-less)
+    - [`grunt autoprefixer`](#grunt-autoprefixer)
+    - [`grunt uglify`](#grunt-uglify)
+    - [`grunt bump-version`](#grunt-bump-version)
+    - [`grunt wp_readme_to_markdown`](#grunt-wp_readme_to_markdown)
+    - [`grunt compress`](#grunt-compress)
+    - [`grunt sync`](#grunt-sync)
+    - [`grunt watch`](#grunt-watch)
+  - [Tasks specific to the main WP Customer Area plugin](#tasks-specific-to-the-main-wp-customer-area-plugin)
+    - [`grunt tx-push`](#grunt-tx-push)
+    - [`grunt tx-pull`](#grunt-tx-pull)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Required software
 
 - Install NPM and Grunt
