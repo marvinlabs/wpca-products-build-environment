@@ -7,8 +7,8 @@
 ## First time setup
 
 - Checkout this build-environment repository to a folder (e.g. c:/wpca/)
-- Checkout the Customer Area plugin to the wp-plugins folder from [its github repository](https://github.com/marvinlabs/customer-area/)
 - Run `npm install` in the build environment directory
+- Checkout the Customer Area plugin to the wp-plugins folder from [its github repository](https://github.com/marvinlabs/customer-area/)
 
 ## Vagrant as local MAMP/WAMP/XAMP/EasyPHP/... replacement
 
@@ -16,14 +16,23 @@ This build environment makes use of Vagrant (and more specifically of
 [VVV](https://github.com/Varying-Vagrant-Vagrants/VVV)) to provide a web server contained in a virtual machine.
 
 Please refer to the documentation of [VVV](https://github.com/Varying-Vagrant-Vagrants/VVV) to know how to install and 
-start this virtual machine. 
+start this virtual machine. Basically, all files for your webserver will be shared in the folder `vagrant/www`. 
 
-Basically, all files for your webserver will be shared in the folder `vagrant/www`. 
+*Hint: if you still want to use *AMP or any other local server, you can edit the `grunt/config/sync.json` file and
+add your web server's plugins folder to that list*
 
-We have a grunt task to help making hard links for the plugin and add-ons so that you can see all changes right after 
-they are saved.
+### Let's develop something
 
+When you want to start developing, run the `start-vagrant.bat` script which will:
+  
+- start the vagrant VM (the first time you do it can take a few minutes)
+- Open the `vvv.dev` URL in your favorite browser so you can access the sites easily
+- synchronize the plugin files
+- watch for changes in the `wp-plugins` folder and sync those changes to the VM's webserver
 
+### Let's call it a day
+
+Once you are finished, just run the `stop-vagrant.bat` script to halt gracefully the VM.
 
 ## Grunt tasks
 
@@ -33,15 +42,27 @@ All grunt tasks shall be run in the build environment directory directly
 
 #### `grunt prepare-languages`
 
+When translations need a refresh.
+
 Runs sequentially: `checktextdomain`, then `makepot`, then `potomo`
 
 #### `grunt prepare-assets`
+
+When asset sources have changed and we need to compile them  
 
 Runs sequentially: `less`, then `autoprefixer`, then `uglify`
 
 #### `grunt prepare-archives`
 
+When you are ready to release a new version and want to build a zip file for publishing your add-on
+
 Runs sequentially: `prepare-languages`, then `prepare-assets`, then `compress`
+
+#### `grunt start-dev`
+
+When you want to start working with your local web server
+
+Runs sequentially: `sync`, then `watch`
 
 ### Tasks available for all plugins
 
@@ -102,6 +123,16 @@ Convert each `readme.txt` file to a `README.md` file more appropriate for git re
 
 Make a zip file of each plugin and place it in the releases folder. File inclusion/exclusion can be adjusted in the file
 named `grunt/config/build.json`.
+
+#### `grunt sync`
+
+Synchronize the `wp-plugins` folder with the local web server (or Vagrant) folder
+  
+#### `grunt watch`
+
+Watch for file changes in:
+
+- the `wp-plugins` folder to start a synchronisation task with the local web server 
 
 ### Tasks specific to the main WP Customer Area plugin
 

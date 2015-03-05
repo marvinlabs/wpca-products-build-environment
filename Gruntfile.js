@@ -21,11 +21,6 @@ module.exports = function (grunt) {
         jitGrunt: {
             staticMappings: {
                 "makepot": "grunt-wp-i18n",
-                "addtextdomain": "grunt-wp-i18n",
-                "bump-only": "grunt-bump",
-                "bump-commit": "grunt-bump",
-                "replace": "grunt-text-replace",
-                "gitcommit": "grunt-git",
                 "sync-cuar-commons": "grunt-wpca"
             }
         }
@@ -41,20 +36,14 @@ module.exports = function (grunt) {
     grunt.registerTask("tx-push", ["checktextdomain:customer-area", "makepot:customer-area", "exec:txpush_s"]);
     grunt.registerTask("tx-pull", ["exec:txpull", "potomo:customer-area"]);
 
+    grunt.registerTask("start-dev", ["sync", "watch"]);
+
     // The task to bump version number in various places
     grunt.registerTask("bump-version", "Change the version number of one or more plugins", function (pluginId, mode) {
         var baseTargets = configOptions.release.base_targets;
         baseTargets.forEach(function(baseTarget) {
             grunt.task.run('version:' + pluginId + '_' + baseTarget.id + ':' + mode);
         });
-    });
-
-    // The task to make a new release
-    // TODO Merge the release branch into master/dev
-    grunt.registerTask("finish-release", "Release task", function (mode) {
-        grunt.task.run(
-            "gitcommit:post_release",
-            "compress:build");
     });
 };
 

@@ -1,0 +1,6 @@
+{
+    "sync_dests": [
+        "vagrant/www/wordpress-default/wp-content/plugins",
+        "vagrant/www/wordpress-trunk/wp-content/plugins"
+    ]
+}
