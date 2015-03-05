@@ -1,3 +1,4 @@
 [submodule "vagrant"]
 	path = vagrant
-	url = D:\\Dev\\wpcustomerarea\\dev\\vagrant
+    url = git@github.com:Varying-Vagrant-Vagrants/VVV.git
+
