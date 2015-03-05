@@ -10,6 +10,21 @@
 - Checkout the Customer Area plugin to the wp-plugins folder from [its github repository](https://github.com/marvinlabs/customer-area/)
 - Run `npm install` in the build environment directory
 
+## Vagrant as local MAMP/WAMP/XAMP/EasyPHP/... replacement
+
+This build environment makes use of Vagrant (and more specifically of 
+[VVV](https://github.com/Varying-Vagrant-Vagrants/VVV)) to provide a web server contained in a virtual machine.
+
+Please refer to the documentation of [VVV](https://github.com/Varying-Vagrant-Vagrants/VVV) to know how to install and 
+start this virtual machine. 
+
+Basically, all files for your webserver will be shared in the folder `vagrant/www`. 
+
+We have a grunt task to help making hard links for the plugin and add-ons so that you can see all changes right after 
+they are saved.
+
+
+
 ## Grunt tasks
 
 All grunt tasks shall be run in the build environment directory directly
@@ -68,6 +83,16 @@ Combines and compresses Javascript files into a unique file.
 
 JS files are taken from each plugin's `src/js` folder and compiled to the plugin's `assets/admin/js` and/or 
 `assets/frontend/js` folder
+
+#### `grunt bump-version`
+
+Update the version number for a given plugin. Usage: `grunt bump-version:plugin:mode`
+
+Examples:
+
+- `grunt bump-version:customer-area:minor`
+- `grunt bump-version:customer-area-login-form:major`
+- `grunt bump-version:customer-area-notifications:patch`
 
 #### `grunt wp_readme_to_markdown`
 

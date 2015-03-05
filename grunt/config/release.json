@@ -1,8 +1,22 @@
 {
-    "versionFiles" : [
-        "package.json",
-        "readme.txt",
-        "README.md",
-        "customer-area.php"
+    "base_targets" : [
+        {
+            "id" : "plugin_file",
+            "options" : {
+                "prefix" : "Version:\\s*"
+            },
+            "src" : ["%%path%%/%%mainFile%%"]
+        },
+        {
+            "id" : "readme_txt",
+            "options" : {
+                "prefix" : "Stable tag:\\s*"
+            },
+            "src" : ["%%path%%/readme.txt"]
+        },
+        {
+            "id" : "package",
+            "src" : ["%%path%%/package.json"]
+        }
     ]
 }

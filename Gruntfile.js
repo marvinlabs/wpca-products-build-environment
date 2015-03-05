@@ -41,16 +41,12 @@ module.exports = function (grunt) {
     grunt.registerTask("tx-push", ["checktextdomain:customer-area", "makepot:customer-area", "exec:txpush_s"]);
     grunt.registerTask("tx-pull", ["exec:txpull", "potomo:customer-area"]);
 
-    // The task to prepare a new release
-    // TODO make a new branch for the release
-    grunt.registerTask("start-release", "Prepare release task", function (mode) {
-        grunt.task.run(
-            "checktextdomain",
-            "sync_addon_libs",
-            "checkpending",
-            "version::" + mode,
-            "tx-push",
-            "dist");
+    // The task to bump version number in various places
+    grunt.registerTask("bump-version", "Change the version number of one or more plugins", function (pluginId, mode) {
+        var baseTargets = configOptions.release.base_targets;
+        baseTargets.forEach(function(baseTarget) {
+            grunt.task.run('version:' + pluginId + '_' + baseTarget.id + ':' + mode);
+        });
     });
 
     // The task to make a new release

@@ -1,6 +1,6 @@
 {
   "name": "customer-area-build-environment",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Build tools for WP Customer Area",
   "author": {
     "name": "Vincent Mimoun-Prat",
@@ -33,6 +33,7 @@
     "grunt-exec": "^0.4.5",
     "grunt-git": "^0.3.4",
     "grunt-potomo": "^3.2.0",
+    "grunt-sync": "^0.2.3",
     "grunt-text-replace": "^0.4.0",
     "grunt-transifex": "^0.1.1",
     "grunt-version": "^0.3.1",
