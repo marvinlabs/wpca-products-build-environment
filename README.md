@@ -55,6 +55,8 @@ start this virtual machine. Basically, all files for your webserver will be shar
 *Hint: if you still want to use *AMP or any other local server, you can edit the `grunt/config/sync.json` file and
 add your web server's plugins folder to that list*
 
+*Hint: to debug you can use xdebug. Here is some [tutorial to setup PhpStorm to work with that VM](http://devincharge.com/debug-cli-remote-server/)*
+
 ### Let's develop something
 
 When you want to start developing, run the `start-vagrant.bat` script which will:
