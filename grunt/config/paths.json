@@ -5,5 +5,8 @@
         "!customer-area-support-manager",
         "customer-area-*"
     ],
-    "themes" : "wp-themes"
+    "themes" : "wp-themes",
+    "themes_patterns" : [
+        "wpca-*"
+    ]
 }

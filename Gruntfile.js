@@ -12,6 +12,7 @@ module.exports = function (grunt) {
 
     // Some additional handy configuration info
     configOptions['addons'] = wpca.listAddons(configOptions.paths.plugins, configOptions.paths.addons_patterns);
+    configOptions['themes'] = wpca.listThemes(configOptions.paths.themes, configOptions.paths.themes_patterns);
 
     // Configure tasks
     require("load-grunt-config")(grunt, {

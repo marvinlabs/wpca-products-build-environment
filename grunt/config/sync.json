@@ -1,6 +1,12 @@
 {
-    "sync_dests" : [
-        "vagrant/www/wordpress-default/wp-content/plugins",
-        "vagrant/www/wordpress-trunk/wp-content/plugins"
-    ]
+    "sync_dests" : {
+        "plugins" : [
+            "vagrant/www/wordpress-default/wp-content/plugins",
+            "vagrant/www/wordpress-trunk/wp-content/plugins"
+        ],
+        "themes" : [
+            "vagrant/www/wordpress-default/wp-content/themes",
+            "vagrant/www/wordpress-trunk/wp-content/themes"
+        ]
+    }
 }

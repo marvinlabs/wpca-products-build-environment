@@ -12,10 +12,10 @@ module.exports = function (grunt, options) {
     var targets = {};
 
     // Add the new target for the main plugin
-    var syncTargets = options.sync.sync_dests;
+    var pluginSyncTargets = options.sync.sync_dests.plugins;
     var pluginFiles = [];
     var addons = options.addons;
-    syncTargets.forEach(function (t) {
+    pluginSyncTargets.forEach(function (t) {
         var sources = [
             'customer-area', 'customer-area/**/*',
             'advanced-custom-fields', 'advanced-custom-fields/**/*',
@@ -36,6 +36,32 @@ module.exports = function (grunt, options) {
 
     targets["wp-plugins"] = extend(true, {}, baseOptions, {
         files: pluginFiles
+    });
+
+    // Add the new targets for the themes
+    var themeSyncTargets = options.sync.sync_dests.themes;
+    var themeFiles = [];
+    var themes = options.themes;
+    themeSyncTargets.forEach(function (t) {
+        var sources = [
+            "twenty*", "twenty*/**/*",
+            '!**/.git/**', '!**/.po'
+        ];
+        themes.forEach(function (theme) {
+            sources.push(theme.slug);
+            sources.push(theme.slug + '/**/*');
+        });
+
+        themeFiles.push({
+            cwd: options.paths.themes,
+            expand: true,
+            src: sources,
+            dest: t
+        });
+    });
+
+    targets["wp-themes"] = extend(true, {}, baseOptions, {
+        files: themeFiles
     });
 
     return targets;

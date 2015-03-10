@@ -1,6 +1,8 @@
 node_modules
 releases/*
-!**/.gitkeep
 .transifexrc
 tx.exe
 .idea/
+wp-themes/*
+wp-plugins/*
+!**/.gitkeep
