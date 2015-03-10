@@ -1,7 +1,7 @@
 [main]
 host = https://www.transifex.com
 
-[wp-customer-area.cuarpot]
+[wp-customer-area.cuar]
 file_filter = wp-plugins/customer-area/languages/cuar-<lang>.po
 source_file = wp-plugins/customer-area/languages/cuar.pot
 source_lang = en_US
