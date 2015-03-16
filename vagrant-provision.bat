@@ -1,5 +1,4 @@
-vagrant-stop.bat
-cp -a vagrant-config/* vagrant
+xcopy "vagrant-config" "vagrant" /s /e /y
 cd vagrant
 vagrant up --provision
 cd ..
