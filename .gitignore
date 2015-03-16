@@ -1,8 +1,9 @@
 node_modules
-releases/*
-.transifexrc
+/releases/*
+/.transifexrc
 tx.exe
 .idea/
-wp-themes/*
-wp-plugins/*
+/wp-themes/*
+/wp-plugins/*
 !**/.gitkeep
+/vagrant-config/config/custom/Userconfig

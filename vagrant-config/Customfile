@@ -1,5 +1,9 @@
 # Customfile
 #
+# DOT NOT EDIT THIS FILE.
+# CREATE A FILE 'config/custom/Userconfig'
+# IF YOU NEED CUSTOM A CONFIGURATION.
+#
 # This file will execute additional processes for the VM customizations
 # defined in Vagrantfile.
 
@@ -10,8 +14,8 @@
 # point to the Loader file of each one of them. You can grab the following code
 # as a practical example, or move this file to your vagrant root directory and
 # rename it as Customfile.
-if File.exists?(File.join(vagrant_dir,'../vagrant-config','Config')) then
-	eval(IO.read(File.join(vagrant_dir,'../vagrant-config','Config')), binding)
+if File.exists?(File.join(vagrant_dir,'config/custom','Userconfig')) then
+	eval(IO.read(File.join(vagrant_dir,'config/custom','Userconfig')), binding)
 end
 
 # Customize VM
@@ -25,9 +29,12 @@ config.vm.provider :virtualbox do |v|
 	config.vm.hostname = "wpca.dev"
 	config.vm.network :private_network, ip: "192.168.51.11"
 
-	v.customize ["modifyvm", :id, "--memory", "3072"]
-	v.customize ["modifyvm", :id, "--cpus", "4"]
-	v.customize ["modifyvm", :id, "--ioapic", "on"]
+	# Add theses parameters to 'config/custom/Userconfig'
+	# because there are personal computer related.
+	# v.customize ["modifyvm", :id, "--memory", "3072"]
+	# v.customize ["modifyvm", :id, "--cpus", "4"]
+	# v.customize ["modifyvm", :id, "--ioapic", "on"]
+
 	v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
 
 	config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
