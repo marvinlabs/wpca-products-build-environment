@@ -37,7 +37,7 @@ module.exports = function (grunt) {
     grunt.registerTask("tx-push", ["checktextdomain:customer-area", "makepot:customer-area", "exec:txpush_s"]);
     grunt.registerTask("tx-pull", ["exec:txpull", "potomo:customer-area"]);
 
-    grunt.registerTask("start-dev", ["sync", "watch"]);
+    grunt.registerTask("start-dev", ["watch"]);
 
     // The task to bump version number in various places
     grunt.registerTask("bump-version", "Change the version number of one or more plugins", function (pluginId, mode) {

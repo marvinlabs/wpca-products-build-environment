@@ -11,10 +11,10 @@ module.exports = function (grunt, options) {
     var targets = {};
 
     // Watch the plugin files to synchronize automatically to vagrant
-    targets["wp-plugins"] = extend(true, {}, baseOptions, {
-        files: ['wp-plugins/**/*'],
-        tasks: ['sync']
-    });
+    //targets["wp-plugins"] = extend(true, {}, baseOptions, {
+    //    files: ['wp-plugins/**/*'],
+    //    tasks: ['sync']
+    //});
 
     // TODO Watch LESS, JS, PHP
 
