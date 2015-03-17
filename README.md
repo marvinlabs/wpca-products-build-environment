@@ -24,7 +24,6 @@
     - [`grunt bump-version`](#grunt-bump-version)
     - [`grunt wp_readme_to_markdown`](#grunt-wp_readme_to_markdown)
     - [`grunt compress`](#grunt-compress)
-    - [`grunt sync`](#grunt-sync)
     - [`grunt watch`](#grunt-watch)
   - [Tasks specific to the main WP Customer Area plugin](#tasks-specific-to-the-main-wp-customer-area-plugin)
     - [`grunt tx-push`](#grunt-tx-push)
@@ -63,8 +62,7 @@ When you want to start developing, run the `start-vagrant.bat` script which will
   
 - start the vagrant VM (the first time you do it can take a few minutes)
 - Open the `vvv.dev` URL in your favorite browser so you can access the sites easily
-- synchronize the plugin files
-- watch for changes in the `wp-plugins` folder and sync those changes to the VM's webserver
+- TODO : watch for changes in the `wp-plugins` for LESS, JS, PHP.
 
 ### Let's call it a day
 
@@ -98,7 +96,7 @@ Runs sequentially: `prepare-languages`, then `prepare-assets`, then `compress`
 
 When you want to start working with your local web server
 
-Runs sequentially: `sync`, then `watch`
+Runs sequentially: `watch`
 
 ### Tasks available for all plugins
 
@@ -159,16 +157,13 @@ Convert each `readme.txt` file to a `README.md` file more appropriate for git re
 
 Make a zip file of each plugin and place it in the releases folder. File inclusion/exclusion can be adjusted in the file
 named `grunt/config/build.json`.
-
-#### `grunt sync`
-
-Synchronize the `wp-plugins` folder with the local web server (or Vagrant) folder
   
 #### `grunt watch`
 
 Watch for file changes in:
 
-- the `wp-plugins` folder to start a synchronisation task with the local web server 
+- the `wp-plugins` folder to start a synchronisation task with the local web server
+  TODO : watch for JS, CSS LESS files
 
 ### Tasks specific to the main WP Customer Area plugin
 
