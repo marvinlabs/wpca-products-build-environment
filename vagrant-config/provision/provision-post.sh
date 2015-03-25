@@ -8,7 +8,7 @@ for i in "${paths[@]}"; do
       rm -R "plugins"
     fi
     if [ ! -d "plugins" ] && [ ! -f "plugins" ] && [ ! -h "plugins" ]; then
-      ln -sf "/vagrant/wpca-plugins" "plugins"
+      ln -sf "/srv/wpca-plugins" "plugins"
     fi
 
     # Check if themes symlink exists
@@ -17,6 +17,6 @@ for i in "${paths[@]}"; do
       rm -R "themes"
     fi
     if [ ! -d "themes" ] && [ ! -f "themes" ] && [ ! -h "themes" ]; then
-      ln -sf "/vagrant/wpca-themes" "themes"
+      ln -sf "/srv/wpca-themes" "themes"
     fi
 done

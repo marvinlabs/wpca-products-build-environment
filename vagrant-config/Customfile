@@ -1,0 +1,61 @@
+# Customfile
+#
+# DOT NOT EDIT THIS FILE.
+# CREATE A FILE 'config/custom/Userconfig'
+# IF YOU NEED CUSTOM A CONFIGURATION.
+#
+# This file will execute additional processes for the VM customizations
+# defined in Vagrantfile.
+
+# Load Custom Auto Provisioner
+#
+# You must point to the Loader file of your custom auto provisioner in order to
+# execute it. If you are using more than one custom auto provisioner, you must
+# point to the Loader file of each one of them. You can grab the following code
+# as a practical example, or move this file to your vagrant root directory and
+# rename it as Customfile.
+if File.exists?(File.join(vagrant_dir,'config/custom','Userconfig')) then
+	eval(IO.read(File.join(vagrant_dir,'config/custom','Userconfig')), binding)
+end
+
+# Customize VM
+#
+# Define available memory and number of CPUs here. 64 bit host systems need to
+# set IOAPIC mode to "on" if using more than one CPU, and have virtualization
+# features enabled in the BIOS in order to work correctly. Otherwise, the VM
+# could not start.
+config.vm.provider :virtualbox do |v|
+
+	# Add theses parameters to 'config/custom/Userconfig'
+	# because there are personal computer related.
+	# v.customize ["modifyvm", :id, "--memory", "3072"]
+	# v.customize ["modifyvm", :id, "--cpus", "4"]
+	# v.customize ["modifyvm", :id, "--ioapic", "on"]
+
+	# v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
+
+	# prevent stdin is not a tty error
+	config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
+
+	# /srv/wpca/wp-plugins
+	#
+	# If a www directory exists in the same directory as your Vagrantfile, a mapped directory
+	# inside the VM will be created that acts as the default location for nginx sites. Put all
+	# of your project files here that you want to access through the web server
+	if vagrant_version >= "1.3.0"
+	  config.vm.synced_folder "../wp-plugins/", "/srv/wpca-plugins", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	else
+	  config.vm.synced_folder "../wp-plugins/", "/srv/wpca-plugins", :owner => "www-data", :extra => 'dmode=775,fmode=774'
+	end
+
+	# /srv/wpca/wp-themes
+	#
+	# If a www directory exists in the same directory as your Vagrantfile, a mapped directory
+	# inside the VM will be created that acts as the default location for nginx sites. Put all
+	# of your project files here that you want to access through the web server
+	if vagrant_version >= "1.3.0"
+	  config.vm.synced_folder "../wp-themes/", "/srv/wpca-themes", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	else
+	  config.vm.synced_folder "../wp-themes/", "/srv/wpca-themes", :owner => "www-data", :extra => 'dmode=775,fmode=774'
+	end
+end
