@@ -58,7 +58,7 @@ add your web server's plugins folder to that list*
 
 ### Let's develop something
 
-When you want to start developing, run the `start-vagrant.bat` script which will:
+When you want to start developing, run `. vagrant-start.sh` which will:
   
 - start the vagrant VM (the first time you do it can take a few minutes)
 - Open the `vvv.dev` URL in your favorite browser so you can access the sites easily
@@ -66,7 +66,19 @@ When you want to start developing, run the `start-vagrant.bat` script which will
 
 ### Let's call it a day
 
-Once you are finished, just run the `stop-vagrant.bat` script to halt gracefully the VM.
+Once you are finished, just run `. vagrant-stop.sh` to halt gracefully the VM.
+
+### Let's re-provision the VM
+
+Sometimes, you may pull the last environment-build from this repo, and see that some changes have been made in the
+`vagrant-config` folder. In this case, you can re-provision the VM by running `. vagrant-provision.sh`.
+> Note :
+> This command run a `vagrant up --provision` and also copy some config files before that.
+> If the VM is already running, do not forget to stop it before by running `. vagrant-stop.sh`.
+
+You will notice a folder called `vagrant-config`. All the directories and files within this folder will be recursively
+copied to `vagrant/` before provisioning. This folder contains some VVV customisations for our build-environment,
+so the files should not be edited there.
 
 ## Grunt tasks
 
