@@ -26,17 +26,15 @@ end
 # could not start.
 config.vm.provider :virtualbox do |v|
 
-	config.vm.hostname = "wpca.dev"
-	config.vm.network :private_network, ip: "192.168.51.11"
-
 	# Add theses parameters to 'config/custom/Userconfig'
 	# because there are personal computer related.
 	# v.customize ["modifyvm", :id, "--memory", "3072"]
 	# v.customize ["modifyvm", :id, "--cpus", "4"]
 	# v.customize ["modifyvm", :id, "--ioapic", "on"]
 
-	v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
+	# v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
 
+	# prevent stdin is not a tty error
 	config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
 	# /srv/wpca/wp-plugins
