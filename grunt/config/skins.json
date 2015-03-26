@@ -1,18 +1,22 @@
 [
-    {
-        "slug" : "frontend-default",
-        "path" : "frontend/default"
-    },
-    {
-        "slug" : "frontend-default-v4",
-        "path" : "frontend/default-v4"
-    },
-    {
-        "slug" : "admin-default",
-        "path" : "admin/default"
-    },
-    {
-        "slug" : "admin-default-wp38",
-        "path" : "admin/default-wp38"
-    }
+  {
+    "slug": "frontend-master",
+    "path": "frontend/master"
+  },
+  {
+    "slug": "frontend-default",
+    "path": "frontend/default"
+  },
+  {
+    "slug": "frontend-default-v4",
+    "path": "frontend/default-v4"
+  },
+  {
+    "slug": "admin-default",
+    "path": "admin/default"
+  },
+  {
+    "slug": "admin-default-wp38",
+    "path": "admin/default-wp38"
+  }
 ]
