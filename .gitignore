@@ -9,3 +9,4 @@ tx.exe
 /vagrant-config/config/custom/Userconfig
 /vendor/bower/*
 !/vendor/bower/.gitkeep
+vendor/wpca/

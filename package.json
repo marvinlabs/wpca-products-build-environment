@@ -30,7 +30,7 @@
     "grunt-contrib-clean": "*",
     "grunt-contrib-compress": "*",
     "grunt-contrib-concat": "*",
-    "grunt-contrib-copy": "*",
+    "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-less": "^1.0.0",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",

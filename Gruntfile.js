@@ -29,7 +29,8 @@ module.exports = function (grunt) {
 
     // Register some default grunt tasks
     grunt.registerTask("default", ["watch"]);
-
+    
+    grunt.registerTask("prepare-vendors", ["copy:copy-bootstrap", "copy:prefix-bootstrap"]);
     grunt.registerTask("prepare-languages", ["checktextdomain", "makepot", "potomo"]);
     grunt.registerTask("prepare-assets", ["less", "autoprefixer", "uglify"]);
     grunt.registerTask("prepare-archives", ["prepare-languages", "prepare-assets", "compress"]);
