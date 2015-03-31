@@ -2,7 +2,7 @@ module.exports = function (grunt, options) {
     var rgx = /(\.)([^\d]\w[^\s"\.:]*)([\(,\s;:\.])/g;
     var tildeRgx = /\.col-/g;
     var prefix = 'cuar-';
-    var exclusions = ['Microsoft'];
+    var exclusions = ['Microsoft', 'css.map'];
 
     return {
         'copy-bootstrap': {
@@ -20,8 +20,11 @@ module.exports = function (grunt, options) {
                 process: function (content, srcpath) {
                     content = content.replace(rgx, "$1" + prefix + "$2$3");
                     content = content.replace(tildeRgx, "." + prefix + "col-");
-                    exclusions.forEach(function(str) {
-                       content = content.replace(prefix+str, str);
+                    exclusions.forEach(function (str) {
+                        var find = prefix + str;
+                        find = find.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+                        var re = new RegExp(find, 'g');
+                        content = content.replace(re, str);
                     });
                     return content;
                 }
