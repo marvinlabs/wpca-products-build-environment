@@ -92,6 +92,13 @@ When translations need a refresh.
 
 Runs sequentially: `checktextdomain`, then `makepot`, then `potomo`
 
+#### `grunt prepare-vendors`
+
+When you are updating the vendors (via bower or composer). Some of them are copied and prepared for use in WP Customer
+Area projects (for instance, Bootstrap classes are prefixed.
+
+Runs sequentially: `copy`
+
 #### `grunt prepare-assets`
 
 When asset sources have changed and we need to compile them  
