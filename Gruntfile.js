@@ -31,7 +31,7 @@ module.exports = function (grunt) {
     grunt.registerTask("default", ["watch"]);
 
     grunt.registerTask("prepare-languages", ["checktextdomain", "makepot", "potomo"]);
-    grunt.registerTask("prepare-assets", ["less", "autoprefixer", "uglify"]);
+    grunt.registerTask("prepare-assets", ["less", "uglify"]);
     grunt.registerTask("prepare-archives", ["prepare-languages", "prepare-assets", "compress"]);
 
     grunt.registerTask("tx-push", ["checktextdomain:customer-area", "makepot:customer-area", "exec:txpush_s"]);
