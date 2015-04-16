@@ -5,6 +5,7 @@ tx.exe
 .idea/
 /wp-themes/*
 /wp-plugins/*
+!/wp-plugins/fix_vvv_symlinks.php
 !**/.gitkeep
 /vagrant-config/config/custom/Userconfig
 /vendor/bower/*
