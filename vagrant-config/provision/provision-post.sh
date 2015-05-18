@@ -1,7 +1,6 @@
 #!/bin/bash
-paths=( "/srv/www/wordpress-default/wp-content" "/srv/www/wordpress-develop/src/wp-content" "/srv/www/wordpress-trunk/wp-content" )
 
-for i in "${paths[@]}"; do
+for i in "/srv/www/wordpress-default/wp-content" "/srv/www/wordpress-develop/src/wp-content" "/srv/www/wordpress-trunk/wp-content"; do
 	# Check if plugins symlink exists
     cd $i
     if [ -d "plugins" ]; then

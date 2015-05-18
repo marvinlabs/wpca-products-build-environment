@@ -43,9 +43,9 @@ config.vm.provider :virtualbox do |v|
 	# inside the VM will be created that acts as the default location for nginx sites. Put all
 	# of your project files here that you want to access through the web server
 	if vagrant_version >= "1.3.0"
-	  config.vm.synced_folder "../wp-plugins/", "/srv/wpca-plugins", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	  config.vm.synced_folder "../wp-plugins/", "/srv/wpca-plugins", :owner => "www-data", :mount_options => ["dmode=777","fmode=766"], create: true
 	else
-	  config.vm.synced_folder "../wp-plugins/", "/srv/wpca-plugins", :owner => "www-data", :extra => 'dmode=775,fmode=774'
+	  config.vm.synced_folder "../wp-plugins/", "/srv/wpca-plugins", :owner => "www-data", :extra => 'dmode=777,fmode=766', create: true
 	end
 
 	# /srv/wpca/wp-themes
@@ -54,8 +54,8 @@ config.vm.provider :virtualbox do |v|
 	# inside the VM will be created that acts as the default location for nginx sites. Put all
 	# of your project files here that you want to access through the web server
 	if vagrant_version >= "1.3.0"
-	  config.vm.synced_folder "../wp-themes/", "/srv/wpca-themes", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	  config.vm.synced_folder "../wp-themes/", "/srv/wpca-themes", :owner => "www-data", :mount_options => ["dmode=777","fmode=766"], create: true
 	else
-	  config.vm.synced_folder "../wp-themes/", "/srv/wpca-themes", :owner => "www-data", :extra => 'dmode=775,fmode=774'
+	  config.vm.synced_folder "../wp-themes/", "/srv/wpca-themes", :owner => "www-data", :extra => 'dmode=777,fmode=766', create: true
 	end
 end
