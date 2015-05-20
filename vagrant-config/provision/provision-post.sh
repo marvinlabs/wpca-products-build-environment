@@ -17,8 +17,8 @@ for i in "/srv/www/wordpress-default/wp-content" "/srv/www/wordpress-develop/src
         if [ -d "themes" ]; then
             for D in `find themes -mindepth 1 -maxdepth 1 -type d`
             do
-                if [ ! -d "/srv/wpca-themes/"$D ]; then
-                    mv $D "/srv/wpca-themes/"$D
+                if [ ! -d "/srv/wpca-"$D ]; then
+                    mv $D "/srv/wpca-"$D
                 fi
             done
             rm -R themes
