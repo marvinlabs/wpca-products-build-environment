@@ -35,7 +35,7 @@ module.exports = function (grunt, options) {
                 "sourceMapFilename": options.paths.base_plugin + "/skins/" + skin.path + "/assets/css/styles.css.map",
                 "sourceMapURL": "styles.css.map",
                 "sourceMapRootpath": "/",
-                "sourceMapBasepath": "src/less/"
+                "sourceMapBasepath": "src/less"
             }
         ), {
             files: files
@@ -63,8 +63,8 @@ module.exports = function (grunt, options) {
             {
                 "sourceMapFilename": addon.path + "/assets/frontend/css/" + addon.slug + ".css.map",
                 "sourceMapURL": addon.slug + ".css.map",
-                "sourceMapRootpath": addon.path + "/",
-                "sourceMapBasepath": "src/less/"
+                "sourceMapRootpath": "/",
+                "sourceMapBasepath": "src/less"
             }
         ), {
             files: files
