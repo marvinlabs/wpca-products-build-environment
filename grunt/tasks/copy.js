@@ -9,13 +9,13 @@ module.exports = function (grunt, options) {
             cwd: 'vendor/bower/',
             expand: true,
             src: ['bootstrap/*', 'bootstrap/**/*', '!bootstrap/**/*.less', '!bootstrap/**/*.css'],
-            dest: 'vendor/wpca'
+            dest: 'wp-plugins/customer-area/skins/vendor/wpca'
         },
         'prefix-bootstrap': {
             cwd: 'vendor/bower/',
             expand: true,
             src: ['bootstrap/**/*.less', 'bootstrap/**/*.css'],
-            dest: 'vendor/wpca',
+            dest: 'wp-plugins/customer-area/skins/vendor/wpca',
             options: {
                 process: function (content, srcpath) {
                     content = content.replace(rgx, "$1" + prefix + "$2$3");
