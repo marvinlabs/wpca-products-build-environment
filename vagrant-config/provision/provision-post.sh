@@ -6,10 +6,11 @@
 
 for i in "/srv/www/wordpress-default/wp-content" "/srv/www/wordpress-develop/src/wp-content" "/srv/www/wordpress-trunk/wp-content"; do
 
+    cd ${i}
+
     for type in "plugins" "themes"; do
 
         if [ ! -h ${type} ]; then
-            cd ${i}
             if [ -d ${type} ]; then
                 for D in `find ${type} -mindepth 1 -maxdepth 1 -type d`
                 do
@@ -22,6 +23,8 @@ for i in "/srv/www/wordpress-default/wp-content" "/srv/www/wordpress-develop/src
             if [ ! -d ${type} ] && [ ! -f ${type} ]; then
               ln -sf "/srv/wpca-"${type} ${type}
             fi
+
+            ln -sf "/srv/wpca-"${type} "../wp-"${type}
         fi
 
     done
