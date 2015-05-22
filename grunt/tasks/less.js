@@ -33,9 +33,9 @@ module.exports = function (grunt, options) {
         targets["cuar-skin-" + skin.slug] = extend(true, {}, baseOptions(
             {
                 "sourceMapFilename": options.paths.base_plugin + "/skins/" + skin.path + "/assets/css/styles.css.map",
-                "sourceMapURL": "styles.css.map",
+                "sourceMapURL": "/" + options.paths.base_plugin + "/skins/" + skin.path + "/assets/css/styles.css.map",
                 "sourceMapRootpath": "/",
-                "sourceMapBasepath": "src/less"
+                "sourceMapBasepath": options.paths.base_plugin + "/skins/"
             }
         ), {
             files: files
