@@ -2,6 +2,8 @@ module.exports = function (grunt) {
     var path = require("path");
     var wpca = require('grunt-wpca/lib/wpca');
 
+
+
     // Load configuration
     var configOptions = loadConfigurationFiles(grunt, {
         config: {
@@ -32,8 +34,10 @@ module.exports = function (grunt) {
     
     grunt.registerTask("prepare-vendors", ["copy:copy-bootstrap", "copy:prefix-bootstrap"]);
     grunt.registerTask("prepare-languages", ["checktextdomain", "makepot", "potomo"]);
-    grunt.registerTask("prepare-assets", ["less", "uglify"]);
+    grunt.registerTask("prepare-assets", ["less", "uglify:addons-assets"]);
     grunt.registerTask("prepare-archives", ["prepare-languages", "prepare-assets", "compress"]);
+
+    grunt.registerTask("update-libs", ["exec:bower-update", "prepare-vendors", "uglify:libs-assets"]); // "exec:composer-update",  "copy:libs-from-vendors",
 
     grunt.registerTask("tx-push", ["checktextdomain:customer-area", "makepot:customer-area", "exec:txpush_s"]);
     grunt.registerTask("tx-pull", ["exec:txpull", "potomo:customer-area"]);

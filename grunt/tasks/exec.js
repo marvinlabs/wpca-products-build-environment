@@ -5,6 +5,14 @@ module.exports = function (grunt, options) {
         },
         txpush_s: { // Push pot to Transifex - grunt exec:txpush_s
             cmd: 'tx push -s'
+        },
+        "bower-update": {
+            cwd: 'wp-plugins/customer-area',
+            cmd: 'bower update --save'
+        },
+        "composer-update": {
+            cwd: 'wp-plugins/customer-area',
+            cmd: 'composer update'
         }
     };
 };
