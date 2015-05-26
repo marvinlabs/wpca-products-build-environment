@@ -46,8 +46,7 @@ module.exports = function (grunt, options) {
         );
     });
 
-    return {
-        "addons-assets": targets,
-        "libs-assets": grunt.file.readJSON("grunt/config/libs.json")
-    };
+    targets["libs-assets"] = extend(true, {}, {}, grunt.file.readJSON("grunt/config/libs.json"));
+
+    return targets;
 };
