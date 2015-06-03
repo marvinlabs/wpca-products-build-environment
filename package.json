@@ -27,7 +27,7 @@
     "grunt-autoprefixer": "*",
     "grunt-checkpending": "^1.0.0",
     "grunt-checktextdomain": "*",
-    "grunt-contrib-clean": "*",
+    "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-compress": "*",
     "grunt-contrib-concat": "*",
     "grunt-contrib-copy": "*",

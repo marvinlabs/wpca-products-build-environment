@@ -3,7 +3,6 @@ module.exports = function (grunt) {
     var wpca = require('grunt-wpca/lib/wpca');
 
 
-
     // Load configuration
     var configOptions = loadConfigurationFiles(grunt, {
         config: {
@@ -31,7 +30,7 @@ module.exports = function (grunt) {
 
     // Register some default grunt tasks
     grunt.registerTask("default", ["watch"]);
-    
+
     grunt.registerTask("prepare-vendors", ["copy:copy-bootstrap", "copy:prefix-bootstrap"]);
     grunt.registerTask("prepare-languages", ["checktextdomain", "makepot", "potomo"]);
     grunt.registerTask("prepare-assets", function () {
@@ -40,7 +39,36 @@ module.exports = function (grunt) {
     });
     grunt.registerTask("prepare-archives", ["prepare-languages", "prepare-assets", "compress"]);
 
-    grunt.registerTask("update-libs", ["exec:bower-update", "prepare-vendors", "uglify:libs-assets"]); // "exec:composer-update",  "copy:libs-from-vendors",
+    grunt.registerTask("update-libs", [
+
+        // Update bower libs
+        // "exec:bower-update",
+
+        // Update WPCA bootstrap fork
+        // "prepare-vendors",
+
+        // Update composer libs
+        // "exec:composer-update",
+
+        // Clean framework
+        "clean:clean-framework-src-js",
+        "clean:clean-framework-libs-js",
+        "clean:clean-framework-libs-fonts",
+        "clean:clean-framework-libs-imgs",
+
+        // Update framework
+        "copy:copy-framework-src-js",
+        "copy:copy-framework-libs-js",
+        "copy:copy-framework-libs-fonts",
+        "copy:copy-framework-libs-imgs",
+
+        // Rebuild some src JS files from vendors (bootstrap Fork actually)
+        // "uglify:libs-assets",
+
+        // Recompile main plugin assets
+        "uglify:customer-area",
+        "less:cuar-skin-frontend-master"
+    ]);
 
     grunt.registerTask("tx-push", ["checktextdomain:customer-area", "makepot:customer-area", "exec:txpush_s"]);
     grunt.registerTask("tx-pull", ["exec:txpull", "potomo:customer-area"]);
@@ -50,7 +78,7 @@ module.exports = function (grunt) {
     // The task to bump version number in various places
     grunt.registerTask("bump-version", "Change the version number of one or more plugins", function (pluginId, mode) {
         var baseTargets = configOptions.release.base_targets;
-        baseTargets.forEach(function(baseTarget) {
+        baseTargets.forEach(function (baseTarget) {
             grunt.task.run('version:' + pluginId + '_' + baseTarget.id + ':' + mode);
         });
     });

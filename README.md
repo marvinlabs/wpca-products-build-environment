@@ -26,6 +26,7 @@
     - [`grunt compress`](#grunt-compress)
     - [`grunt watch`](#grunt-watch)
   - [Tasks specific to the main WP Customer Area plugin](#tasks-specific-to-the-main-wp-customer-area-plugin)
+    - [`grunt update-libs`](#grunt-update-libs)
     - [`grunt tx-push`](#grunt-tx-push)
     - [`grunt tx-pull`](#grunt-tx-pull)
 
@@ -185,6 +186,11 @@ Watch for file changes in:
   TODO : watch for JS, CSS LESS files
 
 ### Tasks specific to the main WP Customer Area plugin
+
+#### `grunt update-libs`
+
+Use this when you need to update all the libs for WPCA. This will run updates from bower, composer, and custom libs,
+copy the required vendors files to WPCA, and recompile LESS and JS assets.
 
 #### `grunt tx-push`
 
