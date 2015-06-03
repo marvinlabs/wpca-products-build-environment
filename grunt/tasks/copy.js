@@ -114,16 +114,16 @@ module.exports = function (grunt, options) {
             cwd: 'vendor/other/framework/theme/assets/fonts',
             expand: true,
             src: [
-                'fonts/admindesigns/*',
-                'fonts/font-awesome/*',
-                'fonts/glyphicons/*',
-                'fonts/glyphicons-pro/*',
-                'fonts/icomoon/*',
-                'fonts/iconsweets/*',
-                'fonts/octicons/*',
-                'fonts/open-sans/*',
-                'fonts/stateface/*',
-                'fonts/zocial/*'
+                'admindesigns/*',
+                'font-awesome/*',
+                'glyphicons/*',
+                'glyphicons-pro/*',
+                'icomoon/*',
+                'iconsweets/*',
+                'octicons/*',
+                'open-sans/*',
+                'stateface/*',
+                'zocial/*'
             ],
             dest: 'wp-plugins/customer-area/skins/frontend/master/assets/fonts/framework'
         },
@@ -131,7 +131,7 @@ module.exports = function (grunt, options) {
             cwd: 'vendor/other/framework/theme/assets/img',
             expand: true,
             src: [
-                '*'
+                '**'
             ],
             dest: 'wp-plugins/customer-area/skins/frontend/master/assets/img/framework'
         }
