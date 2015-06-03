@@ -7,3 +7,4 @@ tx.exe
 /wp-plugins/*
 !**/.gitkeep
 /vagrant-config/config/custom/Userconfig
+/vendor
