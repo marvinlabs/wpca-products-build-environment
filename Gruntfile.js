@@ -62,8 +62,8 @@ module.exports = function (grunt) {
         "copy:copy-framework-libs-fonts",
         "copy:copy-framework-libs-imgs",
 
-        // Rebuild some src JS files from vendors (bootstrap Fork actually)
-        // "uglify:libs-assets",
+        // Rebuild some src JS files from vendors (bootstrap actually)
+        "uglify:libs-assets",
 
         // Recompile main plugin assets
         "uglify:customer-area",

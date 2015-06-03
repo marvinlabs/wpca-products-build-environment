@@ -1,0 +1,16 @@
+{
+  "files": {
+    "wp-plugins/customer-area/libs/js/bootstrap/affix.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/affix.js"],
+    "wp-plugins/customer-area/libs/js/bootstrap/alert.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/alert.js"],
+    "wp-plugins/customer-area/libs/js/bootstrap/button.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/button.js"],
+    "wp-plugins/customer-area/libs/js/bootstrap/carousel.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/carousel.js"],
+    "wp-plugins/customer-area/libs/js/bootstrap/collapse.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/collapse.js"],
+    "wp-plugins/customer-area/libs/js/bootstrap/dropdown.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/dropdown.js"],
+    "wp-plugins/customer-area/libs/js/bootstrap/modal.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/modal.js"],
+    "wp-plugins/customer-area/libs/js/bootstrap/popover.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/popover.js"],
+    "wp-plugins/customer-area/libs/js/bootstrap/scrollspy.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/scrollspy.js"],
+    "wp-plugins/customer-area/libs/js/bootstrap/tab.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/tab.js"],
+    "wp-plugins/customer-area/libs/js/bootstrap/tooltip.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/tooltip.js"],
+    "wp-plugins/customer-area/libs/js/bootstrap/transition.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/transition.js"]
+  }
+}
