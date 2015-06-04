@@ -50,7 +50,7 @@ module.exports = function (grunt, options) {
             cwd: 'vendor/other/framework/theme/vendor/',
             expand: true,
             src: [
-                'jquery/*',
+                'jquery/**',
                 'plugins/animate/*',
                 'plugins/bstimeout/*',
                 'plugins/bstour/*',
