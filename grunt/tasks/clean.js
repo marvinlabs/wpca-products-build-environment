@@ -1,9 +1,4 @@
 module.exports = function (grunt, options) {
-    var rgx = /(\.)([^\d]\w[^\s"\.:]*)([\(,\s;:\.])/g;
-    var tildeRgx = /\.col-/g;
-    var prefix = 'cuar-';
-    var exclusions = ['Microsoft', 'css.map'];
-
     return {
         'clean-framework-src-js': {
             src: [
@@ -12,7 +7,7 @@ module.exports = function (grunt, options) {
         },
         'clean-framework-libs-js': {
             src: [
-                'wp-plugins/customer-area/libs/js/*'
+                'wp-plugins/customer-area/libs/js/framework/*'
             ]
         },
         'clean-framework-libs-fonts': {
