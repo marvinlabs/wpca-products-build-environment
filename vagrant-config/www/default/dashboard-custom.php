@@ -149,7 +149,7 @@
 <div class="container">
 
     <a href="http://wp-customerarea.com" title="Visit http://wp-customerarea.com" target="_BLANK" style="opacity: 1;">
-        <img class="logo" src="http://wpca.dev/logo.png" alt="WP Customer Area logo" width="386" height="400"/>
+        <img class="logo" src="logo.png" alt="WP Customer Area logo" width="386" height="400"/>
     </a>
 
     <ul class="nav nav1">

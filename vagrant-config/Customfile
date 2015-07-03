@@ -26,17 +26,6 @@ end
 # could not start.
 config.vm.provider :virtualbox do |v|
 
-	# Add theses parameters to 'config/custom/Userconfig'
-	# because there are personal computer related.
-	# v.customize ["modifyvm", :id, "--memory", "3072"]
-	# v.customize ["modifyvm", :id, "--cpus", "4"]
-	# v.customize ["modifyvm", :id, "--ioapic", "on"]
-
-	# v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
-
-	# prevent stdin is not a tty error
-	config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
-
 	# /srv/wpca/wp-plugins
 	#
 	# If a www directory exists in the same directory as your Vagrantfile, a mapped directory
@@ -58,4 +47,5 @@ config.vm.provider :virtualbox do |v|
 	else
 	  config.vm.synced_folder "../wp-themes/", "/srv/wpca-themes", :owner => "www-data", :extra => 'dmode=777,fmode=766', create: true
 	end
+
 end

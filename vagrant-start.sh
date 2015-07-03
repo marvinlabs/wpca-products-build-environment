@@ -1,12 +1,13 @@
-# Check if the box has never been initialized, if so, provision it
-if [ ! -f "vagrant/www/default/dashboard-custom.php" ]; then
-   . vagrant-provision.sh
+echo "==> script: Copy wpca custom config for VVV"
+cp -a vagrant-config/* vagrant
 
-# Else, start the box and grunt for developing
-else
-   cd vagrant
-   vagrant up
-   cd ..
-   start http://vvv.dev
-   grunt start-dev
-fi
+echo "==> script: Start the VM and load database backups"
+cd vagrant
+vagrant up
+cd ..
+
+echo "==> script: Load WPCA Dashboard"
+start http://vvv.dev
+
+# echo "==> script: Start grunt dev task"
+# grunt start-dev
