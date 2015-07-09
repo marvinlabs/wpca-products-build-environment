@@ -8,7 +8,8 @@ module.exports = function (grunt) {
         config: {
             src: "grunt/tasks/*"
         },
-        pkg: grunt.file.readJSON("package.json")
+        pkg: grunt.file.readJSON("package.json"),
+        assets: grunt.file.readJSON("grunt/config/assets.json")
     }, "grunt/config");
 
     // Some additional handy configuration info

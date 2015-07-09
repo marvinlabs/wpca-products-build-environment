@@ -46,7 +46,7 @@ module.exports = function (grunt, options) {
         );
     });
 
-    targets["libs-assets"] = extend(true, {}, {}, grunt.file.readJSON("grunt/config/bootstrap.json"));
+    targets["libs-assets"] = extend(true, {}, {}, options.assets.cuarUglify);
 
     return targets;
 };
