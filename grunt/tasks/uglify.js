@@ -26,18 +26,30 @@ module.exports = function (grunt, options) {
         var frontendAsset = addon.path + "/assets/frontend/js/" + addon.slug + ".min.js";
 
         var files = {};
-        files[adminAsset] = [
-            addon.path + '/src/js/common/**/*.js',
-            addon.path + '/src/js/admin/**/*.js'
-        ];
         files[frontendAsset] = [
             addon.path + '/src/js/common/**/*.js',
             addon.path + '/src/js/frontend/**/*.js'
         ];
 
-        targets[addon.slug] = extend(true, {}, baseOptions(
+        targets[addon.slug + '-frontend'] = extend(true, {}, baseOptions(
                 {
                     sourceMapName: addon.path + "/assets/frontend/js/" + addon.slug + ".js.map",
+                    sourceMapRoot: addon.path + "/src/js/"
+                }),
+            {
+                files: files
+            }
+        );
+
+        files = {};
+        files[adminAsset] = [
+            addon.path + '/src/js/common/**/*.js',
+            addon.path + '/src/js/admin/**/*.js'
+        ];
+
+        targets[addon.slug + '-admin'] = extend(true, {}, baseOptions(
+                {
+                    sourceMapName: addon.path + "/assets/admin/js/" + addon.slug + ".js.map",
                     sourceMapRoot: addon.path + "/src/js/"
                 }),
             {
