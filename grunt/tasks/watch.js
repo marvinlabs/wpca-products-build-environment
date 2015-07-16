@@ -20,7 +20,7 @@ module.exports = function (grunt, options) {
             "less:cuar-skin-" + skin.slug
         ];
         var files = [
-            options.paths.base_plugin + "/skins/" + skin.path + "/src/less/*.less"
+            options.paths.base_plugin + "/skins/" + skin.path + "/src/**/*.less"
         ];
 
         targets["cuar-skin-" + skin.slug + "-css"] = extend(true, {}, baseOptions({}), {
