@@ -12,7 +12,7 @@ module.exports = function (grunt, options) {
                 "sourceMapFilename": opt.sourceMapFilename,
                 "sourceMapURL": opt.sourceMapURL,
                 "sourceMapBasepath": opt.sourceMapBasepath,
-                "sourceMapRootpath": opt.sourceMapRootpath
+                "sourceMapRootpath": "/"
             }
         }
     };
@@ -34,7 +34,6 @@ module.exports = function (grunt, options) {
             {
                 "sourceMapFilename": options.paths.base_plugin + "/skins/" + skin.path + "/assets/css/styles.css.map",
                 "sourceMapURL": "/" + options.paths.base_plugin + "/skins/" + skin.path + "/assets/css/styles.css.map",
-                "sourceMapRootpath": "/",
                 "sourceMapBasepath": options.paths.base_plugin + "/skins/"
             }
         ), {
@@ -50,21 +49,30 @@ module.exports = function (grunt, options) {
         var frontendAsset = addon.path + "/assets/frontend/css/" + addon.slug + ".min.css";
 
         var files = {};
-        files[adminAsset] = [
-            addon.path + '/src/less/common/*.less',
-            addon.path + '/src/less/admin/*.less'
-        ];
         files[frontendAsset] = [
             addon.path + '/src/less/common/*.less',
             addon.path + '/src/less/frontend/*.less'
         ];
-
-        targets[addon.slug] = extend(true, {}, baseOptions(
+        targets[addon.slug + "-frontend"] = extend(true, {}, baseOptions(
             {
                 "sourceMapFilename": addon.path + "/assets/frontend/css/" + addon.slug + ".css.map",
                 "sourceMapURL": addon.slug + ".css.map",
-                "sourceMapRootpath": "/",
                 "sourceMapBasepath": "src/less"
+            }
+        ), {
+            files: files
+        });
+
+        files = {};
+        files[adminAsset] = [
+            addon.path + '/src/less/common/*.less',
+            addon.path + '/src/less/admin/*.less'
+        ];
+        targets[addon.slug + "-admin"] = extend(true, {}, baseOptions(
+            {
+                "sourceMapFilename": addon.path + "/assets/admin/css/" + addon.slug + ".css.map",
+                "sourceMapURL": addon.slug + ".css.map",
+                "sourceMapBasepath": addon.slug + "/src/less"
             }
         ), {
             files: files
