@@ -33,7 +33,7 @@ module.exports = function (grunt) {
     grunt.registerTask("default", ["watch"]);
 
     grunt.registerTask("prepare-vendors", ["copy:copy-bootstrap", "copy:prefix-bootstrap"]);
-    grunt.registerTask("prepare-languages", ["checktextdomain", "makepot", "potomo"]);
+    grunt.registerTask("prepare-languages", [/*"checktextdomain"*/, "makepot", "potomo"]);
     grunt.registerTask("prepare-assets", function () {
         delete grunt.config.data.uglify["libs-assets"];
         grunt.task.run(["less", "uglify"]);
@@ -71,7 +71,7 @@ module.exports = function (grunt) {
         "less:cuar-skin-frontend-master"
     ]);
 
-    grunt.registerTask("tx-push", ["checktextdomain:customer-area", "makepot:customer-area", "exec:txpush_s"]);
+    grunt.registerTask("tx-push", [/*"checktextdomain:customer-area"*/, "makepot:customer-area", "exec:txpush_s"]);
     grunt.registerTask("tx-pull", ["exec:txpull", "potomo:customer-area"]);
 
     grunt.registerTask("start-dev", ["watch"]);
