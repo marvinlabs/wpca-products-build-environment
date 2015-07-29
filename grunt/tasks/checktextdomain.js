@@ -4,7 +4,7 @@ module.exports = function (grunt, options) {
     // The options that are common to all plugins
     var baseOptions = {
         options: {
-            correct_domain: true,
+            correct_domain: false,
             keywords: options.i18n.keywords
         }
     };
