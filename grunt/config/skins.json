@@ -4,6 +4,10 @@
     "path": "frontend/master"
   },
   {
+    "slug": "frontend-master-dark",
+    "path": "frontend/master-dark"
+  },
+  {
     "slug": "frontend-default",
     "path": "frontend/default"
   },
