@@ -12,7 +12,7 @@ module.exports = function (grunt, options) {
                 "sourceMapFilename": opt.sourceMapFilename,
                 "sourceMapURL": opt.sourceMapURL,
                 "sourceMapBasepath": opt.sourceMapBasepath,
-                "sourceMapRootpath": "/"
+                "sourceMapRootpath": opt.sourceMapRootpath
             }
         }
     };
@@ -33,8 +33,9 @@ module.exports = function (grunt, options) {
         targets["cuar-skin-" + skin.slug] = extend(true, {}, baseOptions(
             {
                 "sourceMapFilename": options.paths.base_plugin + "/skins/" + skin.path + "/assets/css/styles.css.map",
-                "sourceMapURL": "/" + options.paths.base_plugin + "/skins/" + skin.path + "/assets/css/styles.css.map",
-                "sourceMapBasepath": options.paths.base_plugin + "/skins/"
+                "sourceMapURL": "styles.css.map",
+                "sourceMapBasepath": "/" + options.paths.base_plugin + "/skins/",
+                "sourceMapRootpath": "/"
             }
         ), {
             files: files
