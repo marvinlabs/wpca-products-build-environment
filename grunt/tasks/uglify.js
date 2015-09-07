@@ -5,7 +5,7 @@ module.exports = function (grunt, options) {
     var baseOptions = function (opt) {
         return {
             options: {
-                mangle: false,
+                mangle: true,
                 sourceMap: true,
                 sourceMapName: opt.sourceMapName,
                 sourceMapRoot: opt.sourceMapRoot
