@@ -38,7 +38,7 @@ module.exports = function (grunt) {
         delete grunt.config.data.uglify["libs-assets"];
         grunt.task.run(["less", "uglify"]);
     });
-    grunt.registerTask("prepare-archives", ["prepare-languages", "prepare-assets", "compress"]);
+    grunt.registerTask("prepare-archives", ["compress"]);
 
     grunt.registerTask("update-libs", [
 
