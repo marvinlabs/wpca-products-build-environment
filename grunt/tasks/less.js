@@ -22,9 +22,9 @@ module.exports = function (grunt, options) {
     // Create the targets for the base plugin and all add-ons
     var skins = options.skins;
     skins.forEach(function (skin) {
-        var output = options.paths.base_plugin + "/skins/" + skin.path + "/assets/css/styles.min.css";
+        var output = skin.plugin + "/skins/" + skin.path + "/assets/css/styles.min.css";
         var input = [
-            options.paths.base_plugin + "/skins/" + skin.path + "/src/less/*.less"
+            skin.plugin + "/skins/" + skin.path + "/src/less/*.less"
         ];
 
         var files = {};
@@ -32,9 +32,9 @@ module.exports = function (grunt, options) {
 
         targets["cuar-skin-" + skin.slug] = extend(true, {}, baseOptions(
             {
-                "sourceMapFilename": options.paths.base_plugin + "/skins/" + skin.path + "/assets/css/styles.css.map",
+                "sourceMapFilename": skin.plugin + "/skins/" + skin.path + "/assets/css/styles.css.map",
                 "sourceMapURL": "styles.css.map",
-                "sourceMapBasepath": "/" + options.paths.base_plugin + "/skins/",
+                "sourceMapBasepath": "/" + skin.plugin + "/skins/",
                 "sourceMapRootpath": "/"
             }
         ), {

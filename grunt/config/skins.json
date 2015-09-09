@@ -1,26 +1,42 @@
 [
   {
     "slug": "frontend-master",
+    "plugin": "<%= paths.base_plugin %>",
     "path": "frontend/master"
   },
   {
     "slug": "frontend-master-dark",
+    "plugin": "<%= paths.base_plugin %>",
     "path": "frontend/master-dark"
   },
   {
     "slug": "frontend-default",
+    "plugin": "<%= paths.base_plugin %>",
     "path": "frontend/default"
   },
   {
     "slug": "frontend-default-v4",
+    "plugin": "<%= paths.base_plugin %>",
     "path": "frontend/default-v4"
   },
   {
     "slug": "admin-default",
+    "plugin": "<%= paths.base_plugin %>",
     "path": "admin/default"
   },
   {
     "slug": "admin-default-wp38",
+    "plugin": "<%= paths.base_plugin %>",
     "path": "admin/default-wp38"
+  },
+  {
+    "slug": "frontend-master-light-blue",
+    "plugin": "wp-plugins/customer-area-master-colors",
+    "path": "frontend/master-light-blue"
+  },
+  {
+    "slug": "frontend-master-dark-green",
+    "plugin": "wp-plugins/customer-area-master-colors",
+    "path": "frontend/master-dark-green"
   }
 ]
