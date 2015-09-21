@@ -4,7 +4,7 @@ module.exports = function (grunt, options) {
     // The options that are common to all plugins
     var targets = {
         options: {
-            browsers: ['last 3 versions, > 2%'],
+            browsers: ['last 3 versions', '> 2%'],
             silent: true,
             cascade: false // We have minified CSS...
         }
