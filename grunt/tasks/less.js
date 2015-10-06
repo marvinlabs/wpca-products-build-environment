@@ -12,7 +12,7 @@ module.exports = function (grunt, options) {
                 "sourceMapFilename": opt.sourceMapFilename,
                 "sourceMapURL": opt.sourceMapURL,
                 "sourceMapBasepath": opt.sourceMapBasepath,
-                "sourceMapRootpath": opt.sourceMapRootpath
+                "sourceMapRootpath": "/"
             }
         }
     };

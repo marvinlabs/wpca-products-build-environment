@@ -8,7 +8,7 @@ module.exports = function (grunt, options) {
                 mangle: true,
                 sourceMap: true,
                 sourceMapName: opt.sourceMapName,
-                sourceMapRoot: opt.sourceMapRoot
+                sourceMapRoot: '/' + opt.sourceMapRoot
             }
         }
     };
