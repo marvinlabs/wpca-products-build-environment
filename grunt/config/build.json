@@ -4,6 +4,7 @@
         "!**/assets/**/*.map",
         "!node_modules/**",
         "!package.json",
+        "!composer.json",
         "!README.md",
         "!.git/**",
         "!.gitignore",

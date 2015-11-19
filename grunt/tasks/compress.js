@@ -11,7 +11,7 @@ module.exports = function (grunt, options) {
     var targets = {};
 
     // Create the targets for the base plugin and all add-ons
-    var pkg = grunt.file.readJSON(options.paths.base_plugin + "/package.json");
+    var pkg = grunt.file.readJSON(options.paths.base_plugin + "/composer.json");
     targets["customer-area"] = extend(true, {}, baseOptions, {
         options: {
             archive: "releases/" + pkg.name + '-' + pkg.version + ".zip"
