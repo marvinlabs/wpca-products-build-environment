@@ -2,4 +2,4 @@ echo "==> script: Backup databases, destroy and recreate the whole VM and reimpo
 cd vagrant
 vagrant destroy
 cd ..
-. vagrant-start.sh
+. up-vagrant.sh

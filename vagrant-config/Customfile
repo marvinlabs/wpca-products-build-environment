@@ -26,6 +26,9 @@ end
 # could not start.
 config.vm.provider :virtualbox do |v|
 
+	# Prevent `protocol error` on symlink creation
+	v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
+
 	# /srv/wpca/wp-plugins
 	#
 	# If a www directory exists in the same directory as your Vagrantfile, a mapped directory
