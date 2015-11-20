@@ -14,7 +14,7 @@ module.exports = function (grunt, options) {
     var pkg = grunt.file.readJSON(options.paths.base_plugin + "/composer.json");
     targets["customer-area"] = extend(true, {}, baseOptions, {
         options: {
-            archive: "releases/" + pkg.name + '-' + pkg.version + ".zip"
+            archive: "releases/" + pkg.extra.slug + '-' + pkg.version + ".zip"
         },
         files: [{
             expand: true,
