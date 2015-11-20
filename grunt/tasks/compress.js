@@ -20,7 +20,7 @@ module.exports = function (grunt, options) {
             expand: true,
             cwd: options.paths.base_plugin,
             src: options.build.includeFiles,
-            dest: pkg.name
+            dest: pkg.extra.slug
         }]
     });
 
