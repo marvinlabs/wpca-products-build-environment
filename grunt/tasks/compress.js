@@ -12,6 +12,7 @@ module.exports = function (grunt, options) {
 
     // Create the targets for the base plugin and all add-ons
     var pkg = grunt.file.readJSON(options.paths.base_plugin + "/composer.json");
+    var zipFolder = (undefined===pkg.extra.folder) ? pkg.extra.slug : pkg.extra.folder;
     targets["customer-area"] = extend(true, {}, baseOptions, {
         options: {
             archive: "releases/" + pkg.extra.slug + '-' + pkg.version + ".zip"
@@ -20,7 +21,7 @@ module.exports = function (grunt, options) {
             expand: true,
             cwd: options.paths.base_plugin,
             src: options.build.includeFiles,
-            dest: pkg.extra.slug
+            dest: zipFolder
         }]
     });
 
@@ -34,7 +35,7 @@ module.exports = function (grunt, options) {
                 expand: true,
                 cwd: addon.path,
                 src: options.build.includeFiles,
-                dest: addon.slug
+                dest: addon.zipFolder
             }]
         });
     });
