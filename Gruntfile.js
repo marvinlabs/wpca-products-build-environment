@@ -43,13 +43,10 @@ module.exports = function (grunt) {
     grunt.registerTask("update-libs", [
 
         // Update bower libs
-        // "exec:bower-update",
-
-        // Update WPCA bootstrap fork
-        // "prepare-vendors",
+        "exec:bower-update",
 
         // Update composer libs
-        // "exec:composer-update",
+        "exec:composer-update",
 
         // Clean framework
         "clean:clean-framework-src-js",
