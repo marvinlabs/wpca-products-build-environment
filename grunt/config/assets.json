@@ -12,7 +12,8 @@
       "wp-plugins/customer-area/libs/js/bootstrap/scrollspy.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/scrollspy.js"],
       "wp-plugins/customer-area/libs/js/bootstrap/tab.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/tab.js"],
       "wp-plugins/customer-area/libs/js/bootstrap/tooltip.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/tooltip.js"],
-      "wp-plugins/customer-area/libs/js/bootstrap/transition.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/transition.js"]
+      "wp-plugins/customer-area/libs/js/bootstrap/transition.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/transition.js"],
+      "wp-plugins/customer-area/libs/js/bootstrap-slider/bootstrap-slider.min.js": ["wp-plugins/customer-area/vendor/bower/seiyria-bootstrap-slider/js/bootstrap-slider.js"]
     }
   },
   "frameworkSrcJs": [
