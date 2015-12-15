@@ -67,7 +67,7 @@ module.exports = function (grunt) {
         "uglify:libs-assets",
 
         // Recompile main plugin assets
-        "uglify:customer-area",
+        "uglify:customer-area-frontend",
         "less:cuar-skin-frontend-master"
     ]);
 
