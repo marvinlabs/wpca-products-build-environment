@@ -48,13 +48,16 @@ module.exports = function (grunt) {
         // Update composer libs
         "exec:composer-update",
 
-        // Clean framework
+        // Clean libs bower folder,
+        "clean:clean-bower-libs-js",
+
+        // Clean framework folders
         "clean:clean-framework-src-js",
         "clean:clean-framework-libs-js",
         "clean:clean-framework-libs-fonts",
         "clean:clean-framework-libs-imgs",
 
-        // Update framework
+        // Update libs from framework
         "copy:copy-framework-src-js",
         "copy:copy-framework-libs-js",
         "copy:copy-framework-libs-fonts",
@@ -62,6 +65,9 @@ module.exports = function (grunt) {
 
         // Rebuild some src JS files from vendors (bootstrap actually)
         "uglify:libs-assets",
+
+        // Add some extras files by direct copy without uglify
+        "copy:libs-assets-extras",
 
         // Recompile main plugin assets
         "uglify:customer-area-frontend",

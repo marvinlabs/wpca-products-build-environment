@@ -19,6 +19,11 @@ module.exports = function (grunt, options) {
             src: [
                 'wp-plugins/customer-area/skins/frontend/master/assets/img/framework/*'
             ]
-        }
+        },
+        'clean-bower-libs-js': {
+            src: [
+                'wp-plugins/customer-area/libs/js/bower/*'
+            ]
+        },
     };
 };

@@ -1,20 +1,68 @@
 {
   "cuarUglify": {
     "files": {
-      "wp-plugins/customer-area/libs/js/bootstrap/affix.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/affix.js"],
-      "wp-plugins/customer-area/libs/js/bootstrap/alert.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/alert.js"],
-      "wp-plugins/customer-area/libs/js/bootstrap/button.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/button.js"],
-      "wp-plugins/customer-area/libs/js/bootstrap/carousel.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/carousel.js"],
-      "wp-plugins/customer-area/libs/js/bootstrap/collapse.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/collapse.js"],
-      "wp-plugins/customer-area/libs/js/bootstrap/dropdown.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/dropdown.js"],
-      "wp-plugins/customer-area/libs/js/bootstrap/modal.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/modal.js"],
-      "wp-plugins/customer-area/libs/js/bootstrap/popover.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/popover.js"],
-      "wp-plugins/customer-area/libs/js/bootstrap/scrollspy.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/scrollspy.js"],
-      "wp-plugins/customer-area/libs/js/bootstrap/tab.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/tab.js"],
-      "wp-plugins/customer-area/libs/js/bootstrap/tooltip.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/tooltip.js"],
-      "wp-plugins/customer-area/libs/js/bootstrap/transition.min.js": ["vendor/other/framework/theme/assets/js/utility/bootstrap/source/transition.js"],
-      "wp-plugins/customer-area/libs/js/bootstrap-slider/bootstrap-slider.min.js": ["wp-plugins/customer-area/vendor/bower/seiyria-bootstrap-slider/js/bootstrap-slider.js"]
+      "wp-plugins/customer-area/libs/js/framework/bootstrap/affix.min.js": [
+        "vendor/other/framework/theme/assets/js/utility/bootstrap/source/affix.js"
+      ],
+      "wp-plugins/customer-area/libs/js/framework/bootstrap/alert.min.js": [
+        "vendor/other/framework/theme/assets/js/utility/bootstrap/source/alert.js"
+      ],
+      "wp-plugins/customer-area/libs/js/framework/bootstrap/button.min.js": [
+        "vendor/other/framework/theme/assets/js/utility/bootstrap/source/button.js"
+      ],
+      "wp-plugins/customer-area/libs/js/framework/bootstrap/carousel.min.js": [
+        "vendor/other/framework/theme/assets/js/utility/bootstrap/source/carousel.js"
+      ],
+      "wp-plugins/customer-area/libs/js/framework/bootstrap/collapse.min.js": [
+        "vendor/other/framework/theme/assets/js/utility/bootstrap/source/collapse.js"
+      ],
+      "wp-plugins/customer-area/libs/js/framework/bootstrap/dropdown.min.js": [
+        "vendor/other/framework/theme/assets/js/utility/bootstrap/source/dropdown.js"
+      ],
+      "wp-plugins/customer-area/libs/js/framework/bootstrap/modal.min.js": [
+        "vendor/other/framework/theme/assets/js/utility/bootstrap/source/modal.js"
+      ],
+      "wp-plugins/customer-area/libs/js/framework/bootstrap/popover.min.js": [
+        "vendor/other/framework/theme/assets/js/utility/bootstrap/source/popover.js"
+      ],
+      "wp-plugins/customer-area/libs/js/framework/bootstrap/scrollspy.min.js": [
+        "vendor/other/framework/theme/assets/js/utility/bootstrap/source/scrollspy.js"
+      ],
+      "wp-plugins/customer-area/libs/js/framework/bootstrap/tab.min.js": [
+        "vendor/other/framework/theme/assets/js/utility/bootstrap/source/tab.js"
+      ],
+      "wp-plugins/customer-area/libs/js/framework/bootstrap/tooltip.min.js": [
+        "vendor/other/framework/theme/assets/js/utility/bootstrap/source/tooltip.js"
+      ],
+      "wp-plugins/customer-area/libs/js/framework/bootstrap/transition.min.js": [
+        "vendor/other/framework/theme/assets/js/utility/bootstrap/source/transition.js"
+      ],
+      "wp-plugins/customer-area/libs/js/bower/bootstrap-slider/bootstrap-slider.min.js": [
+        "wp-plugins/customer-area/vendor/bower/seiyria-bootstrap-slider/js/bootstrap-slider.js"
+      ],
+      "wp-plugins/customer-area/libs/js/bower/file-upload/jquery.fileupload.min.js": [
+        "wp-plugins/customer-area/vendor/bower/blueimp-file-upload/js/jquery.fileupload.js"
+      ],
+      "wp-plugins/customer-area/libs/js/bower/file-upload/jquery.iframe-transport.min.js": [
+        "wp-plugins/customer-area/vendor/bower/blueimp-file-upload/js/jquery.iframe-transport.js"
+      ],
+      "wp-plugins/customer-area/libs/js/bower/file-upload/vendor/jquery.ui.widget.min.js": [
+        "wp-plugins/customer-area/vendor/bower/blueimp-file-upload/js/vendor/jquery.ui.widget.js"
+      ]
     }
+  },
+  "cuarCopy": {
+    "files": [
+      {
+        "cwd": "wp-plugins/customer-area/vendor/bower/select2/dist/js",
+        "expand": true,
+        "src": [
+          "select2.min.js",
+          "i18n/*"
+        ],
+        "dest": "wp-plugins/customer-area/libs/js/bower/select2"
+      }
+    ]
   },
   "frameworkSrcJs": [
     "admindock/admindock.js",
@@ -73,7 +121,6 @@
     "nprogress/**",
     "oggrid/**",
     "pnotify/**",
-    "select2/**",
     "slick/**",
     "sparkline/**",
     "summernote/**",

@@ -53,6 +53,7 @@ module.exports = function (grunt, options) {
             expand: true,
             src: options.assets.frameworkLibsImgs,
             dest: 'wp-plugins/customer-area/skins/frontend/master/assets/img/framework'
-        }
+        },
+        'libs-assets-extras': options.assets.cuarCopy
     };
 };
