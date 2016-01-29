@@ -61,14 +61,6 @@
           "i18n/*"
         ],
         "dest": "wp-plugins/customer-area/libs/js/bower/select2"
-      },
-      {
-        "cwd": "wp-plugins/customer-area/vendor/bower/select2/dist/css",
-        "expand": true,
-        "src": [
-          "select2.min.css"
-        ],
-        "dest": "wp-plugins/customer-area/libs/js/bower/select2"
       }
     ]
   },
