@@ -61,6 +61,14 @@
           "i18n/*"
         ],
         "dest": "wp-plugins/customer-area/libs/js/bower/select2"
+      },
+      {
+        "cwd": "node_modules/eqcss",
+        "expand": true,
+        "src": [
+          "EQCSS.js"
+        ],
+        "dest": "wp-plugins/customer-area/src/js/frontend/framework/eqcss"
       }
     ]
   },
