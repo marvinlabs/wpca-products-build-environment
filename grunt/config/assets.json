@@ -79,7 +79,10 @@
     "scroller/jquery.scroller.js",
     "underscore/underscore.min.js"
   ],
-  "frameworkLibsJs": [],
+  "frameworkLibsJs": [
+    "magnific/**",
+    "mixitup/**"
+  ],
   "frameworkLibsFonts": [
     "admindesigns/**",
     "font-awesome/**",
@@ -130,13 +133,11 @@
       "jvectormap/**",
       "ladda/**",
       "lazyline/**",
-      "magnific/**",
       "map/**",
       "mapplic/**",
       "markdown/**",
       "markitup/**",
       "maxlength/**",
-      "mixitup/**",
       "moment/**",
       "nestable/**",
       "nprogress/**",
