@@ -67,11 +67,9 @@ module.exports = function (grunt) {
         "uglify:libs-assets",
 
         // Add some extras files by direct copy without uglify
-        "copy:libs-assets-extras",
+        "copy:libs-assets-extras"
 
-        // Recompile main plugin assets
-        "uglify:customer-area-frontend",
-        "less:cuar-skin-frontend-master"
+        // Then you need to recompile main plugin assets using `grunt prepare-assets`
     ]);
 
     grunt.registerTask("tx-push", ["checktextdomain:customer-area", "makepot:customer-area", "exec:txpush_s"]);
