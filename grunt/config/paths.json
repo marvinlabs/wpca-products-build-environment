@@ -7,6 +7,7 @@
     ],
     "themes" : "wp-themes",
     "themes_patterns" : [
-        "wpca-*"
+        "wpca-*",
+        "busyless"
     ]
 }
