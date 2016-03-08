@@ -16,9 +16,6 @@
     "url": "https://github.com/marvinlabs/wpca-products-build-environment.git"
   },
   "license": "GPL v2",
-  "scripts": {
-    "postinstall": "node node_modules/bower/bin/bower install"
-  },
   "devDependencies": {
     "bower": "^1.5.2",
     "eqcss": "^1.1.0",
