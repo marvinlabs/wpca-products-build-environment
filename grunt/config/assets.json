@@ -1,6 +1,9 @@
 {
   "cuarUglify": {
     "files": {
+      "wp-plugins/customer-area/skins/frontend/master/assets/js/main.min.js": [
+        "wp-plugins/customer-area/skins/frontend/master/assets/js/main.js"
+      ],
       "wp-plugins/customer-area/libs/js/framework/bootstrap/affix.min.js": [
         "vendor/other/framework/theme/assets/js/utility/bootstrap/source/affix.js"
       ],
