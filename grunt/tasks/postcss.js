@@ -39,6 +39,18 @@ module.exports = function (grunt, options) {
         if (grunt.file.exists(adminAsset)) assets.push(adminAsset);
         if (grunt.file.exists(frontendAsset)) assets.push(frontendAsset);
 
+        // An add-on can contain skins
+        var skinsFolders = ['frontend', 'admin'];
+        skinsFolders.forEach(function (folder) {
+            if (grunt.file.exists(addon.path + "/skins/" + folder)) {
+                grunt.file.recurse(addon.path + "/skins/" + folder, function (abspath, rootdir, subdir, filename) {
+                    if (subdir.substring(subdir.indexOf("/")) + "/" + filename === "/assets/css/styles.min.css") {
+                        assets.push(abspath);
+                    }
+                })
+            }
+        });
+
         if (assets.length<=0) return;
 
         targets[addon.slug] = {
