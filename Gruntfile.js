@@ -34,10 +34,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask("prepare-vendors", ["copy:copy-bootstrap", "copy:prefix-bootstrap"]);
     grunt.registerTask("prepare-languages", ["checktextdomain", "makepot", "potomo"]);
-    grunt.registerTask("prepare-assets", function () {
-        //delete grunt.config.data.uglify["libs-assets"];
-        grunt.task.run(["less", "uglify"]);
-    });
+    grunt.registerTask("prepare-assets", ["less", "postcss", "uglify", "copy:libs-assets-extras"]);
     grunt.registerTask("prepare-archives", ["compress"]);
 
     grunt.registerTask("update-libs", [
@@ -61,15 +58,13 @@ module.exports = function (grunt) {
         "copy:copy-framework-src-js",
         "copy:copy-framework-libs-js",
         "copy:copy-framework-libs-fonts",
-        "copy:copy-framework-libs-imgs",
+        "copy:copy-framework-libs-imgs"
 
-        // Rebuild some src JS files from vendors (bootstrap actually)
-        "uglify:libs-assets",
+        // ------------------------------------------------------ //
+        // Then you need to recompile main plugin assets using :  //
+        // grunt prepare-assets                                   //
+        // ------------------------------------------------------ //
 
-        // Add some extras files by direct copy without uglify
-        "copy:libs-assets-extras"
-
-        // Then you need to recompile main plugin assets using `grunt prepare-assets`
     ]);
 
     grunt.registerTask("tx-push", ["checktextdomain:customer-area", "makepot:customer-area", "exec:txpush_s"]);

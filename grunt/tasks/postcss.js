@@ -4,9 +4,16 @@ module.exports = function (grunt, options) {
     // The options that are common to all plugins
     var targets = {
         options: {
-            browsers: ['last 3 versions', '> 2%'],
-            silent: true,
-            cascade: false // We have minified CSS...
+            map: false,
+            processors: [
+                require('pixrem')(), // add fallbacks for rem units
+                require('autoprefixer')({ // add vendor prefixes
+                    browsers: ['last 3 versions', '> 2%'],
+                    silent: true,
+                    cascade: false // We have minified CSS...
+                }),
+                require('cssnano')() // minify the result
+            ]
         }
     };
 
