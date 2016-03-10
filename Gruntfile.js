@@ -35,7 +35,7 @@ module.exports = function (grunt) {
     grunt.registerTask("prepare-vendors", ["copy:copy-bootstrap", "copy:prefix-bootstrap"]);
     grunt.registerTask("prepare-languages", ["checktextdomain", "makepot", "potomo"]);
     grunt.registerTask("prepare-assets", function () {
-        delete grunt.config.data.uglify["libs-assets"];
+        //delete grunt.config.data.uglify["libs-assets"];
         grunt.task.run(["less", "uglify"]);
     });
     grunt.registerTask("prepare-archives", ["compress"]);
