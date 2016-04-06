@@ -161,6 +161,7 @@
         <li><a href="http://wpca.dev/webgrind" target="_BLANK">Webgrind</a></li>
         <li><a href="http://wpca.dev/phpinfo" target="_BLANK">PHP Info</a></li>
         <li><a href="http://wpca.dev/dbreplace" target="_BLANK">DB Replace</a></li>
+        <li><a href="http://local.wordpress.dev/vendor/other/framework/theme/dashboard.html" target="_BLANK" style="margin:0;">WPCA UI Framework Demo</a></li>
     </ul>
 
     <ul class="nav nav2">
