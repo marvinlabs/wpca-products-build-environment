@@ -33,9 +33,8 @@ module.exports = function (grunt, options) {
         targets["cuar-skin-" + skin.slug] = extend(true, {}, baseOptions(
             {
                 "sourceMapFilename": skin.plugin + "/skins/" + skin.path + "/assets/css/styles.css.map",
-                "sourceMapURL": "styles.css.map",
-                "sourceMapBasepath": "/" + skin.plugin + "/skins/",
-                "sourceMapRootpath": "/"
+                "sourceMapURL": "/"  + skin.plugin + "/skins/" + skin.path + "/assets/css/styles.css.map",
+                "sourceMapBasepath": "/"
             }
         ), {
             files: files
@@ -57,8 +56,8 @@ module.exports = function (grunt, options) {
         targets[addon.slug + "-frontend"] = extend(true, {}, baseOptions(
             {
                 "sourceMapFilename": addon.path + "/assets/frontend/css/" + addon.slug + ".css.map",
-                "sourceMapURL": addon.slug + ".css.map",
-                "sourceMapBasepath": "src/less"
+                "sourceMapURL": "/" + addon.path + "/assets/frontend/css/" + addon.slug + ".css.map",
+                "sourceMapBasepath": "/"
             }
         ), {
             files: files
