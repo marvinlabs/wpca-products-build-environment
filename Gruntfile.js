@@ -67,6 +67,8 @@ module.exports = function (grunt) {
 
     ]);
 
+    grunt.registerTask("dev-master", ["less:cuar-skin-frontend-master", "less:cuar-skin-frontend-master-dark", "uglify:libs-assets"]);
+
     grunt.registerTask("tx-push", ["checktextdomain:customer-area", "makepot:customer-area", "exec:txpush_s"]);
     grunt.registerTask("tx-pull", ["exec:txpull", "potomo:customer-area"]);
 
