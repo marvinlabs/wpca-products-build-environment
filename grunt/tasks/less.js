@@ -22,23 +22,44 @@ module.exports = function (grunt, options) {
     // Create the targets for the base plugin and all add-ons
     var skins = options.skins;
     skins.forEach(function (skin) {
-        var output = skin.plugin + "/skins/" + skin.path + "/assets/css/styles.min.css";
-        var input = [
-            skin.plugin + "/skins/" + skin.path + "/src/less/*.less"
-        ];
 
-        var files = {};
-        files[output] = input;
+        // Paths to less and css files
+        var lessFilesFolder = skin.plugin + "/skins/" + skin.path + "/src/less";
+        var cssOutputFolder = skin.plugin + "/skins/" + skin.path + "/assets/css";
 
-        targets["cuar-skin-" + skin.slug] = extend(true, {}, baseOptions(
-            {
-                "sourceMapFilename": skin.plugin + "/skins/" + skin.path + "/assets/css/styles.css.map",
-                "sourceMapURL": "/"  + skin.plugin + "/skins/" + skin.path + "/assets/css/styles.css.map",
-                "sourceMapBasepath": "/"
+        // Each skin can contain multiple less files to compile
+        // Dynamically read LESS source folder and store paths
+        // Less files names must be : _{myFile}.less
+        var lessFilesList = [];
+        grunt.file.recurse(lessFilesFolder, function (abspath, rootdir, subdir, filename) {
+            if ((abspath === rootdir + "/" + filename) && filename.match(/^_[0-9a-zA-Z\-_]*\.less$/g)) {
+                var name = filename.substring(0, filename.lastIndexOf('.')).slice(1).replace('_','');
+                lessFilesList.push({
+                    name: name,
+                    abspath: abspath,
+                    rootdir: rootdir,
+                    subdir: subdir,
+                    filename: filename
+                });
             }
-        ), {
-            files: files
         });
+
+        // Create options for all registered LESS files
+        for (var i = 0; i < lessFilesList.length; i++) {
+            var skinFiles = {};
+            skinFiles[skin.plugin + "/skins/" + skin.path + "/assets/css/" + lessFilesList[i].name + ".min.css"] = [
+                lessFilesList[i].abspath
+            ];
+            targets["cuar-skin-" + skin.slug + "-" + lessFilesList[i].name] = extend(true, {}, baseOptions(
+                {
+                    "sourceMapFilename": cssOutputFolder + "/" + lessFilesList[i].name + '.css.map',
+                    "sourceMapURL": "/"  + skin.plugin + "/skins/" + skin.path + "/assets/css/" + lessFilesList[i].name + ".css.map",
+                    "sourceMapBasepath": "/"
+                }
+            ), {
+                files: skinFiles
+            });
+        }
     });
 
     // Create assets for addons (official add-ons do not have any particular styling, this is bundled in the main
