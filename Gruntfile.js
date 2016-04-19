@@ -67,8 +67,6 @@ module.exports = function (grunt) {
 
     ]);
 
-    grunt.registerTask("dev-master", ["less:cuar-skin-frontend-master", "less:cuar-skin-frontend-master-dark", "uglify:libs-assets"]);
-
     grunt.registerTask("tx-push", ["checktextdomain:customer-area", "makepot:customer-area", "exec:txpush_s"]);
     grunt.registerTask("tx-pull", ["exec:txpull", "potomo:customer-area"]);
 
@@ -81,6 +79,25 @@ module.exports = function (grunt) {
             grunt.task.run('version:' + pluginId + '_' + baseTarget.id + ':' + mode);
         });
     });
+
+    // Master-Skin Less vars parser
+    grunt.registerTask("dev-vars", "Parse master-skin Less vars to get values into a JSON file", function () {
+        var masterLessVars = grunt.file.read(path.join(configOptions.paths.base_plugin, 'skins/frontend/master/src/less/wpca/variables/colors-config.less'))
+                + grunt.file.read(path.join(configOptions.paths.base_plugin, 'skins/frontend/master/src/less/wpca/variables/colors.less'))
+                + grunt.file.read(path.join(configOptions.paths.base_plugin, 'skins/frontend/master/src/less/wpca/variables/colors-google.less'))
+                + grunt.file.read(path.join(configOptions.paths.base_plugin, 'skins/frontend/master/src/less/core/theme_variables.less')),
+            lines = masterLessVars.split('\n'),
+            lessVars = {},
+            keyVar;
+        lines.forEach(function (line) {
+            if (line.indexOf('@') == 0) {
+                keyVar = line.split(';')[0].split(':');
+                lessVars[keyVar[0].replace(/@/g, '.cuar-dev-nuance-')] = keyVar[1].trim() + ";";
+            }
+        });
+        grunt.file.write(path.join(configOptions.paths.base_plugin, 'skins/frontend/master/src/less/less-vars.css'), JSON.stringify(lessVars).replace('{', '&{').replace(/\\"/g, "").replace(/"([^"]*)":"([^;]*);",?/g, "$1 {&:before{content: '$2';} background: $2; &:after{content: '$1';}}").replace(/&:after\{content: '\.cuar-dev-nuance-([^']*)';}/g, "&:after{content: '@$1';}"));
+    });
+    grunt.registerTask("dev-master", ["dev-vars", "less:cuar-skin-frontend-master", "less:cuar-skin-frontend-master-dark", "uglify:libs-assets"]);
 };
 
 /**
