@@ -1,5 +1,15 @@
 [
   {
+    "slug": "admin-default-wp38",
+    "plugin": "wp-plugins/customer-area",
+    "path": "admin/default-wp38"
+  },
+  {
+    "slug": "frontend-default-v4",
+    "plugin": "wp-plugins/customer-area",
+    "path": "frontend/default-v4"
+  },
+  {
     "slug": "frontend-master",
     "plugin": "wp-plugins/customer-area",
     "path": "frontend/master"
@@ -8,26 +18,6 @@
     "slug": "frontend-master-dark",
     "plugin": "wp-plugins/customer-area",
     "path": "frontend/master-dark"
-  },
-  {
-    "slug": "frontend-default",
-    "plugin": "wp-plugins/customer-area",
-    "path": "frontend/default"
-  },
-  {
-    "slug": "frontend-default-v4",
-    "plugin": "wp-plugins/customer-area",
-    "path": "frontend/default-v4"
-  },
-  {
-    "slug": "admin-default",
-    "plugin": "wp-plugins/customer-area",
-    "path": "admin/default"
-  },
-  {
-    "slug": "admin-default-wp38",
-    "plugin": "wp-plugins/customer-area",
-    "path": "admin/default-wp38"
   },
   {
     "slug": "frontend-master-light-blue",

@@ -50,7 +50,11 @@ module.exports = function (grunt, options) {
             skinFiles[skin.plugin + "/skins/" + skin.path + "/assets/css/" + lessFilesList[i].name + ".min.css"] = [
                 lessFilesList[i].abspath
             ];
-            targets["cuar-skin-" + skin.slug + "-" + lessFilesList[i].name] = extend(true, {}, baseOptions(
+
+            var targetName = "cuar-skin-" + skin.slug + "-" + lessFilesList[i].name;
+            grunt.log.debug(targetName);
+
+            targets[targetName] = extend(true, {}, baseOptions(
                 {
                     "sourceMapFilename": cssOutputFolder + "/" + lessFilesList[i].name + '.css.map',
                     "sourceMapURL": "/"  + skin.plugin + "/skins/" + skin.path + "/assets/css/" + lessFilesList[i].name + ".css.map",
