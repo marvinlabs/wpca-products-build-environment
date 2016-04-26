@@ -78,6 +78,14 @@
           "EQCSS.js"
         ],
         "dest": "wp-plugins/customer-area/src/js/frontend/framework/eqcss"
+      },
+      {
+        "cwd": "wp-plugins/customer-area/vendor/bower/font-awesome/css",
+        "expand": true,
+        "src": [
+          "font-awesome.min.css"
+        ],
+        "dest": "wp-plugins/customer-area/libs/js/bower/font-awesome"
       }
     ]
   },
@@ -94,7 +102,6 @@
   ],
   "frameworkLibsFonts": [
     "admindesigns/**",
-    "font-awesome/**",
     "stateface/**"
   ],
   "frameworkLibsImgs": [
