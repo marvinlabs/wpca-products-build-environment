@@ -34,7 +34,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask("prepare-vendors", ["copy:copy-bootstrap", "copy:prefix-bootstrap"]);
     grunt.registerTask("prepare-languages", ["checktextdomain", "makepot", "potomo"]);
-    grunt.registerTask("prepare-assets", ["less", "postcss", "uglify", "copy:libs-assets-extras"]);
+    grunt.registerTask("prepare-assets", ["copy:libs-assets-extras", "less", "postcss", "uglify"]);
     grunt.registerTask("prepare-archives", ["compress"]);
 
     grunt.registerTask("update-libs", [
