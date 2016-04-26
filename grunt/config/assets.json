@@ -80,12 +80,13 @@
         "dest": "wp-plugins/customer-area/src/js/frontend/framework/eqcss"
       },
       {
-        "cwd": "wp-plugins/customer-area/vendor/bower/font-awesome/css",
+        "cwd": "wp-plugins/customer-area/vendor/bower/font-awesome",
         "expand": true,
         "src": [
-          "font-awesome.min.css"
+          "css/font-awesome.min.css",
+          "fonts/*"
         ],
-        "dest": "wp-plugins/customer-area/libs/js/bower/font-awesome"
+        "dest": "wp-plugins/customer-area/skins/frontend/master/assets"
       }
     ]
   },
