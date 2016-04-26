@@ -11,8 +11,8 @@ module.exports = function (grunt, options) {
             cmd: 'bower update --save'
         },
         "composer-update": {
-            cwd: 'wp-plugins/customer-area',
-            cmd: 'composer update'
+            cwd: 'vagrant',
+            cmd: "vagrant ssh -c \"cd /srv/www/wordpress-default/wp-plugins/customer-area && composer update\""
         }
     };
 };
