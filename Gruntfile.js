@@ -34,7 +34,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask("prepare-vendors", ["copy:copy-bootstrap", "copy:prefix-bootstrap"]);
     grunt.registerTask("prepare-languages", ["checktextdomain", "makepot", "potomo"]);
-    grunt.registerTask("prepare-assets", ["less", "postcss", "uglify", "copy:libs-assets-extras"]);
+    grunt.registerTask("prepare-assets", ["copy:libs-assets-extras", "less", "postcss", "uglify"]);
     grunt.registerTask("prepare-archives", ["compress"]);
 
     grunt.registerTask("update-libs", [
@@ -85,7 +85,7 @@ module.exports = function (grunt) {
         var masterLessVars = grunt.file.read(path.join(configOptions.paths.base_plugin, 'skins/frontend/master/src/less/wpca/variables/colors-config.less'))
                 + grunt.file.read(path.join(configOptions.paths.base_plugin, 'skins/frontend/master/src/less/wpca/variables/colors.less'))
                 + grunt.file.read(path.join(configOptions.paths.base_plugin, 'skins/frontend/master/src/less/wpca/variables/colors-google.less'))
-                + grunt.file.read(path.join(configOptions.paths.base_plugin, 'skins/frontend/master/src/less/core/theme_variables.less')),
+                + grunt.file.read('vendor/other/framework/theme_wpca/assets/skin/core/theme_variables.less'),
             lines = masterLessVars.split('\n'),
             lessVars = {},
             keyVar;
@@ -97,7 +97,13 @@ module.exports = function (grunt) {
         });
         grunt.file.write(path.join(configOptions.paths.base_plugin, 'skins/frontend/master/src/less/less-vars.css'), JSON.stringify(lessVars).replace('{', '&{').replace(/\\"/g, "").replace(/"([^"]*)":"([^;]*);",?/g, "$1 {&:before{content: '$2';} background: $2; &:after{content: '$1';}}").replace(/&:after\{content: '\.cuar-dev-nuance-([^']*)';}/g, "&:after{content: '@$1';}"));
     });
-    grunt.registerTask("dev-master", ["dev-vars", "less:cuar-skin-frontend-master", "less:cuar-skin-frontend-master-dark", "uglify:libs-assets"]);
+    grunt.registerTask("dev-master", [
+        "dev-vars",
+        "less:cuar-skin-frontend-master-styles",
+        "less:cuar-skin-frontend-master-less-vars",
+        "less:cuar-skin-frontend-master-dark-styles",
+        "uglify:libs-assets"
+    ]);
 };
 
 /**
