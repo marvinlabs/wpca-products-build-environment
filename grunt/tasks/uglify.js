@@ -35,7 +35,7 @@ module.exports = function (grunt, options) {
         targets[addon.slug + '-frontend'] = extend(true, {}, baseOptions(
                 {
                     sourceMapName: addon.path + "/assets/frontend/js/" + addon.slug + ".js.map",
-                    sourceMapRoot: addon.path + "/src/js"
+                    sourceMapRoot: addon.path + "/src/js/frontend"
                 }),
             {
                 files: files
@@ -51,7 +51,7 @@ module.exports = function (grunt, options) {
         targets[addon.slug + '-admin'] = extend(true, {}, baseOptions(
                 {
                     sourceMapName: addon.path + "/assets/admin/js/" + addon.slug + ".js.map",
-                    sourceMapRoot: addon.path + "/src/js"
+                    sourceMapRoot: addon.path + "/src/js/admin"
                 }),
             {
                 files: files
