@@ -41,7 +41,7 @@
         "vendor/other/framework/theme/assets/js/utility/bootstrap/source/transition.js"
       ],
       "wp-plugins/customer-area/libs/js/bower/bootstrap-slider/bootstrap-slider.min.js": [
-        "wp-plugins/customer-area/vendor/bower/seiyria-bootstrap-slider/js/bootstrap-slider.js"
+        "wp-plugins/customer-area/vendor/bower/seiyria-bootstrap-slider/dist/bootstrap-slider.js"
       ],
       "wp-plugins/customer-area/libs/js/bower/file-upload/jquery.fileupload.min.js": [
         "wp-plugins/customer-area/vendor/bower/blueimp-file-upload/js/jquery.fileupload.js"
