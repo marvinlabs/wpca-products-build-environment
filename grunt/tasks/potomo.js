@@ -11,20 +11,10 @@ module.exports = function (grunt, options) {
     var targets = {};
 
     // Create the targets for the base plugin and all add-ons
-    targets["customer-area"] = extend(true, {}, baseOptions, {
-        options: {},
-        files: [{
-            expand: true,
-            src: ['*.po'],
-            ext: '.mo',
-            nonull: true,
-            cwd: options.paths.base_plugin + '/languages',
-            dest: options.paths.base_plugin + '/languages'
-        }]
-    });
-
     var addons = options.addons;
     addons.forEach(function (addon) {
+        if (addon.langFolder === undefined) addon.langFolder = 'languages';
+        
         targets[addon.slug] = extend(true, {}, baseOptions, {
             options: {},
             files: [{
