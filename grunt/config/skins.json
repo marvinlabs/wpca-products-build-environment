@@ -5,11 +5,6 @@
     "path": "admin/default-wp38"
   },
   {
-    "slug": "frontend-default-v4",
-    "plugin": "wp-plugins/customer-area",
-    "path": "frontend/default-v4"
-  },
-  {
     "slug": "frontend-master",
     "plugin": "wp-plugins/customer-area",
     "path": "frontend/master"
