@@ -3,6 +3,8 @@
     "base_plugin" : "wp-plugins/customer-area",
     "addons_patterns" : [
         "!customer-area-support-manager",
+        "!customer-area-paypal-gateway",
+        "!customer-area",
         "customer-area-*"
     ],
     "themes" : "wp-themes",

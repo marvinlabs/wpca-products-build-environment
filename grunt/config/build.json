@@ -5,9 +5,13 @@
         "!node_modules/**",
         "!package.json",
         "!composer.json",
+        "!composer.lock",
+        "!bower.json",
         "!README.md",
         "!.git/**",
         "!.gitignore",
-        "!.idea/**"
+        "!.idea/**",
+        "!vendor/**",
+        "!wp-assets/**"
     ]
 }
