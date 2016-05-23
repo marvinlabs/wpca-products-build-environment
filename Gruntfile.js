@@ -25,7 +25,8 @@ module.exports = function (grunt) {
             staticMappings: {
                 "makepot": "grunt-wp-i18n",
                 "sync-cuar-commons": "grunt-wpca",
-                "gitfetch": "grunt-git"
+                "gitfetch": "grunt-git",
+                "gitpull": "grunt-git"
             }
         }
     });
