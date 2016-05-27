@@ -35,7 +35,7 @@ module.exports = function (grunt, options) {
         targets[addon.slug + '-frontend'] = extend(true, {}, baseOptions(
                 {
                     sourceMapName: addon.path + "/assets/frontend/js/" + addon.slug + ".js.map",
-                    sourceMapRoot: addon.path + "/src/js/frontend"
+                    sourceMapRoot: addon.path + "/src/js/frontend/"
                 }),
             {
                 files: files
@@ -51,7 +51,7 @@ module.exports = function (grunt, options) {
         targets[addon.slug + '-admin'] = extend(true, {}, baseOptions(
                 {
                     sourceMapName: addon.path + "/assets/admin/js/" + addon.slug + ".js.map",
-                    sourceMapRoot: addon.path + "/src/js/admin"
+                    sourceMapRoot: addon.path + "/src/js/admin/"
                 }),
             {
                 files: files
@@ -59,7 +59,15 @@ module.exports = function (grunt, options) {
         );
     });
 
-    targets["libs-assets"] = extend(true, {}, {}, options.assets.cuarUglify);
+    targets["libs-assets"] = extend(true, {}, baseOptions(
+        {
+            sourceMapName: options.paths.base_plugin + "/skins/frontend/master/assets/js/main.js.map",
+            sourceMapRoot: options.paths.base_plugin + "/skins/frontend/master/assets/js/"
+        }),
+        {
+            files: options.assets.cuarUglify.files
+        }
+    );
 
     return targets;
 };
