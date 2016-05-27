@@ -59,13 +59,15 @@ module.exports = function (grunt, options) {
         );
     });
 
-    targets["libs-assets"] = extend(true, {}, baseOptions(
+    targets["libs-assets"] = extend(true, {}, {}, options.assets.cuarUglify);
+
+    targets["cuarMasterSkin"] = extend(true, {}, baseOptions(
         {
             sourceMapName: options.paths.base_plugin + "/skins/frontend/master/assets/js/main.js.map",
             sourceMapRoot: options.paths.base_plugin + "/skins/frontend/master/assets/js/"
         }),
         {
-            files: options.assets.cuarUglify.files
+            files: options.assets.cuarMasterSkin.files
         }
     );
 

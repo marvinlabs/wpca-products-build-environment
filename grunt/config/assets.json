@@ -62,7 +62,11 @@
         "wp-plugins/customer-area/vendor/bower/jquery.fancytree/dist/jquery.fancytree.js",
         "wp-plugins/customer-area/vendor/bower/jquery.fancytree/dist/src/jquery.fancytree.glyph.js",
         "wp-plugins/customer-area/vendor/bower/jquery.fancytree/dist/src/jquery.fancytree.childcounter.js"
-      ],
+      ]
+    }
+  },
+  "cuarMasterSkin": {
+    "files": {
       "wp-plugins/customer-area/skins/frontend/master/assets/js/main.min.js": [
         "wp-plugins/customer-area/skins/frontend/master/assets/js/main.js"
       ]

@@ -105,7 +105,8 @@ module.exports = function (grunt) {
         "less:cuar-skin-frontend-master-styles",
         "less:cuar-skin-frontend-master-less-vars",
         "less:cuar-skin-frontend-master-dark-styles",
-        "uglify:libs-assets"
+        "uglify:libs-assets",
+        "uglify:cuarMasterSkin"
     ]);
 };
 
