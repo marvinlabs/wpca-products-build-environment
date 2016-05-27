@@ -1,9 +1,6 @@
 {
   "cuarUglify": {
     "files": {
-      "wp-plugins/customer-area/skins/frontend/master/assets/js/main.min.js": [
-        "wp-plugins/customer-area/skins/frontend/master/assets/js/main.js"
-      ],
       "wp-plugins/customer-area/libs/js/framework/bootstrap/affix.min.js": [
         "vendor/other/framework/theme/assets/js/utility/bootstrap/source/affix.js"
       ],
@@ -60,6 +57,9 @@
       ],
       "wp-plugins/customer-area/libs/js/bower/slick-carousel/jquery.slick.min.js": [
         "wp-plugins/customer-area/vendor/bower/slick-carousel/slick/slick.js"
+      ],
+      "wp-plugins/customer-area/skins/frontend/master/assets/js/main.min.js": [
+        "wp-plugins/customer-area/skins/frontend/master/assets/js/main.js"
       ]
     }
   },
