@@ -58,6 +58,11 @@
       "wp-plugins/customer-area/libs/js/bower/slick-carousel/jquery.slick.min.js": [
         "wp-plugins/customer-area/vendor/bower/slick-carousel/slick/slick.js"
       ],
+      "wp-plugins/customer-area/libs/js/bower/fancytree/jquery.fancytree.min.js": [
+        "wp-plugins/customer-area/vendor/bower/jquery.fancytree/dist/jquery.fancytree.js",
+        "wp-plugins/customer-area/vendor/bower/jquery.fancytree/dist/src/jquery.fancytree.glyph.js",
+        "wp-plugins/customer-area/vendor/bower/jquery.fancytree/dist/src/jquery.fancytree.childcounter.js"
+      ],
       "wp-plugins/customer-area/skins/frontend/master/assets/js/main.min.js": [
         "wp-plugins/customer-area/skins/frontend/master/assets/js/main.js"
       ]
@@ -90,6 +95,15 @@
           "fonts/*"
         ],
         "dest": "wp-plugins/customer-area/skins/frontend/master/assets"
+      },
+      {
+        "cwd": "wp-plugins/customer-area/vendor/bower/jquery.fancytree/dist",
+        "expand": true,
+        "src": [
+          "skin-*",
+          "skin-*/*"
+        ],
+        "dest": "vendor/other/framework/theme_wpca/assets/skin/base/plugins/fancytree"
       }
     ]
   },
