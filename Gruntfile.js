@@ -100,6 +100,7 @@ module.exports = function (grunt) {
         grunt.file.write(path.join(configOptions.paths.base_plugin, 'skins/frontend/master/src/less/less-vars.css'), JSON.stringify(lessVars).replace('{', '&{').replace(/\\"/g, "").replace(/"([^"]*)":"([^;]*);",?/g, "$1 {&:before{content: '$2';} background: $2; &:after{content: '$1';}}").replace(/&:after\{content: '\.cuar-dev-nuance-([^']*)';}/g, "&:after{content: '@$1';}"));
     });
     grunt.registerTask("dev-master", [
+        "copy:libs-assets-extras",
         "dev-vars",
         "less:cuar-skin-frontend-master-styles",
         "less:cuar-skin-frontend-master-less-vars",
