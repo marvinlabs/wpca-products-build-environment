@@ -84,6 +84,31 @@
         "dest": "wp-plugins/customer-area/libs/js/bower/select2"
       },
       {
+        "cwd": "wp-plugins/customer-area/vendor/bower/summernote/dist",
+        "expand": true,
+        "src": [
+          "summernote.min.js",
+          "lang/*.min.js"
+        ],
+        "dest": "wp-plugins/customer-area/libs/js/bower/summernote"
+      },
+      {
+        "cwd": "wp-plugins/customer-area/vendor/bower/summernote/src/less",
+        "expand": true,
+        "src": [
+          "*.less"
+        ],
+        "dest": "vendor/other/framework/theme_wpca/assets/skin/base/plugins/summernote"
+      },
+      {
+        "cwd": "wp-plugins/customer-area/vendor/bower/summernote/dist/font",
+        "expand": true,
+        "src": [
+          "*"
+        ],
+        "dest": "wp-plugins/customer-area/skins/frontend/master/assets/fonts"
+      },
+      {
         "cwd": "node_modules/eqcss",
         "expand": true,
         "src": [
