@@ -60,8 +60,7 @@
       ],
       "wp-plugins/customer-area/libs/js/bower/fancytree/jquery.fancytree.min.js": [
         "wp-plugins/customer-area/vendor/bower/jquery.fancytree/dist/jquery.fancytree.js",
-        "wp-plugins/customer-area/vendor/bower/jquery.fancytree/dist/src/jquery.fancytree.glyph.js",
-        "wp-plugins/customer-area/vendor/bower/jquery.fancytree/dist/src/jquery.fancytree.childcounter.js"
+        "wp-plugins/customer-area/vendor/bower/jquery.fancytree/dist/src/jquery.fancytree.glyph.js"
       ]
     }
   },
