@@ -1,0 +1,10 @@
+<code_scheme name="WPCA-CodeStyle-HTML">
+  <option name="HTML_ATTRIBUTE_WRAP" value="0" />
+  <option name="HTML_KEEP_LINE_BREAKS" value="false" />
+  <option name="HTML_KEEP_LINE_BREAKS_IN_TEXT" value="false" />
+  <option name="HTML_KEEP_WHITESPACES_INSIDE" value="span,pre,textarea,title" />
+  <option name="HTML_INLINE_ELEMENTS" value="abbr,acronym,b,basefont,bdo,big,br,cite,cite,code,dfn,em,font,i,img,input,kbd,label,q,s,samp,select,span,strike,strong,sub,sup,textarea,tt,u,var,title" />
+  <codeStyleSettings language="HTML">
+    <option name="RIGHT_MARGIN" value="160" />
+  </codeStyleSettings>
+</code_scheme>

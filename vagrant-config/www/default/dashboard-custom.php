@@ -149,18 +149,20 @@
 <div class="container">
 
     <a href="http://wp-customerarea.com" title="Visit http://wp-customerarea.com" target="_BLANK" style="opacity: 1;">
-        <img class="logo" src="http://wpca.dev/logo.png" alt="WP Customer Area logo" width="386" height="400"/>
+        <img class="logo" src="logo.png" alt="WP Customer Area logo" width="386" height="400"/>
     </a>
 
     <ul class="nav nav1">
         <li><a href="https://github.com/Varying-Vagrant-Vagrants/VVV" target="_BLANK">VVV Repository</a></li>
-        <li><a href="https://bitbucket.org/wp-customerarea" target="_BLANK">WPCA Repositories</a></li>
-        <li><a href="http://wpca.dev/database-admin" target="_BLANK">PHPmyAdmin</a></li>
-        <li><a href="http://wpca.dev/memcached-admin" target="_BLANK">phpMemcachedAdmin</a></li>
-        <li><a href="http://wpca.dev/opcache-status/opcache.php" target="_BLANK">Opcache Status</a></li>
-        <li><a href="http://wpca.dev/webgrind" target="_BLANK">Webgrind</a></li>
-        <li><a href="http://wpca.dev/phpinfo" target="_BLANK">PHP Info</a></li>
-        <li><a href="http://wpca.dev/dbreplace" target="_BLANK">DB Replace</a></li>
+        <li><a href="http://local.wordpress.dev/vendor/other/framework/theme/dashboard.html" target="_BLANK" style="margin:0;">WPCA Framework</a></li>
+        <li><a href="https://bitbucket.org/wp-customerarea" target="_BLANK">WPCA Bitbucket</a></li>
+        <li><a href="https://github.com/marvinlabs/customer-area" target="_BLANK">WPCA Github</a></li>
+        <li><a href="http://vvv.dev/database-admin" target="_BLANK">PHPmyAdmin</a></li>
+        <li><a href="http://vvv.dev/memcached-admin" target="_BLANK">phpMemcachedAdmin</a></li>
+        <li><a href="http://vvv.dev/opcache-status/opcache.php" target="_BLANK">Opcache Status</a></li>
+        <li><a href="http://vvv.dev/webgrind" target="_BLANK">Webgrind</a></li>
+        <li><a href="http://vvv.dev/phpinfo" target="_BLANK">PHP Info</a></li>
+        <li><a href="http://vvv.dev/dbreplace" target="_BLANK">DB Replace</a></li>
     </ul>
 
     <ul class="nav nav2">

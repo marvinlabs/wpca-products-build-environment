@@ -39,8 +39,9 @@ module.exports = function (grunt, options) {
                 "x-poedit-keywordslist": true
             },
             type: options.i18n.projectType,
-            updateTimestamp: true,
-            updatePoFiles: true
+            updateTimestamp: false,
+            updatePoFiles: true,
+            processPot: processPot
         }
     };
 
