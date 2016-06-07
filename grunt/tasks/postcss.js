@@ -2,22 +2,32 @@ module.exports = function (grunt, options) {
     var extend = require('extend');
 
     // The options that are common to all plugins
-    var baseOptions = function (opt) {
-        return {
-            "options": {
-                "compress": true,
-                "yuicompress": true,
-                "optimization": 2,
-                "sourceMap": true,
-                "sourceMapFilename": opt.sourceMapFilename,
-                "sourceMapURL": opt.sourceMapURL,
-                "sourceMapBasepath": opt.sourceMapBasepath,
-                "sourceMapRootpath": "/"
-            }
+    var targets = {
+        options: {
+            map: false,
+            processors: [
+                require('pixrem')(), // add fallbacks for rem units
+                require('autoprefixer')({ // add vendor prefixes
+                    browsers: ['last 3 versions', '> 2%'],
+                    silent: true,
+                    cascade: false // We have minified CSS...
+                }),
+                require('cssnano')() // minify the result
+            ]
         }
     };
 
-    var targets = {};
+
+    // Create the targets for the base plugin and all add-ons
+    var skins = options.skins;
+    skins.forEach(function(skin) {
+        var asset = options.paths.base_plugin + "/skins/" + skin.path + "/assets/css/styles.min.css";
+        if (!grunt.file.exists(asset)) return;
+
+        targets["cuar-skin-" + skin.slug] = {
+            src: [ asset ]
+        };
+    });
 
     // Create the targets for the base plugin and all add-ons
     var skins = options.skins;
@@ -34,13 +44,12 @@ module.exports = function (grunt, options) {
         grunt.file.recurse(lessFilesFolder, function (abspath, rootdir, subdir, filename) {
             if ((abspath === rootdir + "/" + filename) && filename.match(/^_[0-9a-zA-Z\-_]*\.less$/g)) {
                 var name = filename.substring(0, filename.lastIndexOf('.')).slice(1).replace('_','');
-                lessFilesList.push({
-                    name: name,
-                    abspath: abspath,
-                    rootdir: rootdir,
-                    subdir: subdir,
-                    filename: filename
-                });
+                var asset = options.paths.base_plugin + "/skins/" + skin.path + "/assets/css/" + name + ".min.css";
+                if (grunt.file.exists(asset)) {
+                    targets["cuar-skin-" + skin.slug] = {
+                        src: [asset]
+                    };
+                }
             }
         });
 
@@ -50,11 +59,7 @@ module.exports = function (grunt, options) {
             skinFiles[skin.plugin + "/skins/" + skin.path + "/assets/css/" + lessFilesList[i].name + ".min.css"] = [
                 lessFilesList[i].abspath
             ];
-
-            var targetName = "cuar-skin-" + skin.slug + "-" + lessFilesList[i].name;
-            grunt.log.debug(targetName);
-
-            targets[targetName] = extend(true, {}, baseOptions(
+            targets["cuar-skin-" + skin.slug + "-" + lessFilesList[i].name] = extend(true, {}, baseOptions(
                 {
                     "sourceMapFilename": cssOutputFolder + "/" + lessFilesList[i].name + '.css.map',
                     "sourceMapURL": "/"  + skin.plugin + "/skins/" + skin.path + "/assets/css/" + lessFilesList[i].name + ".css.map",
@@ -72,36 +77,27 @@ module.exports = function (grunt, options) {
     addons.forEach(function (addon) {
         var adminAsset = addon.path + "/assets/admin/css/" + addon.slug + ".min.css";
         var frontendAsset = addon.path + "/assets/frontend/css/" + addon.slug + ".min.css";
+        var assets = [];
+        if (grunt.file.exists(adminAsset)) assets.push(adminAsset);
+        if (grunt.file.exists(frontendAsset)) assets.push(frontendAsset);
 
-        var files = {};
-        files[frontendAsset] = [
-            addon.path + '/src/less/common/*.less',
-            addon.path + '/src/less/frontend/*.less'
-        ];
-        targets[addon.slug + "-frontend"] = extend(true, {}, baseOptions(
-            {
-                "sourceMapFilename": addon.path + "/assets/frontend/css/" + addon.slug + ".css.map",
-                "sourceMapURL": "/" + addon.path + "/assets/frontend/css/" + addon.slug + ".css.map",
-                "sourceMapBasepath": "/"
+        // An add-on can contain skins
+        var skinsFolders = ['frontend', 'admin'];
+        skinsFolders.forEach(function (folder) {
+            if (grunt.file.exists(addon.path + "/skins/" + folder)) {
+                grunt.file.recurse(addon.path + "/skins/" + folder, function (abspath, rootdir, subdir, filename) {
+                    if (subdir.substring(subdir.indexOf("/")) + "/" + filename === "/assets/css/styles.min.css") {
+                        assets.push(abspath);
+                    }
+                })
             }
-        ), {
-            files: files
         });
 
-        files = {};
-        files[adminAsset] = [
-            addon.path + '/src/less/common/*.less',
-            addon.path + '/src/less/admin/*.less'
-        ];
-        targets[addon.slug + "-admin"] = extend(true, {}, baseOptions(
-            {
-                "sourceMapFilename": addon.path + "/assets/admin/css/" + addon.slug + ".css.map",
-                "sourceMapURL": addon.slug + ".css.map",
-                "sourceMapBasepath": addon.slug + "/src/less"
-            }
-        ), {
-            files: files
-        });
+        if (assets.length<=0) return;
+
+        targets[addon.slug] = {
+            src: assets
+        };
     });
 
     return targets;

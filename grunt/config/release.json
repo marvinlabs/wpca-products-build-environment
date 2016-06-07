@@ -15,8 +15,8 @@
             "src" : ["%%path%%/readme.txt"]
         },
         {
-            "id" : "package",
-            "src" : ["%%path%%/package.json"]
+            "id" : "composer",
+            "src" : ["%%path%%/composer.json"]
         }
     ]
 }

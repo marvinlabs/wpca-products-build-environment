@@ -26,6 +26,7 @@
     - [`grunt compress`](#grunt-compress)
     - [`grunt watch`](#grunt-watch)
   - [Tasks specific to the main WP Customer Area plugin](#tasks-specific-to-the-main-wp-customer-area-plugin)
+    - [`grunt update-libs`](#grunt-update-libs)
     - [`grunt tx-push`](#grunt-tx-push)
     - [`grunt tx-pull`](#grunt-tx-pull)
 
@@ -91,6 +92,13 @@ All grunt tasks shall be run in the build environment directory directly
 When translations need a refresh.
 
 Runs sequentially: `checktextdomain`, then `makepot`, then `potomo`
+
+#### `grunt prepare-vendors`
+
+When you are updating the vendors (via bower or composer). Some of them are copied and prepared for use in WP Customer
+Area projects (for instance, Bootstrap classes are prefixed.
+
+Runs sequentially: `copy`
 
 #### `grunt prepare-assets`
 
@@ -179,6 +187,11 @@ Watch for file changes in:
 
 ### Tasks specific to the main WP Customer Area plugin
 
+#### `grunt update-libs`
+
+Use this when you need to update all the libs for WPCA. This will run updates from bower, composer, and custom libs,
+copy the required vendors files to WPCA, and recompile LESS and JS assets.
+
 #### `grunt tx-push`
 
 Use this when you have finished developing something and need to update the translation repository for translators.
@@ -196,3 +209,14 @@ Use this when translators have finished working and you need to update the PO/MO
 
 - Push latest PO files from wp-translations.org
 - Compile PO files to MO files
+
+## Debugging JS
+
+For instance, for Switch Users, in Chrome.
+
+- In the panel "sources", we see a yellow folder in the section NETWORK (not Workspace). 
+- The JS file appears. When clicking on it, we see the right source file, which means that sourcemaps are correct. 
+- We then need to add that file to the workspace: right clic > add folder to workspace > pick the folder `wp-plugins/customer-area-switch-users/src/js/frontend`
+- Authorize access to Chrome and reload the page
+- Then clic on the workspace file and pick `map to network resource`
+- You can then select `switch-users.js` in the scripts loaded from network

@@ -24,7 +24,7 @@ module.exports = function (grunt, options) {
         // Add the new target for the main plugin
         targets["customer-area" + '_' + baseTarget.id] = extend(true, {}, baseTarget, {
             options: {
-                pkg: options.paths.base_plugin + '/package.json'
+                pkg: options.paths.base_plugin + '/composer.json'
             },
             src: newSrc
         });
@@ -40,7 +40,7 @@ module.exports = function (grunt, options) {
 
             targets[addon.slug+ '_' + baseTarget.id] = extend(true, {}, baseTarget, {
                 options: {
-                    pkg: addon.path + '/package.json'
+                    pkg: addon.path + '/composer.json'
                 },
                 src: newSrc
             });

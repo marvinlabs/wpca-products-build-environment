@@ -5,9 +5,10 @@ module.exports = function (grunt, options) {
     var baseOptions = function (opt) {
         return {
             options: {
+                mangle: true,
                 sourceMap: true,
                 sourceMapName: opt.sourceMapName,
-                sourceMapRoot: opt.sourceMapRoot
+                sourceMapRoot: '/' + opt.sourceMapRoot
             }
         }
     };
@@ -26,25 +27,49 @@ module.exports = function (grunt, options) {
         var frontendAsset = addon.path + "/assets/frontend/js/" + addon.slug + ".min.js";
 
         var files = {};
-        files[adminAsset] = [
-            addon.path + '/src/js/common/**/*.js',
-            addon.path + '/src/js/admin/**/*.js'
-        ];
         files[frontendAsset] = [
             addon.path + '/src/js/common/**/*.js',
             addon.path + '/src/js/frontend/**/*.js'
         ];
 
-        targets[addon.slug] = extend(true, {}, baseOptions(
+        targets[addon.slug + '-frontend'] = extend(true, {}, baseOptions(
                 {
                     sourceMapName: addon.path + "/assets/frontend/js/" + addon.slug + ".js.map",
-                    sourceMapRoot: addon.path + "/src/js/"
+                    sourceMapRoot: addon.path + "/src/js/frontend/"
+                }),
+            {
+                files: files
+            }
+        );
+
+        files = {};
+        files[adminAsset] = [
+            addon.path + '/src/js/common/**/*.js',
+            addon.path + '/src/js/admin/**/*.js'
+        ];
+
+        targets[addon.slug + '-admin'] = extend(true, {}, baseOptions(
+                {
+                    sourceMapName: addon.path + "/assets/admin/js/" + addon.slug + ".js.map",
+                    sourceMapRoot: addon.path + "/src/js/admin/"
                 }),
             {
                 files: files
             }
         );
     });
+
+    targets["libs-assets"] = extend(true, {}, {}, options.assets.cuarUglify);
+
+    targets["cuarMasterSkin"] = extend(true, {}, baseOptions(
+        {
+            sourceMapName: options.paths.base_plugin + "/skins/frontend/master/assets/js/main.js.map",
+            sourceMapRoot: options.paths.base_plugin + "/skins/frontend/master/assets/js/"
+        }),
+        {
+            files: options.assets.cuarMasterSkin.files
+        }
+    );
 
     return targets;
 };
