@@ -14,6 +14,7 @@ module.exports = function (grunt, options) {
     };
     var targets = {};
     var addons = options.addons;
+    var themes = options.themes;
 
     addons.push(
         {
@@ -53,6 +54,43 @@ module.exports = function (grunt, options) {
                     sourceMapName: addon.path + "/assets/admin/js/" + addon.slug + ".js.map",
                     sourceMapRoot: addon.path + "/src/js/admin/"
                 }),
+            {
+                files: files
+            }
+        );
+    });
+
+    themes.forEach(function (theme) {
+        var backendAsset = theme.path + "/assets/backend/js/" + theme.slug + ".js";
+        var frontendAsset = theme.path + "/assets/frontend/js/" + theme.slug + ".js";
+
+        var files = {};
+        files[frontendAsset] = [
+            theme.path + '/dev/src/js/common/**/*.js',
+            theme.path + '/dev/src/js/frontend/**/*.js'
+        ];
+
+        targets['cuar-theme-' + theme.slug + '-frontend'] = extend(true, {}, baseOptions(
+            {
+                sourceMapName: theme.path + "/assets/frontend/js/" + theme.slug + ".js.map",
+                sourceMapRoot: theme.path + "/dev/src/js/frontend/"
+            }),
+            {
+                files: files
+            }
+        );
+
+        files = {};
+        files[backendAsset] = [
+            theme.path + '/dev/src/js/common/**/*.js',
+            theme.path + '/dev/src/js/backend/**/*.js'
+        ];
+
+        targets['cuar-theme-' + theme.slug + '-backend'] = extend(true, {}, baseOptions(
+            {
+                sourceMapName: theme.path + "/assets/backend/js/" + theme.slug + ".js.map",
+                sourceMapRoot: theme.path + "/dev/src/js/backend/"
+            }),
             {
                 files: files
             }
