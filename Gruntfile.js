@@ -25,6 +25,7 @@ module.exports = function (grunt) {
             staticMappings: {
                 "makepot": "grunt-wp-i18n",
                 "sync-cuar-commons": "grunt-wpca",
+                "update-cuar-versions": "grunt-wpca",
                 "gitfetch": "grunt-git",
                 "gitpull": "grunt-git"
             }
@@ -36,7 +37,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask("prepare-vendors", ["copy:copy-bootstrap", "copy:prefix-bootstrap"]);
     grunt.registerTask("prepare-languages", ["checktextdomain", "makepot", "potomo"]);
-    grunt.registerTask("prepare-assets", ["copy:libs-assets-extras", "less", "postcss", "uglify"]);
+    grunt.registerTask("prepare-assets", ["copy:libs-assets-extras", "less", "postcss", "uglify", "update-cuar-versions"]);
     grunt.registerTask("prepare-archives", ["compress"]);
 
     grunt.registerTask("update-libs", [

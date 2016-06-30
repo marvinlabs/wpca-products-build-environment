@@ -50,7 +50,7 @@
         "wp-plugins/customer-area/vendor/bower/blueimp-file-upload/js/vendor/jquery.ui.widget.js"
       ],
       "wp-plugins/customer-area/libs/js/bower/jquery-cookie/jquery.cookie.min.js": [
-        "wp-plugins/customer-area/vendor/bower/jquery.cookie/jquery.cookie.js"
+        "wp-plugins/customer-area/vendor/bower/js-cookie/src/js.cookie.js"
       ],
       "wp-plugins/customer-area/libs/js/bower/jquery-steps/jquery.steps.min.js": [
         "wp-plugins/customer-area/vendor/bower/jquery.steps/build/jquery.steps.js"

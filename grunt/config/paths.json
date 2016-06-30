@@ -5,6 +5,7 @@
         "!customer-area-support-manager",
         "!customer-area-paypal-gateway",
         "!customer-area",
+        "!customer-area-one-compat",
         "customer-area-*"
     ],
     "themes" : "wp-themes",

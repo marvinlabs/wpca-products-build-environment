@@ -48,21 +48,6 @@ module.exports = function (grunt, options) {
     var targets = {};
 
     // Create the targets for the base plugin and all add-ons
-    targets["customer-area"] = extend(true, {}, baseOptions, {
-        options: {
-            cwd: options.paths.base_plugin,
-            include: [
-                "customer-area.php",
-                "src/php/.*",
-                "includes/.*"
-            ],
-            domainPath: "languages",
-            mainFile: "customer-area.php",
-            potFilename: "cuar.pot",
-            processPot: processPot
-        }
-    });
-
     var addons = options.addons;
     addons.forEach(function (addon) {
         targets[addon.slug] = extend(true, {}, baseOptions, {
@@ -79,6 +64,22 @@ module.exports = function (grunt, options) {
                 processPot: processPot
             }
         });
+    });
+
+    targets["customer-area"] = extend(true, {}, baseOptions, {
+        options: {
+            cwd: options.paths.base_plugin,
+            include: [
+                "customer-area.php",
+                "src/php/.*",
+                "skins/.*",
+                "includes/.*"
+            ],
+            domainPath: "languages",
+            mainFile: "customer-area.php",
+            potFilename: "cuar.pot",
+            processPot: processPot
+        }
     });
 
     return targets;
