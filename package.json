@@ -20,7 +20,7 @@
     "autoprefixer": "^6.3.3",
     "bower": "^1.5.2",
     "cssnano": "^3.5.2",
-    "eqcss": "^1.1.0",
+    "eqcss": "1.2.0",
     "extend": "^3.0.0",
     "glob": "^7.0.3",
     "grunt": "^1.0.1",
