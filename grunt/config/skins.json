@@ -16,12 +16,12 @@
   },
   {
     "slug": "frontend-master-light-blue",
-    "plugin": "wp-plugins/customer-area-master-colors",
+    "plugin": "wp-plugins/customer-area-design-extras",
     "path": "frontend/master-light-blue"
   },
   {
     "slug": "frontend-master-dark-green",
-    "plugin": "wp-plugins/customer-area-master-colors",
+    "plugin": "wp-plugins/customer-area-design-extras",
     "path": "frontend/master-dark-green"
   }
 ]
