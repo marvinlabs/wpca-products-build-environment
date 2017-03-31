@@ -149,7 +149,8 @@ module.exports = function (grunt) {
         var masterLessVars = grunt.file.read(path.join(thisSkin['plugin'], 'skins/' + thisSkin['path'] + '/src/less/wpca/variables/colors-config.less'))
                 + grunt.file.read(path.join(configOptions.paths.base_plugin, 'skins/frontend/master/src/less/wpca/variables/colors.less'))
                 + grunt.file.read(path.join(configOptions.paths.base_plugin, 'skins/frontend/master/src/less/wpca/variables/colors-google.less'))
-                + grunt.file.read('vendor/other/framework/theme_wpca/assets/skin/core/theme_variables.less'),
+                + grunt.file.read('vendor/other/framework/theme_wpca/assets/skin/core/theme_variables.less')
+                + grunt.file.read(path.join(thisSkin['plugin'], 'skins/' + thisSkin['path'] + '/src/less/wpca/variables/overrides.less')),
             lines = masterLessVars.split('\n'),
             lessVars = {},
             keyVar;
