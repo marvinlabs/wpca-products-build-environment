@@ -156,7 +156,7 @@ module.exports = function (grunt) {
             keyVar;
 
         lines.forEach(function (line) {
-            if (line.indexOf('@') == 0) {
+            if (line.indexOf('@') == 0 && line.charAt(1) != '{') {
                 keyVar = line.split(';')[0].split(':');
                 if (keyVar.length > 0) {
                     lessVars[keyVar[0].replace(/@/g, '.cuar-dev-nuance-')] = keyVar[1].trim() + ";";
