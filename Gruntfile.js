@@ -37,7 +37,17 @@ module.exports = function (grunt) {
 
     grunt.registerTask("prepare-vendors", ["copy:copy-bootstrap", "copy:prefix-bootstrap"]);
     grunt.registerTask("prepare-languages", ["checktextdomain", "makepot", "potomo"]);
-    grunt.registerTask("prepare-assets", ["copy:libs-assets-extras", "less", "postcss", "uglify", "update-cuar-versions"]);
+    grunt.registerTask("prepare-dev-assets", function() {
+        var tasks = [];
+        configOptions.skins.forEach(function (skin) {
+            if(!skin["slug"].match("^admin-") && skin["slug"].match("^frontend-")) {
+                tasks.push("dev-vars:" + skin["slug"]);
+                tasks.push("less:cuar-skin-" + skin["slug"] + "-less-vars");
+            }
+        });
+        grunt.task.run(tasks);
+    });
+    grunt.registerTask("prepare-assets", ["copy:libs-assets-extras", "prepare-dev-assets", "less", "postcss", "uglify", "update-cuar-versions"]);
     grunt.registerTask("prepare-archives", ["compress"]);
 
     grunt.registerTask("update-libs", [
@@ -94,22 +104,32 @@ module.exports = function (grunt) {
     grunt.registerTask('dev-skin', function(skin) {
         if (typeof skin == 'undefined') { skin = "frontend-master"; }
 
-        if(!skin.match("^frontend-")) {
-            grunt.fail.fatal("You have to include 'frontend-' before the skin name");
-        }
-
         if(skin.match("^admin-")) {
             grunt.fail.fatal("This task is not ready for admin skins yet");
         }
 
+        if(!skin.match("^frontend-")) {
+            grunt.fail.fatal("You have to include 'frontend-' before the skin name");
+        }
+
+        if (skin == "frontend-master") {
+            grunt.task.run([
+                "copy:libs-assets-extras"
+            ]);
+        }
+
         grunt.task.run([
-            "copy:libs-assets-extras",
             "dev-vars:" + skin,
             "less:cuar-skin-" + skin + "-less-vars",
-            "less:cuar-skin-" + skin + "-styles",
-            "uglify:libs-assets",
-            "uglify:cuarMasterSkin"
-        ])
+            "less:cuar-skin-" + skin + "-styles"
+        ]);
+
+        if (skin == "frontend-master") {
+            grunt.task.run([
+                "uglify:libs-assets",
+                "uglify:cuarMasterSkin"
+            ]);
+        }
     });
 
     /**
@@ -126,12 +146,12 @@ module.exports = function (grunt) {
             skin = "frontend-master";
         }
 
-        if(!skin.match("^frontend-")) {
-            grunt.fail.fatal("You have to include 'frontend-' before the skin name");
-        }
-
         if(skin.match("^admin-")) {
             grunt.fail.fatal("This task is not ready for admin skins yet");
+        }
+
+        if(!skin.match("^frontend-")) {
+            grunt.fail.fatal("You have to include 'frontend-' before the skin name");
         }
 
         var skinConfCount = 0;
