@@ -20,6 +20,11 @@
     "path": "frontend/master-light-blue"
   },
   {
+    "slug": "frontend-master-light-transparent",
+    "plugin": "wp-plugins/customer-area-design-extras",
+    "path": "frontend/master-light-transparent"
+  },
+  {
     "slug": "frontend-master-dark-green",
     "plugin": "wp-plugins/customer-area-design-extras",
     "path": "frontend/master-dark-green"
