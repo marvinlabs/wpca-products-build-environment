@@ -102,7 +102,7 @@ module.exports = function (grunt) {
      * @param skin string The skin theme beginning by frontend-
      */
     grunt.registerTask('dev-skin', function(skin) {
-        if (typeof skin == 'undefined') { skin = "frontend-master"; }
+        if (typeof skin === 'undefined') { skin = "frontend-master"; }
 
         if(skin.match("^admin-")) {
             grunt.fail.fatal("This task is not ready for admin skins yet");
@@ -112,7 +112,7 @@ module.exports = function (grunt) {
             grunt.fail.fatal("You have to include 'frontend-' before the skin name");
         }
 
-        if (skin == "frontend-master") {
+        if (skin === "frontend-master") {
             grunt.task.run([
                 "copy:libs-assets-extras"
             ]);
@@ -124,7 +124,7 @@ module.exports = function (grunt) {
             "less:cuar-skin-" + skin + "-styles"
         ]);
 
-        if (skin == "frontend-master") {
+        if (skin === "frontend-master") {
             grunt.task.run([
                 "uglify:libs-assets",
                 "uglify:cuarMasterSkin"
@@ -142,7 +142,7 @@ module.exports = function (grunt) {
      */
     grunt.registerTask("dev-vars", "Parse skin Less vars to get values into a CSS file", function (skin) {
 
-        if (typeof skin == 'undefined') {
+        if (typeof skin === 'undefined') {
             skin = "frontend-master";
         }
 
@@ -158,7 +158,7 @@ module.exports = function (grunt) {
         var thisSkin = [];
 
         configOptions.skins.forEach(function (skinConf) {
-            if (skinConf.slug == skin) {
+            if (skinConf.slug === skin) {
                 thisSkin['slug'] = configOptions.skins[skinConfCount].slug;
                 thisSkin['plugin'] = configOptions.skins[skinConfCount].plugin;
                 thisSkin['path'] = configOptions.skins[skinConfCount].path;
@@ -166,8 +166,11 @@ module.exports = function (grunt) {
             skinConfCount++;
         });
 
+        var masterLessScheme = thisSkin['path'].indexOf('dark') !== -1 ? 'dark' : 'light';
+
         var masterLessVars = grunt.file.read(path.join(thisSkin['plugin'], 'skins/' + thisSkin['path'] + '/src/less/wpca/variables/colors-config.less'))
                 + grunt.file.read(path.join(configOptions.paths.base_plugin, 'skins/frontend/master/src/less/wpca/variables/colors.less'))
+                + grunt.file.read(path.join(configOptions.paths.base_plugin, 'skins/frontend/master/src/less/wpca/variables/colors-for-' + masterLessScheme + '-scheme.less'))
                 + grunt.file.read(path.join(configOptions.paths.base_plugin, 'skins/frontend/master/src/less/wpca/variables/colors-google.less'))
                 + grunt.file.read('vendor/other/framework/theme_wpca/assets/skin/core/theme_variables.less')
                 + grunt.file.read(path.join(thisSkin['plugin'], 'skins/' + thisSkin['path'] + '/src/less/wpca/variables/overrides.less')),
@@ -175,11 +178,13 @@ module.exports = function (grunt) {
             lessVars = {},
             keyVar;
 
+        var j = 0;
         lines.forEach(function (line) {
-            if (line.indexOf('@') == 0 && line.charAt(1) != '{') {
+            if (line.indexOf('@') === 0 && line.charAt(1) !== '{') {
                 keyVar = line.split(';')[0].split(':');
                 if (keyVar.length > 0) {
                     lessVars[keyVar[0].replace(/@/g, '.cuar-dev-nuance-')] = keyVar[1].trim() + ";";
+                    j++;
                 }
             }
         });
