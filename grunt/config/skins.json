@@ -40,6 +40,11 @@
     "path": "frontend/master-dark-sepia"
   },
   {
+    "slug": "frontend-master-dark-yellow",
+    "plugin": "wp-plugins/customer-area-design-extras",
+    "path": "frontend/master-dark-yellow"
+  },
+  {
     "slug": "frontend-master-dark-transparent",
     "plugin": "wp-plugins/customer-area-design-extras",
     "path": "frontend/master-dark-transparent"
