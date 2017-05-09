@@ -13,6 +13,7 @@
     - [`grunt prepare-assets`](#grunt-prepare-assets)
     - [`grunt prepare-archives`](#grunt-prepare-archives)
     - [`grunt prepare-dev-assets`](#grunt-prepare-dev-assets)
+    - [`grunt dev-skin:frontend-{skin-slug}`](grunt-dev-skin:frontend-{skin-slug})
     - [`grunt start-dev`](#grunt-start-dev)
   - [Tasks available for all plugins](#tasks-available-for-all-plugins)
     - [`grunt checktextdomain`](#grunt-checktextdomain)
@@ -123,6 +124,13 @@ Basically, the `dev-vars` task creates a CSS file from Bootstrap variables parse
 so we can import it. The CSS import of this file is done into `customer-area/skins/frontend/master/cuar-functions.php`
 
 Runs sequentially, for each skin: `dev-vars:{skin-slug}`, then `less:cuar-skin-{skin-slug}-less-vars`
+
+#### `grunt dev-skin:frontend-{skin-slug}`
+
+Everytime a skin is registered in `grunt/config/skins.json`, and that you want to work on it, you can compile it's style
+by running this command. It will also allow you to use sourcemaps, and it will parse the bootstrap variables and their
+values so you will get a nuancier showing you all the colors from your skins while developping.
+This will also compile the JS files and allow sourcemaps when the `{skin-slug}` is `master`.
 
 #### `grunt start-dev`
 
