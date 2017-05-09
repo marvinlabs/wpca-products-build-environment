@@ -12,6 +12,7 @@
     - [`grunt prepare-languages`](#grunt-prepare-languages)
     - [`grunt prepare-assets`](#grunt-prepare-assets)
     - [`grunt prepare-archives`](#grunt-prepare-archives)
+    - [`grunt prepare-dev-assets`](#grunt-prepare-dev-assets)
     - [`grunt start-dev`](#grunt-start-dev)
   - [Tasks available for all plugins](#tasks-available-for-all-plugins)
     - [`grunt checktextdomain`](#grunt-checktextdomain)
@@ -96,21 +97,32 @@ Runs sequentially: `checktextdomain`, then `makepot`, then `potomo`
 #### `grunt prepare-vendors`
 
 When you are updating the vendors (via bower or composer). Some of them are copied and prepared for use in WP Customer
-Area projects (for instance, Bootstrap classes are prefixed.
+Area projects (for instance, Bootstrap classes are prefixed - prefixed bootstrap is no more used).
 
-Runs sequentially: `copy`
+Runs sequentially: `copy:copy-bootstrap`, then `copy:prefix-bootstrap`
 
 #### `grunt prepare-assets`
 
 When asset sources have changed and we need to compile them  
 
-Runs sequentially: `less`, then `autoprefixer`, then `uglify`
+Runs sequentially: `copy:libs-assets-extras`, then `prepare-dev-assets`, then `less`, then `postcss`, then `uglify`, then `update-cuar-versions`
 
 #### `grunt prepare-archives`
 
 When you are ready to release a new version and want to build a zip file for publishing your add-on
 
-Runs sequentially: `prepare-languages`, then `prepare-assets`, then `compress`
+Runs sequentially: `compress`
+
+#### `grunt prepare-dev-assets`
+
+When you need to update the nuancier CSS file for development purpose.
+It means that when developping on local.wordpress.dev, you'll get a "open" button on the bottom left corner of the
+screen that will open a nuancier including almost all bootstrap variables and their values.
+
+Basically, the `dev-vars` task creates a CSS file from Bootstrap variables parsed values, and the second one compile it
+so we can import it. The CSS import of this file is done into `customer-area/skins/frontend/master/cuar-functions.php`
+
+Runs sequentially, for each skin: `dev-vars:{skin-slug}`, then `less:cuar-skin-{skin-slug}-less-vars`
 
 #### `grunt start-dev`
 
