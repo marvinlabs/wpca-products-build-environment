@@ -6,5 +6,6 @@ cp -a vagrant-config/* vagrant
 
 echo "==> script: Provision and start the VM"
 cd vagrant
+vagrant box update
 vagrant up --provision
 cd ..
