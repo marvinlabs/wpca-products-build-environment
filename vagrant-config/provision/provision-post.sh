@@ -4,7 +4,7 @@
 # symlinks to work with
 # WPCA environment
 
-for i in "/srv/www/wordpress-default/wp-content" "/srv/www/wordpress-develop/src/wp-content" "/srv/www/wordpress-trunk/wp-content"; do
+for i in "/srv/www/wordpress-default/public_html/wp-content" "/srv/www/wordpress-develop/public_html/src/wp-content"; do
 
     cd ${i}
 
@@ -31,7 +31,7 @@ for i in "/srv/www/wordpress-default/wp-content" "/srv/www/wordpress-develop/src
 
 done
 
-for i in "/srv/www/wordpress-default" "/srv/www/wordpress-develop/src" "/srv/www/wordpress-trunk"; do
+for i in "/srv/www/wordpress-default/public_html" "/srv/www/wordpress-develop/public_html/src"; do
 
     cd ${i}
 
