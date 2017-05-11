@@ -45,6 +45,27 @@
 - Checkout this build-environment repository to a folder (e.g. c:/wpca/)
 - Run `npm install` in the build environment directory
 - Checkout the Customer Area plugin to the wp-plugins folder from [its github repository](https://github.com/marvinlabs/customer-area/)
+- Open `vagrant/www/wordpress-default/public_html/wp-config.php` and add the following constants
+
+    ```php
+    /**
+     * Custom config for WPCA
+     * @see https://github.com/marvinlabs/wpca-products-build-environment/issues/5
+     */
+    // Environment related
+    define('WP_ENV', 'development');
+    define('WP_CONTENT_DIR', __DIR__ . '/wp-content');
+    define('WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content/');
+    define('WP_PLUGIN_DIR', dirname(dirname(dirname(__DIR__))) . '/wpca-plugins');
+    define('WP_PLUGIN_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content/plugins/');
+    
+    // Errors display
+    define( 'WP_DEBUG', true );
+    define('SAVEQUERIES', true);
+    ini_set('display_errors', 1);
+    define('WP_DEBUG_DISPLAY', true);
+    define('SCRIPT_DEBUG', true);
+    ```
 
 ## Vagrant as local MAMP/WAMP/XAMP/EasyPHP/... replacement
 
