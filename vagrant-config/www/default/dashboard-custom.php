@@ -163,6 +163,7 @@
         <li><a href="http://vvv.dev/webgrind" target="_BLANK">Webgrind</a></li>
         <li><a href="http://vvv.dev/phpinfo" target="_BLANK">PHP Info</a></li>
         <li><a href="http://vvv.dev/dbreplace" target="_BLANK">DB Replace</a></li>
+        <li><a href="http://vvv.dev:1080" target="_BLANK">Mail Catcher</a></li>
     </ul>
 
     <ul class="nav nav2">
