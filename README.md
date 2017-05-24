@@ -13,7 +13,8 @@
     - [`grunt prepare-assets`](#grunt-prepare-assets)
     - [`grunt prepare-archives`](#grunt-prepare-archives)
     - [`grunt prepare-dev-assets`](#grunt-prepare-dev-assets)
-    - [`grunt dev-skin:frontend-{skin-slug}`](grunt-dev-skin:frontend-{skin-slug})
+    - [`grunt dev-skin:frontend-{skin-slug}`](#grunt-dev-skinfrontend-skin-slug)
+    - [`grunt gitpull:{plugin-slug}`](#grunt-gitpull-plugin-slug)
     - [`grunt start-dev`](#grunt-start-dev)
   - [Tasks available for all plugins](#tasks-available-for-all-plugins)
     - [`grunt checktextdomain`](#grunt-checktextdomain)
@@ -152,6 +153,12 @@ Everytime a skin is registered in `grunt/config/skins.json`, and that you want t
 by running this command. It will also allow you to use sourcemaps, and it will parse the bootstrap variables and their
 values so you will get a nuancier showing you all the colors from your skins while developping.
 This will also compile the JS files and allow sourcemaps when the `{skin-slug}` is `master`.
+
+#### `grunt gitpull:{plugin-slug}`
+
+When you need to pull updates from a plugin repository
+
+> Note that this task can be run as a standalone task without a {plugin-slug} so you can pull all repositories at once.
 
 #### `grunt start-dev`
 
