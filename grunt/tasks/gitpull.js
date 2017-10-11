@@ -12,6 +12,13 @@ module.exports = function (grunt, options) {
         }
     );
 
+    addons.push(
+        {
+            slug: "framework",
+            path: "vendor/other"
+        }
+    );
+
     addons.forEach(function (addon) {
         targets[addon.slug] = {
             options: {

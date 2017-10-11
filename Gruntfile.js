@@ -47,7 +47,7 @@ module.exports = function (grunt) {
         });
         grunt.task.run(tasks);
     });
-    grunt.registerTask("prepare-assets", ["copy:libs-assets-extras", "prepare-dev-assets", "less", "postcss", "uglify", "update-cuar-versions"]);
+    grunt.registerTask("prepare-assets", ["gitpull:framework", "copy:libs-assets-extras", "prepare-dev-assets", "less", "postcss", "uglify", "update-cuar-versions"]);
     grunt.registerTask("prepare-archives", ["compress"]);
 
     grunt.registerTask("update-libs", [
