@@ -173,26 +173,26 @@
             <ul>
                 <li>LOCAL PATH: vagrant-local/www/wordpress-default</li>
                 <li>VM PATH: /srv/www/wordpress-default</li>
-                <li>URL: http://local.wordpress.dev</li>
+                <li>URL: http://local.wordpress.test</li>
                 <li>DB Name: wordpress_default</li>
             </ul>
         </li>
         <li>
-            <a href="http://local.wordpress-trunk.dev/" target="_BLANK">WordPress Trunk</a>
+            <a href="http://local.wordpress-trunk.test/" target="_BLANK">WordPress Trunk</a>
             <ul>
                 <li>LOCAL PATH: vagrant-local/www/wordpress-trunk</li>
                 <li>VM PATH: /srv/www/wordpress-trunk</li>
-                <li>URL: http://local.wordpress-trunk.dev</li>
+                <li>URL: http://local.wordpress-trunk.test</li>
                 <li>DB Name: wordpress_trunk</li>
             </ul>
         </li>
         <li>
-            <a href="http://build.wordpress-develop.dev" target="_BLANK">WordPress Develop</a>
+            <a href="http://build.wordpress-develop.test" target="_BLANK">WordPress Develop</a>
             <ul>
                 <li>LOCAL PATH: vagrant-local/www/wordpress-develop</li>
                 <li>VM PATH: /srv/www/wordpress-develop</li>
-                <li>/src URL: http://src.wordpress-develop.dev</li>
-                <li>/build URL: http://build.wordpress-develop.dev</li>
+                <li>/src URL: http://src.wordpress-develop.test</li>
+                <li>/build URL: http://build.wordpress-develop.test</li>
                 <li>DB Name: wordpress_develop</li>
                 <li>DB Name: wordpress_unit_tests</li>
             </ul>
