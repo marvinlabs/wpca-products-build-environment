@@ -67,6 +67,18 @@
     define('WP_DEBUG_DISPLAY', true);
     define('SCRIPT_DEBUG', true);
     ```
+- Open `vagrant/config/nginx-config/nginx-wp-common.conf` and comment out the following lines or you will get an error
+  like `Multisite support not enabled` when browsing the `My files page`.
+  
+  ```
+  # Pass uploaded files to wp-includes/ms-files.php.
+  # rewrite /files/$ /index.php last;
+  
+  # if ($uri !~ wp-content/plugins) {
+  #    rewrite /files/(.+)$ /wp-includes/ms-files.php?file=$1 last;
+  # }
+  ```
+  
 
 ## Vagrant as local MAMP/WAMP/XAMP/EasyPHP/... replacement
 
