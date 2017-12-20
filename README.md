@@ -12,6 +12,9 @@
     - [`grunt prepare-languages`](#grunt-prepare-languages)
     - [`grunt prepare-assets`](#grunt-prepare-assets)
     - [`grunt prepare-archives`](#grunt-prepare-archives)
+    - [`grunt prepare-dev-assets`](#grunt-prepare-dev-assets)
+    - [`grunt dev-skin:frontend-{skin-slug}`](#grunt-dev-skinfrontend-skin-slug)
+    - [`grunt gitpull:{plugin-slug}`](#grunt-gitpull-plugin-slug)
     - [`grunt start-dev`](#grunt-start-dev)
   - [Tasks available for all plugins](#tasks-available-for-all-plugins)
     - [`grunt checktextdomain`](#grunt-checktextdomain)
@@ -43,6 +46,27 @@
 - Checkout this build-environment repository to a folder (e.g. c:/wpca/)
 - Run `npm install` in the build environment directory
 - Checkout the Customer Area plugin to the wp-plugins folder from [its github repository](https://github.com/marvinlabs/customer-area/)
+- Open `vagrant/www/wordpress-default/public_html/wp-config.php` and add the following constants
+
+    ```php
+    /**
+     * Custom config for WPCA
+     * @see https://github.com/marvinlabs/wpca-products-build-environment/issues/5
+     */
+    // Environment related
+    define('WP_ENV', 'development');
+    define('WP_CONTENT_DIR', __DIR__ . '/wp-content');
+    define('WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content/');
+    define('WP_PLUGIN_DIR', dirname(dirname(dirname(__DIR__))) . '/wpca-plugins');
+    define('WP_PLUGIN_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content/plugins/');
+    
+    // Errors display
+    define( 'WP_DEBUG', true );
+    define('SAVEQUERIES', true);
+    ini_set('display_errors', 1);
+    define('WP_DEBUG_DISPLAY', true);
+    define('SCRIPT_DEBUG', true);
+    ```
 
 ## Vagrant as local MAMP/WAMP/XAMP/EasyPHP/... replacement
 
@@ -96,21 +120,45 @@ Runs sequentially: `checktextdomain`, then `makepot`, then `potomo`
 #### `grunt prepare-vendors`
 
 When you are updating the vendors (via bower or composer). Some of them are copied and prepared for use in WP Customer
-Area projects (for instance, Bootstrap classes are prefixed.
+Area projects (for instance, Bootstrap classes are prefixed - prefixed bootstrap is no more used).
 
-Runs sequentially: `copy`
+Runs sequentially: `copy:copy-bootstrap`, then `copy:prefix-bootstrap`
 
 #### `grunt prepare-assets`
 
 When asset sources have changed and we need to compile them  
 
-Runs sequentially: `less`, then `autoprefixer`, then `uglify`
+Runs sequentially: `copy:libs-assets-extras`, then `prepare-dev-assets`, then `less`, then `postcss`, then `uglify`, then `update-cuar-versions`
 
 #### `grunt prepare-archives`
 
 When you are ready to release a new version and want to build a zip file for publishing your add-on
 
-Runs sequentially: `prepare-languages`, then `prepare-assets`, then `compress`
+Runs sequentially: `compress`
+
+#### `grunt prepare-dev-assets`
+
+When you need to update the nuancier CSS file for development purpose.
+It means that when developping on local.wordpress.dev, you'll get a "open" button on the bottom left corner of the
+screen that will open a nuancier including almost all bootstrap variables and their values.
+
+Basically, the `dev-vars` task creates a CSS file from Bootstrap variables parsed values, and the second one compile it
+so we can import it. The CSS import of this file is done into `customer-area/skins/frontend/master/cuar-functions.php`
+
+Runs sequentially, for each skin: `dev-vars:{skin-slug}`, then `less:cuar-skin-{skin-slug}-less-vars`
+
+#### `grunt dev-skin:frontend-{skin-slug}`
+
+Everytime a skin is registered in `grunt/config/skins.json`, and that you want to work on it, you can compile it's style
+by running this command. It will also allow you to use sourcemaps, and it will parse the bootstrap variables and their
+values so you will get a nuancier showing you all the colors from your skins while developping.
+This will also compile the JS files and allow sourcemaps when the `{skin-slug}` is `master`.
+
+#### `grunt gitpull:{plugin-slug}`
+
+When you need to pull updates from a plugin repository
+
+> Note that this task can be run as a standalone task without a {plugin-slug} so you can pull all repositories at once.
 
 #### `grunt start-dev`
 

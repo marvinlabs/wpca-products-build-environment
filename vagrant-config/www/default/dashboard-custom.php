@@ -154,44 +154,45 @@
 
     <ul class="nav nav1">
         <li><a href="https://github.com/Varying-Vagrant-Vagrants/VVV" target="_BLANK">VVV Repository</a></li>
-        <li><a href="http://local.wordpress.dev/vendor/other/framework/theme/dashboard.html" target="_BLANK" style="margin:0;">WPCA Framework</a></li>
+        <li><a href="http://local.wordpress.test/vendor/other/framework/theme/dashboard.html" target="_BLANK" style="margin:0;">WPCA Framework</a></li>
         <li><a href="https://bitbucket.org/wp-customerarea" target="_BLANK">WPCA Bitbucket</a></li>
         <li><a href="https://github.com/marvinlabs/customer-area" target="_BLANK">WPCA Github</a></li>
-        <li><a href="http://vvv.dev/database-admin" target="_BLANK">PHPmyAdmin</a></li>
-        <li><a href="http://vvv.dev/memcached-admin" target="_BLANK">phpMemcachedAdmin</a></li>
-        <li><a href="http://vvv.dev/opcache-status/opcache.php" target="_BLANK">Opcache Status</a></li>
-        <li><a href="http://vvv.dev/webgrind" target="_BLANK">Webgrind</a></li>
-        <li><a href="http://vvv.dev/phpinfo" target="_BLANK">PHP Info</a></li>
-        <li><a href="http://vvv.dev/dbreplace" target="_BLANK">DB Replace</a></li>
+        <li><a href="http://vvv.test/database-admin" target="_BLANK">PHPmyAdmin</a></li>
+        <li><a href="http://vvv.test/memcached-admin" target="_BLANK">phpMemcachedAdmin</a></li>
+        <li><a href="http://vvv.test/opcache-status/opcache.php" target="_BLANK">Opcache Status</a></li>
+        <li><a href="http://vvv.test/webgrind" target="_BLANK">Webgrind</a></li>
+        <li><a href="http://vvv.test/phpinfo" target="_BLANK">PHP Info</a></li>
+        <li><a href="http://vvv.test/dbreplace" target="_BLANK">DB Replace</a></li>
+        <li><a href="http://vvv.test:1080" target="_BLANK">Mail Catcher</a></li>
     </ul>
 
     <ul class="nav nav2">
 
         <li>
-            <a href="http://local.wordpress.dev/" target="_BLANK">WordPress Stable</a>
+            <a href="http://local.wordpress.test/" target="_BLANK">WordPress Stable</a>
             <ul>
                 <li>LOCAL PATH: vagrant-local/www/wordpress-default</li>
                 <li>VM PATH: /srv/www/wordpress-default</li>
-                <li>URL: http://local.wordpress.dev</li>
+                <li>URL: http://local.wordpress.test</li>
                 <li>DB Name: wordpress_default</li>
             </ul>
         </li>
         <li>
-            <a href="http://local.wordpress-trunk.dev/" target="_BLANK">WordPress Trunk</a>
+            <a href="http://local.wordpress-trunk.test/" target="_BLANK">WordPress Trunk</a>
             <ul>
                 <li>LOCAL PATH: vagrant-local/www/wordpress-trunk</li>
                 <li>VM PATH: /srv/www/wordpress-trunk</li>
-                <li>URL: http://local.wordpress-trunk.dev</li>
+                <li>URL: http://local.wordpress-trunk.test</li>
                 <li>DB Name: wordpress_trunk</li>
             </ul>
         </li>
         <li>
-            <a href="http://build.wordpress-develop.dev" target="_BLANK">WordPress Develop</a>
+            <a href="http://build.wordpress-develop.test" target="_BLANK">WordPress Develop</a>
             <ul>
                 <li>LOCAL PATH: vagrant-local/www/wordpress-develop</li>
                 <li>VM PATH: /srv/www/wordpress-develop</li>
-                <li>/src URL: http://src.wordpress-develop.dev</li>
-                <li>/build URL: http://build.wordpress-develop.dev</li>
+                <li>/src URL: http://src.wordpress-develop.test</li>
+                <li>/build URL: http://build.wordpress-develop.test</li>
                 <li>DB Name: wordpress_develop</li>
                 <li>DB Name: wordpress_unit_tests</li>
             </ul>

@@ -15,13 +15,68 @@
     "path": "frontend/master-dark"
   },
   {
+    "slug": "frontend-master-light-red-and-blue",
+    "plugin": "wp-plugins/customer-area-design-extras",
+    "path": "frontend/master-light-red-and-blue"
+  },
+  {
+    "slug": "frontend-master-light-teal-and-red",
+    "plugin": "wp-plugins/customer-area-design-extras",
+    "path": "frontend/master-light-teal-and-red"
+  },
+  {
     "slug": "frontend-master-light-blue",
-    "plugin": "wp-plugins/customer-area-master-colors",
+    "plugin": "wp-plugins/customer-area-design-extras",
     "path": "frontend/master-light-blue"
   },
   {
+    "slug": "frontend-master-light-transparent",
+    "plugin": "wp-plugins/customer-area-design-extras",
+    "path": "frontend/master-light-transparent"
+  },
+  {
+    "slug": "frontend-master-light-red",
+    "plugin": "wp-plugins/customer-area-design-extras",
+    "path": "frontend/master-light-red"
+  },
+  {
+    "slug": "frontend-master-light-teal",
+    "plugin": "wp-plugins/customer-area-design-extras",
+    "path": "frontend/master-light-teal"
+  },
+  {
+    "slug": "frontend-master-light-purple",
+    "plugin": "wp-plugins/customer-area-design-extras",
+    "path": "frontend/master-light-purple"
+  },
+  {
+    "slug": "frontend-master-light-orange",
+    "plugin": "wp-plugins/customer-area-design-extras",
+    "path": "frontend/master-light-orange"
+  },
+  {
     "slug": "frontend-master-dark-green",
-    "plugin": "wp-plugins/customer-area-master-colors",
+    "plugin": "wp-plugins/customer-area-design-extras",
     "path": "frontend/master-dark-green"
+  },
+  {
+    "slug": "frontend-master-dark-red",
+    "plugin": "wp-plugins/customer-area-design-extras",
+    "path": "frontend/master-dark-red"
+  },
+  {
+    "slug": "frontend-master-dark-sepia",
+    "plugin": "wp-plugins/customer-area-design-extras",
+    "path": "frontend/master-dark-sepia"
+  },
+  {
+    "slug": "frontend-master-dark-yellow",
+    "plugin": "wp-plugins/customer-area-design-extras",
+    "path": "frontend/master-dark-yellow"
+  },
+  {
+    "slug": "frontend-master-dark-transparent",
+    "plugin": "wp-plugins/customer-area-design-extras",
+    "path": "frontend/master-dark-transparent"
   }
 ]
