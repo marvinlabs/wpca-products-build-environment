@@ -67,6 +67,18 @@
     define('WP_DEBUG_DISPLAY', true);
     define('SCRIPT_DEBUG', true);
     ```
+- Open `vagrant/config/nginx-config/nginx-wp-common.conf` and comment out the following lines or you will get an error
+  like `Multisite support not enabled` when browsing the `My files page`.
+  
+  ```
+  # Pass uploaded files to wp-includes/ms-files.php.
+  # rewrite /files/$ /index.php last;
+  
+  # if ($uri !~ wp-content/plugins) {
+  #    rewrite /files/(.+)$ /wp-includes/ms-files.php?file=$1 last;
+  # }
+  ```
+  
 
 ## Vagrant as local MAMP/WAMP/XAMP/EasyPHP/... replacement
 
@@ -86,7 +98,7 @@ add your web server's plugins folder to that list*
 When you want to start developing, run `. vagrant-start.sh` which will:
   
 - start the vagrant VM (the first time you do it can take a few minutes)
-- Open the `vvv.dev` URL in your favorite browser so you can access the sites easily
+- Open the `vvv.test` URL in your favorite browser so you can access the sites easily
 - TODO : watch for changes in the `wp-plugins` for LESS, JS, PHP.
 
 ### Let's call it a day
@@ -139,7 +151,7 @@ Runs sequentially: `compress`
 #### `grunt prepare-dev-assets`
 
 When you need to update the nuancier CSS file for development purpose.
-It means that when developping on local.wordpress.dev, you'll get a "open" button on the bottom left corner of the
+It means that when developping on local.wordpress.test, you'll get a "open" button on the bottom left corner of the
 screen that will open a nuancier including almost all bootstrap variables and their values.
 
 Basically, the `dev-vars` task creates a CSS file from Bootstrap variables parsed values, and the second one compile it

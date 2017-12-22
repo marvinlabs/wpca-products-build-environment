@@ -7,7 +7,7 @@ vagrant up
 cd ..
 
 echo "==> script: Load WPCA Dashboard"
-start http://vvv.dev
+start http://vvv.test
 
 # echo "==> script: Start grunt dev task"
 # grunt start-dev
