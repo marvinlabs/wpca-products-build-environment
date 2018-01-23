@@ -20,7 +20,7 @@ module.exports = function (grunt, options) {
                 'wp-plugins/customer-area/skins/frontend/master/assets/img/framework/*'
             ]
         },
-        'clean-bower-libs-js': {
+        'clean-yarn-libs-js': {
             src: [
                 'wp-plugins/customer-area/libs/js/bower/*'
             ]
