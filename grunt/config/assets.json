@@ -38,29 +38,29 @@
         "vendor/other/framework/theme/assets/js/utility/bootstrap/source/transition.js"
       ],
       "wp-plugins/customer-area/libs/js/bower/bootstrap-slider/bootstrap-slider.min.js": [
-        "wp-plugins/customer-area/vendor/bower/seiyria-bootstrap-slider/dist/bootstrap-slider.js"
+        "wp-plugins/customer-area/node_modules/@bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.js"
       ],
       "wp-plugins/customer-area/libs/js/bower/file-upload/jquery.fileupload.min.js": [
-        "wp-plugins/customer-area/vendor/bower/blueimp-file-upload/js/jquery.fileupload.js"
+        "wp-plugins/customer-area/node_modules/@bower_components/blueimp-file-upload/js/jquery.fileupload.js"
       ],
       "wp-plugins/customer-area/libs/js/bower/file-upload/jquery.iframe-transport.min.js": [
-        "wp-plugins/customer-area/vendor/bower/blueimp-file-upload/js/jquery.iframe-transport.js"
+        "wp-plugins/customer-area/node_modules/@bower_components/blueimp-file-upload/js/jquery.iframe-transport.js"
       ],
       "wp-plugins/customer-area/libs/js/bower/file-upload/vendor/jquery.ui.widget.min.js": [
-        "wp-plugins/customer-area/vendor/bower/blueimp-file-upload/js/vendor/jquery.ui.widget.js"
+        "wp-plugins/customer-area/node_modules/@bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"
       ],
       "wp-plugins/customer-area/libs/js/bower/jquery-cookie/jquery.cookie.min.js": [
-        "wp-plugins/customer-area/vendor/bower/js-cookie/src/js.cookie.js"
+        "wp-plugins/customer-area/node_modules/@bower_components/js-cookie/src/js.cookie.js"
       ],
       "wp-plugins/customer-area/libs/js/bower/jquery-steps/jquery.steps.min.js": [
-        "wp-plugins/customer-area/vendor/bower/jquery.steps/build/jquery.steps.js"
+        "wp-plugins/customer-area/node_modules/@bower_components/jquery.steps/build/jquery.steps.js"
       ],
       "wp-plugins/customer-area/libs/js/bower/slick-carousel/jquery.slick.min.js": [
-        "wp-plugins/customer-area/vendor/bower/slick-carousel/slick/slick.js"
+        "wp-plugins/customer-area/node_modules/@bower_components/slick-carousel/slick/slick.js"
       ],
       "wp-plugins/customer-area/libs/js/bower/fancytree/jquery.fancytree.min.js": [
-        "wp-plugins/customer-area/vendor/bower/jquery.fancytree/dist/jquery.fancytree.js",
-        "wp-plugins/customer-area/vendor/bower/jquery.fancytree/dist/src/jquery.fancytree.glyph.js"
+        "wp-plugins/customer-area/node_modules/@bower_components/jquery.fancytree/dist/jquery.fancytree.js",
+        "wp-plugins/customer-area/node_modules/@bower_components/jquery.fancytree/dist/src/jquery.fancytree.glyph.js"
       ]
     }
   },
@@ -74,7 +74,7 @@
   "cuarCopy": {
     "files": [
       {
-        "cwd": "wp-plugins/customer-area/vendor/bower/select2/dist/js",
+        "cwd": "wp-plugins/customer-area/node_modules/@bower_components/select2/dist/js",
         "expand": true,
         "src": [
           "select2.min.js",
@@ -83,7 +83,7 @@
         "dest": "wp-plugins/customer-area/libs/js/bower/select2"
       },
       {
-        "cwd": "wp-plugins/customer-area/vendor/bower/summernote/dist",
+        "cwd": "wp-plugins/customer-area/node_modules/@bower_components/summernote/dist",
         "expand": true,
         "src": [
           "summernote.min.js",
@@ -92,7 +92,7 @@
         "dest": "wp-plugins/customer-area/libs/js/bower/summernote"
       },
       {
-        "cwd": "wp-plugins/customer-area/vendor/bower/summernote/src/less",
+        "cwd": "wp-plugins/customer-area/node_modules/@bower_components/summernote/src/less",
         "expand": true,
         "src": [
           "*.less"
@@ -100,7 +100,7 @@
         "dest": "vendor/other/framework/theme_wpca/assets/skin/base/plugins/summernote"
       },
       {
-        "cwd": "wp-plugins/customer-area/vendor/bower/summernote/dist/font",
+        "cwd": "wp-plugins/customer-area/node_modules/@bower_components/summernote/dist/font",
         "expand": true,
         "src": [
           "*"
@@ -116,7 +116,7 @@
         "dest": "wp-plugins/customer-area/src/js/frontend/framework/eqcss"
       },
       {
-        "cwd": "wp-plugins/customer-area/vendor/bower/font-awesome",
+        "cwd": "wp-plugins/customer-area/node_modules/@bower_components/font-awesome",
         "expand": true,
         "src": [
           "css/font-awesome.min.css",
@@ -125,7 +125,7 @@
         "dest": "wp-plugins/customer-area/skins/frontend/master/assets"
       },
       {
-        "cwd": "wp-plugins/customer-area/vendor/bower/jquery.fancytree/dist",
+        "cwd": "wp-plugins/customer-area/node_modules/@bower_components/jquery.fancytree/dist",
         "expand": true,
         "src": [
           "skin-*",

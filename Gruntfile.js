@@ -52,14 +52,14 @@ module.exports = function (grunt) {
 
     grunt.registerTask("update-libs", [
 
-        // Update bower libs
-        "exec:bower-update",
+        // Update yarn libs
+        "exec:yarn-update",
 
         // Update composer libs
         "exec:composer-update",
 
-        // Clean libs bower folder,
-        "clean:clean-bower-libs-js",
+        // Clean libs yarn folder,
+        "clean:clean-yarn-libs-js",
 
         // Clean framework folders
         "clean:clean-framework-src-js",

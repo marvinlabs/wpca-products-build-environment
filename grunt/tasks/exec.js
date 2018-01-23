@@ -6,13 +6,13 @@ module.exports = function (grunt, options) {
         txpush_s: { // Push pot to Transifex - grunt exec:txpush_s
             cmd: 'tx push -s'
         },
-        "bower-update": {
+        "yarn-update": {
             cwd: 'wp-plugins/customer-area',
-            cmd: 'bower update --save'
+            cmd: 'yarn install'
         },
         "composer-update": {
             cwd: 'vagrant',
-            cmd: "vagrant ssh -c \"cd /srv/www/wordpress-default/wp-plugins/customer-area && composer update\""
+            cmd: "vagrant ssh -c \"cd /srv/www/wordpress-default/public_html/wp-plugins/customer-area && composer update\""
         }
     };
 };
