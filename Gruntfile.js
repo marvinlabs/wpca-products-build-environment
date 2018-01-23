@@ -47,19 +47,28 @@ module.exports = function (grunt) {
         });
         grunt.task.run(tasks);
     });
-    grunt.registerTask("prepare-assets", ["gitpull:framework", "copy:libs-assets-extras", "prepare-dev-assets", "less", "postcss", "uglify", "update-cuar-versions"]);
+    grunt.registerTask("prepare-assets", [
+        "gitpull:framework",
+        "copy:libs-assets-extras",
+        "prepare-dev-assets",
+        "less",
+        "postcss",
+        "uglify",
+        "wrap",
+        "update-cuar-versions"
+    ]);
     grunt.registerTask("prepare-archives", ["compress"]);
 
     grunt.registerTask("update-libs", [
 
-        // Update bower libs
-        "exec:bower-update",
+        // Update yarn libs
+        "exec:yarn-update",
 
         // Update composer libs
         "exec:composer-update",
 
-        // Clean libs bower folder,
-        "clean:clean-bower-libs-js",
+        // Clean libs yarn folder,
+        "clean:clean-yarn-libs-js",
 
         // Clean framework folders
         "clean:clean-framework-src-js",

@@ -15,7 +15,7 @@
     "type": "git",
     "url": "https://github.com/marvinlabs/wpca-products-build-environment.git"
   },
-  "license": "GPL v2",
+  "license": "GPL-2.0",
   "devDependencies": {
     "autoprefixer": "^6.3.3",
     "bower": "^1.5.2",
@@ -45,6 +45,7 @@
     "grunt-wp-i18n": "^0.5.4",
     "grunt-wp-readme-to-markdown": "^1.0.0",
     "grunt-wpca": "^0.6.1",
+    "grunt-wrap": "^0.3.1",
     "load-grunt-config": "^0.19.2",
     "npm-check-updates": "^2.6.4",
     "pixrem": "^3.0.0"

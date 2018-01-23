@@ -23,7 +23,9 @@ module.exports = function (grunt, options) {
         targets[addon.slug] = {
             options: {
                 cwd: addon.path,
-                all: true
+                all: true,
+                remote: "origin",
+                branch: "develop"
             }
         };
     });
