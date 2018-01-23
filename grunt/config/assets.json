@@ -61,6 +61,17 @@
       "wp-plugins/customer-area/libs/js/bower/fancytree/jquery.fancytree.min.js": [
         "wp-plugins/customer-area/node_modules/@bower_components/jquery.fancytree/dist/jquery.fancytree.js",
         "wp-plugins/customer-area/node_modules/@bower_components/jquery.fancytree/dist/src/jquery.fancytree.glyph.js"
+      ],
+      "wp-plugins/customer-area/libs/js/bower/summernote-image-attributes/summernote-image-attributes.min.js": [
+        "wp-plugins/customer-area/node_modules/summernote-image-attributes/summernote-image-attributes.js",
+        "wp-plugins/customer-area/node_modules/summernote-image-attributes/lang/de-DE.js",
+        "wp-plugins/customer-area/node_modules/summernote-image-attributes/lang/es-ES.js",
+        "wp-plugins/customer-area/node_modules/summernote-image-attributes/lang/fr-FR.js",
+        "wp-plugins/customer-area/node_modules/summernote-image-attributes/lang/it-IT.js",
+        "wp-plugins/customer-area/node_modules/summernote-image-attributes/lang/pt-BR.js",
+        "wp-plugins/customer-area/node_modules/summernote-image-attributes/lang/ru-RU.js",
+        "wp-plugins/customer-area/node_modules/summernote-image-attributes/lang/tr-TR.js",
+        "wp-plugins/customer-area/node_modules/summernote-image-attributes/lang/zh-TW.js"
       ]
     }
   },
