@@ -15,7 +15,7 @@
     "type": "git",
     "url": "https://github.com/marvinlabs/wpca-products-build-environment.git"
   },
-  "license": "GPL v2",
+  "license": "GPL-2.0",
   "devDependencies": {
     "autoprefixer": "^6.3.3",
     "bower": "^1.5.2",
