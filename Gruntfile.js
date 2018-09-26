@@ -35,30 +35,16 @@ module.exports = function (grunt) {
     // Register some default grunt tasks
     grunt.registerTask("default", ["watch"]);
 
+    /**
+     * Prepare Vendors
+     *
+     * @deprecated
+     */
     grunt.registerTask("prepare-vendors", ["copy:copy-bootstrap", "copy:prefix-bootstrap"]);
-    grunt.registerTask("prepare-languages", ["checktextdomain", "makepot", "potomo"]);
-    grunt.registerTask("prepare-dev-assets", function() {
-        var tasks = [];
-        configOptions.skins.forEach(function (skin) {
-            if(!skin["slug"].match("^admin-") && skin["slug"].match("^frontend-")) {
-                tasks.push("dev-vars:" + skin["slug"]);
-                tasks.push("less:cuar-skin-" + skin["slug"] + "-less-vars");
-            }
-        });
-        grunt.task.run(tasks);
-    });
-    grunt.registerTask("prepare-assets", [
-        "gitpull:framework",
-        "copy:libs-assets-extras",
-        "prepare-dev-assets",
-        "less",
-        "postcss",
-        "uglify",
-        "wrap",
-        "update-cuar-versions"
-    ]);
-    grunt.registerTask("prepare-archives", ["compress"]);
 
+    /**
+     * Update libraries
+     */
     grunt.registerTask("update-libs", [
 
         // Update yarn libs
@@ -89,18 +75,62 @@ module.exports = function (grunt) {
 
     ]);
 
+    /**
+     * Prepare Languages
+     * You should then run grunt tx-push, then translate the strings directly on Transifex, then run grunt tx-pull
+     */
+    grunt.registerTask("prepare-languages", ["checktextdomain", "makepot", "potomo" ]);
     grunt.registerTask("tx-push", ["checktextdomain:customer-area", "makepot:customer-area", "exec:txpush_s"]);
     grunt.registerTask("tx-pull", ["exec:txpull", "potomo:customer-area"]);
 
-    grunt.registerTask("start-dev", ["watch"]);
+    /**
+     * Prepare Assets
+     */
+    grunt.registerTask("prepare-assets", [
+        //"gitpull:framework",
+        "copy:libs-assets-extras",
+        "prepare-dev-assets",
+        "less",
+        "postcss",
+        "uglify",
+        "wrap",
+        "update-cuar-versions"
+    ]);
+    grunt.registerTask("prepare-dev-assets", function() {
+        var tasks = [];
+        configOptions.skins.forEach(function (skin) {
+            if(!skin["slug"].match("^admin-") && skin["slug"].match("^frontend-")) {
+                tasks.push("dev-vars:" + skin["slug"]);
+                tasks.push("less:cuar-skin-" + skin["slug"] + "-less-vars");
+            }
+        });
+        grunt.task.run(tasks);
+    });
 
-    // The task to bump version number in various places
+    /**
+     * Prepare Archives
+     */
+    grunt.registerTask("prepare-archives", ["compress"]);
+
+    /**
+     * The task to bump version number in various places
+     *
+     * @param plugin ID
+     * @param bump mode
+     */
     grunt.registerTask("bump-version", "Change the version number of one or more plugins", function (pluginId, mode) {
         var baseTargets = configOptions.release.base_targets;
         baseTargets.forEach(function (baseTarget) {
             grunt.task.run('version:' + pluginId + '_' + baseTarget.id + ':' + mode);
         });
     });
+
+    /**
+     * A basic watch task
+     *
+     * You should prefer the dev-skin task instead.
+     */
+    grunt.registerTask("start-dev", ["watch"]);
 
     /**
      * Task for developing a skin
