@@ -40,7 +40,7 @@ module.exports = function (grunt) {
      *
      * @deprecated
      */
-    grunt.registerTask("prepare-vendors", ["copy:copy-bootstrap", "copy:prefix-bootstrap"]);
+    // grunt.registerTask("prepare-vendors", ["copy:copy-bootstrap", "copy:prefix-bootstrap"]);
 
     /**
      * Update libraries

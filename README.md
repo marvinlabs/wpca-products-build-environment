@@ -39,14 +39,13 @@
 
 - Install NPM and Grunt
 - Install Vagrant (that requires Ruby 1.9.x too)
+- Install Python 2.7
 - Install xgettext ([Installer for Windows](http://mlocati.github.io/gettext-iconv-windows/))
+- Install [transifex](https://docs.transifex.com/client/installing-the-client)
 
 ## First time setup
 
-- Checkout this build-environment repository to a folder (e.g. c:/wpca/)
-- Install some build-tools dependencies, run `npm install --global --production windows-build-tools`, then
-  `npm install --global node-gyp` and add the PYTHON user environment variable `C:\Users\conta\.windows-build-tools\python27\python.exe`
-- Run `npm install` in the build environment directory
+- Checkout this build-environment repository to a folder (e.g. c:/wpca/)- Run `npm install` in the build environment directory
 - Checkout the Customer Area plugin to the wp-plugins folder from [its github repository](https://github.com/marvinlabs/customer-area/)
 - Open `vagrant/www/wordpress-default/public_html/wp-config.php` and add the following constants
 
