@@ -27,7 +27,8 @@ module.exports = function (grunt) {
                 "sync-cuar-commons": "grunt-wpca",
                 "update-cuar-versions": "grunt-wpca",
                 "gitfetch": "grunt-git",
-                "gitpull": "grunt-git"
+                "gitpull": "grunt-git",
+                "gitreset": "grunt-git"
             }
         }
     });
