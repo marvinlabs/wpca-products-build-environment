@@ -14,7 +14,9 @@
     - [`grunt prepare-archives`](#grunt-prepare-archives)
     - [`grunt prepare-dev-assets`](#grunt-prepare-dev-assets)
     - [`grunt dev-skin:frontend-{skin-slug}`](#grunt-dev-skinfrontend-skin-slug)
+    - [`grunt gitfetch:{plugin-slug}`](#grunt-gitfetch-plugin-slug)
     - [`grunt gitpull:{plugin-slug}`](#grunt-gitpull-plugin-slug)
+    - [`grunt gitreset:{plugin-slug}`](#grunt-gitreset-plugin-slug)
     - [`grunt start-dev`](#grunt-start-dev)
   - [Tasks available for all plugins](#tasks-available-for-all-plugins)
     - [`grunt checktextdomain`](#grunt-checktextdomain)
@@ -167,9 +169,21 @@ by running this command. It will also allow you to use sourcemaps, and it will p
 values so you will get a nuancier showing you all the colors from your skins while developping.
 This will also compile the JS files and allow sourcemaps when the `{skin-slug}` is `master`.
 
+#### `grunt gitfetch:{plugin-slug}`
+
+When you need to fetch updates from a plugin repository.
+
+> Note that this task can be run as a standalone task without a {plugin-slug} so you can pull all repositories at once.
+
 #### `grunt gitpull:{plugin-slug}`
 
-When you need to pull updates from a plugin repository
+When you need to pull updates from a plugin repository.
+
+> Note that this task can be run as a standalone task without a {plugin-slug} so you can pull all repositories at once.
+
+#### `grunt gitreset:{plugin-slug}`
+
+When you need to hard reset a plugin repository to its HEAD commit.
 
 > Note that this task can be run as a standalone task without a {plugin-slug} so you can pull all repositories at once.
 
