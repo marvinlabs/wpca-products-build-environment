@@ -88,7 +88,7 @@ module.exports = function (grunt) {
      * Prepare Assets
      */
     grunt.registerTask("prepare-assets", [
-        //"gitpull:framework",
+        "gitpull:framework",
         "copy:libs-assets-extras",
         "prepare-dev-assets",
         "less",
