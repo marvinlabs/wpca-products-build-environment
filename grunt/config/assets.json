@@ -143,6 +143,15 @@
           "skin-*/*"
         ],
         "dest": "vendor/other/framework/theme_wpca/assets/skin/base/plugins/fancytree"
+      },
+      {
+        "cwd": "wp-plugins/advanced-custom-fields-pro",
+        "expand": true,
+        "src": [
+          "images/*",
+          "font/*"
+        ],
+        "dest": "wp-plugins/customer-area/assets/frontend"
       }
     ]
   },
