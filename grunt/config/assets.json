@@ -145,7 +145,7 @@
         "dest": "vendor/other/framework/theme_wpca/assets/skin/base/plugins/fancytree"
       },
       {
-        "cwd": "wp-plugins/advanced-custom-fields-pro",
+        "cwd": "wp-plugins/advanced-custom-fields-pro/assets",
         "expand": true,
         "src": [
           "images/*",
