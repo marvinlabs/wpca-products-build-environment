@@ -152,6 +152,15 @@
           "font/*"
         ],
         "dest": "wp-plugins/customer-area/assets/frontend"
+      },
+      {
+        "cwd": "wp-plugins/advanced-custom-fields-pro/assets",
+        "expand": true,
+        "src": [
+          "images/*",
+          "font/*"
+        ],
+        "dest": "wp-plugins/customer-area-design-extras/assets/frontend"
       }
     ]
   },
