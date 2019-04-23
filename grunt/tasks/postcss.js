@@ -37,6 +37,11 @@ module.exports = function (grunt, options) {
         var lessFilesFolder = skin.plugin + "/skins/" + skin.path + "/src/less";
         var cssOutputFolder = skin.plugin + "/skins/" + skin.path + "/assets/css";
 
+        if (!grunt.file.exists(lessFilesFolder)) {
+            grunt.log.error('Warning, an add-on is probably missing. Can\'t reach path ' + lessFilesFolder);
+            return;
+        }
+
         // Each skin can contain multiple less files to compile
         // Dynamically read LESS source folder and store paths
         // Less files names must be : _{myFile}.less

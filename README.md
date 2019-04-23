@@ -14,6 +14,7 @@
     - [`grunt prepare-archives`](#grunt-prepare-archives)
     - [`grunt prepare-dev-assets`](#grunt-prepare-dev-assets)
     - [`grunt dev-skin:frontend-{skin-slug}`](#grunt-dev-skinfrontend-skin-slug)
+    - [`grunt gitclone:{plugin-slug}`](#grunt-gitfetch-plugin-slug)
     - [`grunt gitfetch:{plugin-slug}`](#grunt-gitfetch-plugin-slug)
     - [`grunt gitpull:{plugin-slug}`](#grunt-gitpull-plugin-slug)
     - [`grunt gitreset:{plugin-slug}`](#grunt-gitreset-plugin-slug)
@@ -39,6 +40,7 @@
 
 ## Required software
 
+- Install Git
 - Install NPM and Grunt
 - Install Vagrant (that requires Ruby 1.9.x too)
 - Install Python 2.7
@@ -47,9 +49,11 @@
 
 ## First time setup
 
-- Checkout this build-environment repository to a folder (e.g. c:/wpca/)- Run `npm install` in the build environment directory
-- Checkout the Customer Area plugin to the wp-plugins folder from [its github repository](https://github.com/marvinlabs/customer-area/)
-- Open `vagrant/www/wordpress-default/public_html/wp-config.php` and add the following constants
+- Checkout this build-environment repository to a folder (e.g. c:/wpca/)
+- Run `npm install` in the build environment directory
+- Run `. up-vagrant.sh` to install the VM
+- Run `grunt gitclone` to get all the necessary plugins, add-ons and tools
+- Open `vagrant/www/wordpress-local/public_html/wp-config.php` and add the following constants
 
     ```php
     /**
@@ -168,6 +172,12 @@ Everytime a skin is registered in `grunt/config/skins.json`, and that you want t
 by running this command. It will also allow you to use sourcemaps, and it will parse the bootstrap variables and their
 values so you will get a nuancier showing you all the colors from your skins while developping.
 This will also compile the JS files and allow sourcemaps when the `{skin-slug}` is `master`.
+
+#### `grunt gitclone:{plugin-slug}`
+
+When you need to clone some of our required repositories.
+
+> Note that this task can be run as a standalone task without a {plugin-slug} so you can pull all repositories at once.
 
 #### `grunt gitfetch:{plugin-slug}`
 

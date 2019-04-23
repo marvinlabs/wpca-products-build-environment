@@ -28,7 +28,8 @@ module.exports = function (grunt) {
                 "update-cuar-versions": "grunt-wpca",
                 "gitfetch": "grunt-git",
                 "gitpull": "grunt-git",
-                "gitreset": "grunt-git"
+                "gitreset": "grunt-git",
+                "gitclone": "grunt-git"
             }
         }
     });
