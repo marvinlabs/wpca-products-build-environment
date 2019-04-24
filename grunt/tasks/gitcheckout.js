@@ -23,7 +23,7 @@ module.exports = function (grunt, options) {
         targets[addon.slug] = {
             options: {
                 cwd: addon.path,
-                branch: 'master',
+                branch: 'develop',
                 create: true
             }
         };
