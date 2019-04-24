@@ -22,6 +22,13 @@ module.exports = function (grunt, options) {
                 directory: 'wp-themes/wpca-twenty-twelve'
             }
         },
+        customer_area_advanced_custom_fields_pro: {
+            options: {
+                repository: 'git@bitbucket.org:wp-customerarea/advanced-custom-fields-pro.git',
+                branch: 'master',
+                directory: options.paths.plugins + '/advanced-custom-fields-pro'
+            }
+        },
         customer_area_acf_integration: {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/customer-area-acf-integration.git',
