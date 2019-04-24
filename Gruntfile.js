@@ -29,7 +29,8 @@ module.exports = function (grunt) {
                 "gitfetch": "grunt-git",
                 "gitpull": "grunt-git",
                 "gitreset": "grunt-git",
-                "gitclone": "grunt-git"
+                "gitclone": "grunt-git",
+                "gitcheckout": "grunt-git"
             }
         }
     });

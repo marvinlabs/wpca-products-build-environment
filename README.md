@@ -14,7 +14,8 @@
     - [`grunt prepare-archives`](#grunt-prepare-archives)
     - [`grunt prepare-dev-assets`](#grunt-prepare-dev-assets)
     - [`grunt dev-skin:frontend-{skin-slug}`](#grunt-dev-skinfrontend-skin-slug)
-    - [`grunt gitclone:{plugin-slug}`](#grunt-gitfetch-plugin-slug)
+    - [`grunt gitclone:{plugin-slug}`](#grunt-gitclone-plugin-slug)
+    - [`grunt gitcheckout:{plugin-slug}`](#grunt-gitcheckout-plugin-slug)
     - [`grunt gitfetch:{plugin-slug}`](#grunt-gitfetch-plugin-slug)
     - [`grunt gitpull:{plugin-slug}`](#grunt-gitpull-plugin-slug)
     - [`grunt gitreset:{plugin-slug}`](#grunt-gitreset-plugin-slug)
@@ -52,7 +53,7 @@
 - Checkout this build-environment repository to a folder (e.g. c:/wpca/)
 - Run `npm install` in the build environment directory
 - Run `. up-vagrant.sh` to install the VM
-- Run `grunt gitclone` to get all the necessary plugins, add-ons and tools
+- Run `grunt gitclone && grunt gitcheckout` to get all the necessary plugins, add-ons and tools
 - Open `vagrant/www/wordpress-local/public_html/wp-config.php` and add the following constants
 
     ```php
@@ -175,7 +176,13 @@ This will also compile the JS files and allow sourcemaps when the `{skin-slug}` 
 
 #### `grunt gitclone:{plugin-slug}`
 
-When you need to clone some of our required repositories.
+When you need to clone some of our required repositories. This will clone the master branch.
+
+> Note that this task can be run as a standalone task without a {plugin-slug} so you can pull all repositories at once.
+
+#### `grunt gitcheckout:{plugin-slug}`
+
+When you need to checkout the develop branch for one or more add-ons.
 
 > Note that this task can be run as a standalone task without a {plugin-slug} so you can pull all repositories at once.
 
