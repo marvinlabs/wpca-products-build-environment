@@ -167,34 +167,20 @@
     </ul>
 
     <ul class="nav nav2">
-
         <li>
             <a href="http://local.wordpress.test/" target="_BLANK">WordPress Stable</a>
             <ul>
-                <li>LOCAL PATH: vagrant-local/www/wordpress-default</li>
-                <li>VM PATH: /srv/www/wordpress-default</li>
+                <li>LOCAL PATH: /vagrant/www/public_html/wordpress-local</li>
+                <li>VM PATH: /srv/www/public_html/wordpress-local</li>
                 <li>URL: http://local.wordpress.test</li>
-                <li>DB Name: wordpress_default</li>
-            </ul>
-        </li>
-        <li>
-            <a href="http://local.wordpress-trunk.test/" target="_BLANK">WordPress Trunk</a>
-            <ul>
-                <li>LOCAL PATH: vagrant-local/www/wordpress-trunk</li>
-                <li>VM PATH: /srv/www/wordpress-trunk</li>
-                <li>URL: http://local.wordpress-trunk.test</li>
-                <li>DB Name: wordpress_trunk</li>
-            </ul>
-        </li>
-        <li>
-            <a href="http://build.wordpress-develop.test" target="_BLANK">WordPress Develop</a>
-            <ul>
-                <li>LOCAL PATH: vagrant-local/www/wordpress-develop</li>
-                <li>VM PATH: /srv/www/wordpress-develop</li>
-                <li>/src URL: http://src.wordpress-develop.test</li>
-                <li>/build URL: http://build.wordpress-develop.test</li>
-                <li>DB Name: wordpress_develop</li>
-                <li>DB Name: wordpress_unit_tests</li>
+                <li>DB Name: wordpresslocal</li>
+                <li>DB User: wp</li>
+                <li>DB Pass: wp</li>
+                <li>WP Users:
+                    <ul>
+                        <li>admin / password</li>
+                    </ul>
+                </li>
             </ul>
         </li>
     </ul>
