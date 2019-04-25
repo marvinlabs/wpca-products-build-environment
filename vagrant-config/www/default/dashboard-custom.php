@@ -168,7 +168,7 @@
 
     <ul class="nav nav2">
         <li>
-            <a href="http://local.wordpress.test/" target="_BLANK">WordPress Stable</a>
+            <a href="http://local.wordpress.test/" target="_BLANK">WordPress Local - Build Environment</a>
             <ul>
                 <li>LOCAL PATH: /vagrant/www/public_html/wordpress-local</li>
                 <li>VM PATH: /srv/www/public_html/wordpress-local</li>
@@ -179,6 +179,9 @@
                 <li>WP Users:
                     <ul>
                         <li>admin / password</li>
+                        <li>jake / jake123</li>
+                        <li>john / john123</li>
+                        <li>katy / katy123</li>
                     </ul>
                 </li>
             </ul>
@@ -188,9 +191,26 @@
     <div style="clear:both;"></div>
 
 
-    <p class="teaser"><strong>@TODO:</strong><br>- Include specific docs, or licencing.</p>
+    <p class="teaser">
+        <strong>Copyright 2013 MarvinLabs (contact@marvinlabs.com)</strong><br>
+        <br>
+        This program is free software; you can redistribute it and/or modify
+        it under the terms of the GNU General Public License as published by
+        the Free Software Foundation; either version 2 of the License, or
+        (at your option) any later version.<br>
+        <br>
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+        GNU General Public License for more details.<br>
+        <br>
+        You should have received a copy of the GNU General Public License
+        along with this program; if not, write to the Free Software
+        Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+    </p>
 
-    <p class="copyrights">All Rights Reserved - http://www.marvinlabs.com</p>
+    <p class="copyrights">All Rights Reserved - <a href="https://www.marvinlabs.com" target="_BLANK">https://www.marvinlabs.com</a>
+    </p>
 
 </div>
 
