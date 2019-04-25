@@ -1,181 +1,182 @@
 module.exports = function (grunt, options) {
 
-    return {
-        customer_area: {
+    var targets = {};
+
+    targets['customer-area'] = {
             options: {
                 repository: 'git@github.com:marvinlabs/customer-area.git',
                 branch: 'master',
                 directory: options.paths.base_plugin
             }
-        },
-        customer_area_framework: {
+        };
+    targets['customer-area-framework'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/wpca-framework.git',
                 branch: 'master',
                 directory: 'vendor/other/framework'
             }
-        },
-        customer_area_twenty_twelve: {
+        };
+    targets['customer-area-twenty-twelve'] = {
             options: {
                 repository: 'git@github.com:marvinlabs/wpca-twenty-twelve.git',
                 branch: 'master',
                 directory: 'wp-themes/wpca-twenty-twelve'
             }
-        },
-        customer_area_advanced_custom_fields_pro: {
+        };
+    targets['customer-area-advanced-custom-fields-pro'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/advanced-custom-fields-pro.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/advanced-custom-fields-pro'
             }
-        },
-        customer_area_acf_integration: {
+        };
+    targets['customer-area-acf-integration'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/customer-area-acf-integration.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/customer-area-acf-integration'
             }
-        },
-        customer_area_collaboration: {
+        };
+    targets['customer-area-collaboration'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/customer-area-collaboration.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/customer-area-collaboration'
             }
-        },
-        customer_area_conversations: {
+        };
+    targets['customer-area-conversations'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/customer-area-conversations.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/customer-area-conversations'
             }
-        },
-        customer_area_design_extras: {
+        };
+    targets['customer-area-design-extras'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/customer-area-design-extras.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/customer-area-design-extras'
             }
-        },
-        customer_area_enhanced_files: {
+        };
+    targets['customer-area-enhanced-files'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/customer-area-enhanced-files.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/customer-area-enhanced-files'
             }
-        },
-        customer_area_extended_permissions: {
+        };
+    targets['customer-area-extended-permissions'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/customer-area-extended-permissions.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/customer-area-extended-permissions'
             }
-        },
-        customer_area_extended_invoicing: {
+        };
+    targets['customer-area-extended-invoicing'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/customer-area-invoicing.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/customer-area-invoicing'
             }
-        },
-        customer_area_login_form: {
+        };
+    targets['customer-area-login-form'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/customer-area-login-form.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/customer-area-login-form'
             }
-        },
-        customer_area_managed_groups: {
+        };
+    targets['customer-area-managed-groups'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/customer-area-managed-groups.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/customer-area-managed-groups'
             }
-        },
-        customer_area_master_demo: {
+        };
+    targets['customer-area-master-demo'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/customer-area-master-demo.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/customer-area-master-demo'
             }
-        },
-        customer_area_notifications: {
+        };
+    targets['customer-area-notifications'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/customer-area-notifications.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/customer-area-notifications'
             }
-        },
-        customer_area_owner_restriction: {
+        };
+    targets['customer-area-owner-restriction'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/customer-area-owner-restriction.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/customer-area-owner-restriction'
             }
-        },
-        customer_area_paypal_gateway: {
+        };
+    targets['customer-area-paypal-gateway'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/customer-area-paypal-gateway.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/customer-area-paypal-gateway'
             }
-        },
-        customer_area_projects: {
+        };
+    targets['customer-area-projects'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/customer-area-projects.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/customer-area-projects'
             }
-        },
-        customer_area_protect_post_types: {
+        };
+    targets['customer-area-protect-post-types'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/customer-area-protect-post-types.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/customer-area-protect-post-types'
             }
-        },
-        customer_area_smart_groups: {
+        };
+    targets['customer-area-smart-groups'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/customer-area-smart-groups.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/customer-area-smart-groups'
             }
-        },
-        customer_area_stripe_gateway: {
+        };
+    targets['customer-area-stripe-gateway'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/customer-area-stripe-gateway.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/customer-area-stripe-gateway'
             }
-        },
-        customer_area_switch_users: {
+        };
+    targets['customer-area-switch-users'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/customer-area-switch-users.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/customer-area-switch-users'
             }
-        },
-        customer_area_tasks: {
+        };
+    targets['customer-area-tasks'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/customer-area-tasks.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/customer-area-tasks'
             }
-        },
-        customer_area_unread_documents: {
+        };
+    targets['customer-area-unread-documents'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/customer-area-unread-documents.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/customer-area-unread-documents'
             }
-        },
-        customer_area_terms_of_service: {
+        };
+    targets['customer-area-terms-of-service'] = {
             options: {
                 repository: 'git@bitbucket.org:wp-customerarea/wpca-terms-of-service.git',
                 branch: 'master',
                 directory: options.paths.plugins + '/customer-area-terms-of-service'
             }
-        },
+        };
 
-    };
+    return targets;
 };

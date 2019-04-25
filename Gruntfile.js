@@ -91,6 +91,8 @@ module.exports = function (grunt) {
      */
     grunt.registerTask("prepare-assets", [
         "gitpull:framework",
+        "gitpull:customer-area",
+        "gitpull:customer-area-advanced-custom-fields-pro",
         "copy:libs-assets-extras",
         "prepare-dev-assets",
         "less",

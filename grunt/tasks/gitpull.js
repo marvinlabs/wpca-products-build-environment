@@ -19,6 +19,13 @@ module.exports = function (grunt, options) {
         }
     );
 
+    addons.push(
+        {
+            slug: "customer-area-advanced-custom-fields-pro",
+            path: options.paths.base_plugin
+        }
+    );
+
     addons.forEach(function (addon) {
         targets[addon.slug] = {
             options: {
