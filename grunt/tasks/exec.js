@@ -12,7 +12,7 @@ module.exports = function (grunt, options) {
         },
         "composer-update": {
             cwd: 'vagrant',
-            cmd: "vagrant ssh -c \"cd /srv/www/wordpress-default/public_html/wp-plugins/customer-area && composer update\""
+            cmd: "vagrant ssh -c \"cd /srv/www/wordpress-local/public_html/wp-plugins/customer-area && composer update\""
         }
     };
 };
