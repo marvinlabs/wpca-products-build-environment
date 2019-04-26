@@ -41,19 +41,24 @@
 
 ## Required software
 
-- Install Git
-- Install NPM and Grunt
-- Install Vagrant (that requires Ruby 1.9.x too)
-- Install Python 2.7
-- Install xgettext ([Installer for Windows](http://mlocati.github.io/gettext-iconv-windows/))
-- Install [transifex](https://docs.transifex.com/client/installing-the-client)
+- Install [Ruby](https://rubyinstaller.org/)
+- Install [Git](https://gitforwindows.org/)
+- Install [NodeJS](https://nodejs.org/en/)
+- Install [Virtual Box](https://www.virtualbox.org/)
+- Install [Vagrant](https://www.vagrantup.com/)
+- Install [xGetText](http://mlocati.github.io/gettext-iconv-windows/)
+- Install [Transifex](https://docs.transifex.com/client/installing-the-client)
 
 ## First time setup
 
 - Checkout this build-environment repository to a folder (e.g. c:/wpca/)
+- Run `vagrant plugin install vagrant-hostsupdater` to install a plugin that will automatically update your hosts file
+- Run `npm install -g grunt-cli` to install Grunt
+- Run `npm install -g windows-build-tools` to install some Visual Studio Build tools (and also Python if you don't have it already on your computer)
 - Run `npm install` in the build environment directory
 - Run `. up-vagrant.sh` to install the VM
-- Run `grunt gitclone && grunt gitcheckout` to get all the necessary plugins, add-ons and tools
+- Run `grunt gitclone` to get all the necessary plugins, add-ons and tools
+- Run `grunt gitcheckout` to switch all working branches to develop
 - Open `vagrant/www/wordpress-local/public_html/wp-config.php` and add the following constants
 
     ```php
