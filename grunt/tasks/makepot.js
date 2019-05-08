@@ -5,7 +5,6 @@ module.exports = function (grunt, options) {
         pot.headers["report-msgid-bugs-to"] = options.pkg.bugs.url + "\n";
         pot.headers["last-translator"] = options.pkg.author.name + " <" + options.pkg.author.email + ">\n";
         pot.headers["language-team"] = options.pkg.author.url + "\n";
-        pot.headers["language"] = "en_US";
 
         var excluded_meta = [
             "Plugin Name of the plugin/theme",
@@ -36,12 +35,12 @@ module.exports = function (grunt, options) {
             potComments: options.i18n.copyright,
             potHeaders: {
                 poedit: true,
-                "x-poedit-keywordslist": true
+                language: 'en_US'
+
             },
             type: options.i18n.projectType,
             updateTimestamp: false,
-            updatePoFiles: true,
-            processPot: processPot
+            updatePoFiles: true
         }
     };
 
@@ -55,9 +54,12 @@ module.exports = function (grunt, options) {
                 cwd: addon.path,
                 include: [
                     addon.mainFile,
-                    "src/php/.*",
-                    "includes/.*"
+                    "src/php/.*"
                 ],
+                potHeaders: {
+                    "x-poedit-searchpath-0": addon.mainFile,
+                    "x-poedit-searchpath-1": "src/php"
+                    },
                 domainPath: addon.langFolder,
                 mainFile: addon.mainFile,
                 potFilename: addon.textDomain + ".pot",

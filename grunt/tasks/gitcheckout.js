@@ -7,13 +7,6 @@ module.exports = function (grunt, options) {
 
     addons.push(
         {
-            slug: "customer-area",
-            path: options.paths.base_plugin
-        }
-    );
-
-    addons.push(
-        {
             slug: "framework",
             path: "vendor/other"
         }

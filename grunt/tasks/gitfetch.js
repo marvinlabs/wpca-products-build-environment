@@ -3,14 +3,7 @@ module.exports = function (grunt, options) {
 
     var targets = {};
 
-    var addons = options.addons;
-
-    addons.push(
-        {
-            slug: "customer-area",
-            path: options.paths.base_plugin
-        }
-    );
+    var addons = options.addons.slice(0);
 
     addons.push(
         {

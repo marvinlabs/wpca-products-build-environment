@@ -5,11 +5,12 @@ module.exports = function (grunt, options) {
     var baseOptions = {
         options: {
             correct_domain: false,
-            keywords: options.i18n.keywords
+            keywords: options.i18n.keywords_checktextdomain
         }
     };
 
     var targets = {};
+    var addons = options.addons.slice(0);
 
     // Create the targets for the base plugin and all add-ons
     targets["customer-area"] = extend(true, {}, baseOptions, {
@@ -26,8 +27,9 @@ module.exports = function (grunt, options) {
         }]
     });
 
-    var addons = options.addons;
     addons.forEach(function (addon) {
+        if(addon.slug === 'customer-area') return;
+
         targets[addon.slug] = extend(true, {}, baseOptions, {
             options: {
                 text_domain: addon.textDomain
@@ -42,6 +44,8 @@ module.exports = function (grunt, options) {
             }]
         });
     });
+
+    console.log(targets);
 
     return targets;
 };

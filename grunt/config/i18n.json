@@ -1,7 +1,7 @@
 {
     "projectType": "wp-plugin",
     "copyright" : "(c) Vincent Mimoun-Prat, MarvinLabs {{year}}",
-    "keywords" : [
+    "keywords_checktextdomain" : [
         "__:1,2d",
         "_e:1,2d",
         "_x:1,2c,3d",
