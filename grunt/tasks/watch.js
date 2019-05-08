@@ -31,7 +31,8 @@ module.exports = function (grunt, options) {
 
     // Create assets for addons (official add-ons do not have any particular styling, this is bundled in the main
     // plugin skins
-    var addons = options.addons;
+    var addons = options.addons.slice(0);
+
     addons.push(
         {
             slug: "customer-area",

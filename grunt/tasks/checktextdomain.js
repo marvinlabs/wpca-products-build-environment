@@ -10,7 +10,6 @@ module.exports = function (grunt, options) {
     };
 
     var targets = {};
-    var addons = options.addons.slice(0);
 
     // Create the targets for the base plugin and all add-ons
     targets["customer-area"] = extend(true, {}, baseOptions, {
@@ -27,6 +26,7 @@ module.exports = function (grunt, options) {
         }]
     });
 
+    var addons = options.addons;
     addons.forEach(function (addon) {
         if(addon.slug === 'customer-area') return;
 
@@ -44,8 +44,6 @@ module.exports = function (grunt, options) {
             }]
         });
     });
-
-    console.log(targets);
 
     return targets;
 };

@@ -7,7 +7,8 @@ module.exports = function (grunt, options) {
         }
     };
 
-    var addons = options.addons;
+    var addons = options.addons.slice(0);
+
     var baseTargets = options.release.base_targets;
     var targets = {};
 

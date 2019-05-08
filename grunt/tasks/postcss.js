@@ -78,7 +78,15 @@ module.exports = function (grunt, options) {
 
     // Create assets for addons (official add-ons do not have any particular styling, this is bundled in the main
     // plugin skins
-    var addons = options.addons;
+    var addons = options.addons.slice(0);
+
+    addons.push(
+        {
+            slug: "customer-area",
+            path: options.paths.base_plugin
+        }
+    );
+
     addons.forEach(function (addon) {
         var adminAsset = addon.path + "/assets/admin/css/" + addon.slug + ".min.css";
         var frontendAsset = addon.path + "/assets/frontend/css/" + addon.slug + ".min.css";

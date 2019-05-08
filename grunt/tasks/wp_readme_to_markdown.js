@@ -20,7 +20,8 @@ module.exports = function (grunt, options) {
         files: files
     });
 
-    var addons = options.addons;
+    var addons = options.addons.slice(0);
+
     addons.forEach(function (addon) {
         var md =  addon.path + "/README.MD";
         var txt = addon.path + "/readme.txt";

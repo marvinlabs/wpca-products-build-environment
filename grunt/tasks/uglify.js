@@ -13,7 +13,7 @@ module.exports = function (grunt, options) {
         }
     };
     var targets = {};
-    var addons = options.addons;
+    var addons = options.addons.slice(0);
 
     addons.push(
         {
