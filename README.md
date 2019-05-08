@@ -56,9 +56,9 @@
 - Run `npm install -g grunt-cli` to install Grunt
 - Run `npm install -g windows-build-tools` to install some Visual Studio Build tools (and also Python if you don't have it already on your computer)
 - Run `npm install` in the build environment directory
-- Run `. up-vagrant.sh` to install the VM
 - Run `grunt gitclone` to get all the necessary plugins, add-ons and tools
 - Run `grunt gitcheckout` to switch all working branches to develop
+- Run `. up-vagrant.sh` to install the VM
 - Open `vagrant/www/wordpress-local/public_html/wp-config.php` and add the following constants
 
     ```php
