@@ -145,22 +145,28 @@
         "dest": "vendor/other/framework/theme_wpca/assets/skin/base/plugins/fancytree"
       },
       {
-        "cwd": "wp-plugins/advanced-custom-fields-pro/assets",
+        "cwd": "wp-plugins/advanced-custom-fields-pro/assets/images",
         "expand": true,
         "src": [
-          "images/*",
-          "font/*"
+          "**/*"
         ],
-        "dest": "wp-plugins/customer-area/assets/frontend"
+        "dest": "wp-plugins/customer-area/skins/frontend/master/assets/img/acf"
+      },
+      {
+        "cwd": "wp-plugins/advanced-custom-fields-pro/assets/font",
+        "expand": true,
+        "src": [
+          "**/*"
+        ],
+        "dest": "wp-plugins/customer-area/skins/frontend/master/assets/fonts/acf"
       },
       {
         "cwd": "wp-plugins/advanced-custom-fields-pro/assets",
         "expand": true,
         "src": [
-          "images/*",
-          "font/*"
+          "css/acf-global.css"
         ],
-        "dest": "wp-plugins/customer-area-design-extras/assets/frontend"
+        "dest": "vendor/tmp/acf"
       }
     ]
   },

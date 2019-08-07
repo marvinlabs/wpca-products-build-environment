@@ -94,6 +94,7 @@ module.exports = function (grunt) {
         "gitpull:customer-area",
         "gitpull:customer-area-advanced-custom-fields-pro",
         "copy:libs-assets-extras",
+        "acf-regex",
         "prepare-dev-assets",
         "less",
         "postcss",
@@ -156,9 +157,10 @@ module.exports = function (grunt) {
             grunt.fail.fatal("You have to include 'frontend-' before the skin name");
         }
 
-        if (skin === "frontend-master") {
+        if (skin === "frontend-master" || skin === "frontend-master-dark") {
             grunt.task.run([
-                "copy:libs-assets-extras"
+                "copy:libs-assets-extras",
+                "acf-regex"
             ]);
         }
 
@@ -168,7 +170,7 @@ module.exports = function (grunt) {
             "less:cuar-skin-" + skin + "-styles"
         ]);
 
-        if (skin === "frontend-master") {
+        if (skin === "frontend-master" || skin === "frontend-master-dark") {
             grunt.task.run([
                 "uglify:libs-assets",
                 "uglify:cuarMasterSkin"
@@ -235,6 +237,21 @@ module.exports = function (grunt) {
 
         grunt.file.write(path.join(thisSkin['plugin'], 'skins/' + thisSkin['path'] + '/src/less/less-vars.css'), JSON.stringify(lessVars).replace('{', '&{').replace(/\\"/g, "").replace(/"([^"]*)":"([^;]*);",?/g, "$1 {&:before{content: '$2';} background: $2; &:after{content: '$1';}}").replace(/&:after\{content: '\.cuar-dev-nuance-([^']*)';}/g, "&:after{content: '@$1';}"));
     });
+
+    /**
+     * Custom task used to remove @font-face inclusions from acf-global.css
+     */
+    grunt.registerTask('acf-regex', function () {
+        var acf_global = grunt.file.read('vendor/tmp/acf/css/acf-global.css');
+        var acf_font_hash = "57601716";
+        if (!acf_global.includes(acf_font_hash)) {
+            grunt.fail.fatal("Error: hash (" + acf_font_hash + ") cannot be found in acf-global.css. This means the fonts have been updated and the hash should be updated too in vendor/other/framework/theme_wpca/assets/skin/wpca/wp/acf.less")
+        }
+        var acf_global_result = acf_global.replace(new RegExp("@font\\-face\\s*\\{[\\s\\S]*?}", "g"), "");
+        console.log(acf_global_result);
+        grunt.file.write('vendor/tmp/acf/css/acf-global.css', acf_global_result);
+    });
+
 };
 
 /**
