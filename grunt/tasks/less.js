@@ -63,7 +63,7 @@ module.exports = function (grunt, options) {
                 {
                     "sourceMapFilename": cssOutputFolder + "/" + lessFilesList[i].name + '.css.map',
                     "sourceMapURL": "/"  + skin.plugin + "/skins/" + skin.path + "/assets/css/" + lessFilesList[i].name + ".css.map",
-                    "sourceMapBasepath": "/"
+                    "sourceMapBasepath": ""
                 }
             ), {
                 files: skinFiles
