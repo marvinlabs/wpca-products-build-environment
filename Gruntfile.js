@@ -248,7 +248,6 @@ module.exports = function (grunt) {
             grunt.fail.fatal("Error: hash (" + acf_font_hash + ") cannot be found in acf-global.css. This means the fonts have been updated and the hash should be updated too in vendor/other/framework/theme_wpca/assets/skin/wpca/wp/acf.less")
         }
         var acf_global_result = acf_global.replace(new RegExp("@font\\-face\\s*\\{[\\s\\S]*?}", "g"), "");
-        console.log(acf_global_result);
         grunt.file.write('vendor/tmp/acf/css/acf-global.css', acf_global_result);
     });
 
